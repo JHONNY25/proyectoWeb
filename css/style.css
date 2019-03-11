@@ -1,0 +1,185 @@
+
+.azul-bajo{
+    background: #15A5CF;
+}
+
+.btn-inicio{
+    background: #15A5CF !important;
+    color: #fff;
+}
+
+.margen-inicio{
+    margin: 80px;
+    
+}
+
+.con-ites-img{
+    display: flex;
+    justify-content: center;
+    background: #fff;
+    align-items: center;
+    align-content: center;
+    height: 527px;
+}
+
+.con-ites-img img{
+    width: 600px;
+    height: 243px;
+}
+
+.notificacion, .subir-carta, .delete{
+    font-size: 24px;
+}
+
+.subir-carta, .delete{
+    margin-left: 20px;
+}
+
+.acciones{
+    display: flex;
+    justify-content: center;
+}
+
+.dataTable_filter,#dataTable_filter{
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+
+/* estilos d etaps*/
+.project-tab {
+    padding: 10%;
+    margin-top: -8%;
+}
+.project-tab #tabs{
+    background: #007b5e;
+    color: #eee;
+}
+.project-tab #tabs h6.section-title{
+    color: #eee;
+}
+.project-tab #tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #0062cc;
+    background-color: transparent;
+    border-color: transparent transparent #f3f3f3;
+    border-bottom: 3px solid !important;
+    font-size: 16px;
+    font-weight: bold;
+}
+.project-tab .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    color: #0062cc;
+    font-size: 16px;
+    font-weight: 600;
+}
+.project-tab .nav-link:hover {
+    border: none;
+}
+.project-tab thead{
+    background: #f3f3f3;
+    color: #333;
+}
+.project-tab a{
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+
+.btn-add{
+    background: #15A5CF !important;
+    color: #fff !important;
+}
+
+/*SCROLLBAR*/
+.scrollbar-deep-purple::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #F5F5F5;
+    border-radius: 10px; }
+    
+    .scrollbar-deep-purple::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5; }
+    
+    .scrollbar-deep-purple::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #512da8; }
+    
+    .scrollbar-cyan::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #F5F5F5;
+    border-radius: 10px; }
+    
+    .scrollbar-cyan::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5; }
+    
+    .scrollbar-cyan::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #00bcd4; }
+    
+    .scrollbar-dusty-grass::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #F5F5F5;
+    border-radius: 10px; }
+    
+    .scrollbar-dusty-grass::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5; }
+    
+    .scrollbar-dusty-grass::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-image: -webkit-linear-gradient(330deg, #d4fc79 0%, #96e6a1 100%);
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%); }
+    
+    .scrollbar-ripe-malinka::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-color: #F5F5F5;
+    border-radius: 10px; }
+    
+    .scrollbar-ripe-malinka::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5; }
+    
+    .scrollbar-ripe-malinka::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    background-image: -webkit-linear-gradient(330deg, #15A5CF 0%, #15A5CF 100%);
+     }
+    
+    .bordered-deep-purple::-webkit-scrollbar-track {
+    -webkit-box-shadow: none;
+    border: 1px solid #512da8; }
+    
+    .bordered-deep-purple::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: none; }
+    
+    .bordered-cyan::-webkit-scrollbar-track {
+    -webkit-box-shadow: none;
+    border: 1px solid #00bcd4; }
+    
+    .bordered-cyan::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: none; }
+    
+    .square::-webkit-scrollbar-track {
+    border-radius: 0 !important; }
+    
+    .square::-webkit-scrollbar-thumb {
+    border-radius: 0 !important; }
+    
+    .thin::-webkit-scrollbar {
+    width: 6px; }
+    
+    .example-1 {
+    position: relative;
+    overflow-y: scroll;
+    height: 300px; }
+
+@media screen and (max-width: 991px){
+    .text-inicio{
+        display: none !important;
+    }
+}
