@@ -1,7 +1,7 @@
 <?php require_once '../vistas/cabezera.php'; ?>
 
 <?php require_once '../vistas/sidebar.php'; ?>
-  
+
 <?php require_once '../vistas/labelPerfil.php'; ?>
 <!-- Begin Page Content -->
 <div class="container-fluid">
@@ -12,7 +12,7 @@
             <li class="breadcrumb-item active">Personal</li>
         </ol>
 
-        <a href="#" class="mb-3 btn btn-icon-split btn-add">
+        <a href="../formularios/NuevoUsuario.php" class="mb-3 btn btn-icon-split btn-add">
             <span class="icon text-white-50">
                 <i class="fas fa-plus-circle"></i>
             </span>
@@ -63,7 +63,7 @@
                       <a href="" class="text-danger delete"><i class="fa fa-user-times"></i></a>
                       </td>
                     </tr>
-  
+
                   </tbody>
                 </table>
               </div>
@@ -72,7 +72,7 @@
 
         </div>
         <!-- /.container-fluid -->
-    
+
 <?php require_once '../vistas/footer.php'; ?>
 
 <?php require_once '../vistas/logoutModal.php'; ?>
