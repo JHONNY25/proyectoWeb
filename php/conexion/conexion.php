@@ -1,5 +1,6 @@
 <?php
 require_once 'config.php';
+namespace Conexion;
 
 class Conexion {
     protected $con;
