@@ -3661,6 +3661,13 @@ input[type="button"].btn-block {
   margin-bottom: 0;
 }
 
+.custom-select{
+  font-size: 0.8rem;
+  border-radius: 10rem;
+  padding: 1.5rem 1rem;
+}
+
+
 .input-group > .form-control + .form-control,
 .input-group > .form-control + .custom-select,
 .input-group > .form-control + .custom-file,
