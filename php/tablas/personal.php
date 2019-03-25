@@ -1,3 +1,12 @@
+<?php 
+
+  require_once '../procesamiento/personal.php';
+  $listado = new Personal();
+
+  $resp = $listado->listarPersonas();
+
+  if($resp){
+?>
 <?php require_once '../vistas/cabezera.php'; ?>
 
 <?php require_once '../vistas/sidebar.php'; ?>
@@ -29,43 +38,25 @@
                   <thead>
                     <tr>
                       <th>Nombre</th>
-                      <th>Carrera</th>
-                      <th>N° control</th>
                       <th>Correo</th>
+                      <th>Telefono</th>
                       <th>Acciones</th>
                     </tr>
                   </thead>
                   <tbody>
+                  <?php foreach($resp as $row): ?>
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                      <td>61</td>
+                      <td><?php echo $row['nombre'] ." ". $row['apellido_paterno']. " " . $row['apellido_materno']; ?></td>
+                      <td><?php echo $row['correo']; ?></td>
+                      <td><?php echo $row['telefono']; ?></td>
                       <td class="d-flex justify-content-center">
                       <a href="" class="text-danger delete"><i class="fa fa-user-times"></i></a>
                       </td>
                     </tr>
-                    <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                      <td>61</td>
-                      <td class="d-flex justify-content-center">
-                      <a href="" class="text-danger delete"><i class="fa fa-user-times"></i></a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                      <td>61</td>
-                      <td class="d-flex justify-content-center">
-                      <a href="" class="text-danger delete"><i class="fa fa-user-times"></i></a>
-                      </td>
-                    </tr>
-
+                    <?php endforeach; ?>
                   </tbody>
                 </table>
+              <?php } ?>
               </div>
             </div>
           </div>

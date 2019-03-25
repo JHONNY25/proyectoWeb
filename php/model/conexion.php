@@ -1,6 +1,6 @@
 <?php
+
 require_once 'config.php';
-namespace Conexion;
 
 class Conexion {
     protected $con;
@@ -19,7 +19,11 @@ class Conexion {
         }
 
         $this->con->set_charset(BD_CHARSET);
+        
+        session_start();
     }
+
+
 }
 
 ?>

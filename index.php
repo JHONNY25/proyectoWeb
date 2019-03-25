@@ -44,12 +44,17 @@
                   <div class="text-center m-3">
                     <img src="img/squirrel.png" alt="">
                   </div>
-                  <form class="user">
+                  <?php 
+                  if(!isset($_SESSION['usuario'])): ?>
+                  <form class="user" method="post" action="php/sesion.php">
+                  <?php if(isset($_SESSION['error_login'])): ?>
+                      <div class="alerta-error"><?= $_SESSION['error_login']; ?></div>
+                  <?php endif; ?>
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Ingrese su numero de control o clave">
+                      <input type="text"  name="usuario" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Ingrese su numero de control o clave">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Ingrese su contraseña">
+                      <input type="password" name="pass" class="form-control form-control-user" id="exampleInputPassword" placeholder="Ingrese su contraseña">
                     </div>
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small">
@@ -57,11 +62,11 @@
                         <label class="custom-control-label" for="customCheck">Recordarme</label>
                       </div>
                     </div>
-                    <a href="php/formularios/presentacion.php" class="btn btn-inicio btn-user btn-block">
-                      Iniciar Sesión
-                    </a>
+                    <input class="btn btn-inicio btn-user btn-block" type="submit" value="Iniciar Sesión">
+                      
                     <hr>
                   </form>
+                  <?php endif; ?>
                   <hr>
                   <div class="text-center">
                     <a class="small" href="forgot-password.html">¿Olvidaste tu contraseña?</a>

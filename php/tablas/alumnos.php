@@ -1,3 +1,12 @@
+<?php 
+
+  require_once '../procesamiento/alumno.php';
+  $listado = new Alumno();
+
+  $resp = $listado->listarAlumno();
+
+  if($resp){
+?>
 <?php require_once '../vistas/cabezera.php'; ?>
 
 <?php require_once '../vistas/sidebar.php'; ?>
@@ -11,13 +20,6 @@
             </li>
             <li class="breadcrumb-item active">Alumnos</li>
         </ol>
-
-        <a href="#" class="mb-3 btn btn-icon-split btn-add">
-            <span class="icon text-white-50">
-                <i class="fas fa-plus-circle"></i>
-            </span>
-            <span class="text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nuevo Alumnno</font></font></span>
-        </a>
         
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
@@ -30,44 +32,27 @@
                   <thead>
                     <tr>
                       <th>Nombre</th>
-                      <th>Carrera</th>
                       <th>N° control</th>
                       <th>Correo</th>
                       <th>Acciones</th>
                     </tr>
                   </thead>
                   <tbody>
+                  <?php foreach($resp as $row): ?>
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                      <td>61</td>
+                      <td><?php echo $row['nombre'] ." ". $row['apellido_paterno']. " " . $row['apellido_materno']; ?></td>
+                      <td><?php echo $row['numero_control']; ?></td>
+                      <td><?php echo $row['correo']; ?></td>
                       <td class="acciones">
+                        <a href="" class="text-warning delete"><i class="fa fa-folder"></i></a>
                         <a href="" class="text-danger delete"><i class="fa fa-user-times"></i></a>
+                        
                       </td>
                     </tr>
-                    <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                      <td>61</td>
-                      <td class="acciones">
-                        <a href="" class="text-danger delete"><i class="fa fa-user-times"></i></a>
-                      </td>
-                    </tr>
-                   
-                    <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                      <td>61</td>
-                      <td class="acciones">
-                        <a href="" class="text-danger delete"><i class="fa fa-user-times"></i></a>
-                      </td>
-                    </tr>
-                   
+                  <?php endforeach; ?>
                   </tbody>
                 </table>
+                <?php } ?>
               </div>
             </div>
           </div>
