@@ -45,6 +45,8 @@
                     <img src="img/squirrel.png" alt="">
                   </div>
                   <?php 
+                  require_once 'php/autentificacion.php';  
+                  
                   if(!isset($_SESSION['usuario'])): ?>
                   <form class="user" method="post" action="php/sesion.php">
                   <?php if(isset($_SESSION['error_login'])): ?>
