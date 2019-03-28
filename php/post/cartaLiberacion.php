@@ -25,19 +25,19 @@
       <div class="card-body">
         <div class="border rounded mt-3">
             <h5 class="ml-2">Juanito perez</h5>
-            <p class="ml-2">La carta esta toda mal, cambiela</p>
+            <p class="ml-2">Mi nombre esta mal</p>
         </div>
         <div class="border rounded mt-3">
             <h5 class="ml-2">Francis jimenez</h5>
-            <p class="ml-2">No me fastidies jovencito, luego la hago</p>
+            <p class="ml-2">ok, la voy a cambiar</p>
         </div>
         <div class="border rounded mt-3">
             <h5 class="ml-2">Juanito perez</h5>
-            <p class="ml-2">La carta esta toda mal, cambiela</p>
+            <p class="ml-2">Perfecto, ahora si</p>
         </div>
         <div class="border rounded mt-3">
-            <h5 class="ml-2">Juanito perez</h5>
-            <p class="ml-2">La carta esta toda mal, cambiela</p>
+            <h5 class="ml-2">Francis jimenez</h5>
+            <p class="ml-2">Imprimela y me la traes</p>
         </div>
       </div>
     </div>

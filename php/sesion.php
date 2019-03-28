@@ -1,12 +1,22 @@
 <?php
-require_once 'autentificacion.php';
-
-if(!empty($_POST)){
-    $user = $_POST['usuario'];
-    $password = $_POST['pass'];
+class Sesion {
     
-    $autentificacion = new Login();
-    $sesion = $autentificacion->sesion($user,$password);
-    
+    public function __construct()
+    {
+        session_start();
+    }
 
+    public function setSesion($user){
+        $_SESSION['usuario'] = $user;
+    }
+
+    public function getSesion(){
+        return $_SESSION['usuario'];
+    }
+
+    public function cerrarSesion(){
+        session_unset();
+        session_destroy();
+    }
 }
+

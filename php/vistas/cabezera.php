@@ -1,3 +1,11 @@
+<?php
+        require_once '../sesion.php';
+        require_once '../user.php';
+
+        $sesion = new Sesion();
+        $user = new User();
+        
+      ?>
 <!DOCTYPE html>
 <html lang="en">
 

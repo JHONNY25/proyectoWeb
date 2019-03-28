@@ -1,9 +1,8 @@
 <?php
 
-session_start();
+require_once 'sesion.php';
 
-    if (isset($_SESSION['usuario'])) {
-        session_destroy();
-        
-    }
-    header("Location: ../index.php");
+$sesion = new Sesion();
+$sesion->cerrarSesion();
+
+header('Location: ../index.php');
