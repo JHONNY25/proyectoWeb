@@ -23,10 +23,11 @@ class Personal extends Conexion{
     }
 
     public function registrarPersonas(){
-        
+
     }
 
     public function modificarPersonas(){
-        
+
     }
 }
+?>
