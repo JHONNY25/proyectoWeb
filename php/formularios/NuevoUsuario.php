@@ -19,6 +19,7 @@ if(!empty($_POST)){
   $nombreUsuario = $_POST['nombreUsuario'];
   $correo = $_POST['correo'];
   $telefono = $_POST['telefono'];
+  $carrera = 1;
 
   //----------------------------------------------------------------------------VARIABLES GENERALES
   $tipo = 1;
@@ -167,7 +168,7 @@ if(!empty($_POST)){
     //OBTENER VALOR DEL COMBOBOX Y ASIGNARLE UN NÚMERO
 
 
-
+/*
     //LLAMAR AL PROCEDIMIENTO PARA INSERTAR USUARIO "SSI" SIGNIFICA "STRING STRING INT", ES DECIR, EL TIPO DE VALORES A INGRESAR
     $stm = $conexion->prepare("CALL registrar_usuario(?,?,?)");
     $stm->bind_param("ssi",$nombreUsuario,$contrasena,$tipo);
@@ -186,11 +187,11 @@ if(!empty($_POST)){
              $idBD = $row['id_usuario'];
            }
          }
-
+*/
 
     //AGREGAMOS LOS DATOS DE LA PERSONA AL USUARIO
-      $stm = $conexion->prepare("CALL registrar_persona(?,?,?,?,?,?,?,?)");
-      $stm->bind_param("ssssssdi",$nombre,$aPat,$aMat,$numeroControl,$correo,$telefono,$creditos,$idBD);
+      $stm = $conexion->prepare("CALL registrar_persona(?,?,?,?,?,?,?,?,?,?)");
+      $stm->bind_param("sssssssssi",$nombreUsuario, $contrasena, $tipo,$nombre,$aPat,$aMat,$numeroControl,$correo,$telefono,$carrera);
       $stm->execute();
       $stm->close();
 
