@@ -3,7 +3,7 @@
 require_once 'config.php';
 
 class Conexion {
-    public $con;
+    protected $con;
 
     public function __construct(){
         $this->con= new mysqli(
@@ -20,10 +20,6 @@ class Conexion {
 
         $this->con->set_charset(BD_CHARSET);
         
-    }
-
-    public function getConexion(){
-        return $this->con;
     }
 
 
