@@ -86,131 +86,130 @@
                                  <!--Modal ////////////////////////////////////
                                  /////////////////////////AQUI VA/////////////////////////////////
                                  -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" 
-                    data-target="#exampleModal" data-whatever="@mdo">Registrate</button>
-                   
+                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Registrate</button>
 
-                    <div class="modal fade" id="exampleModal"   aria-labelledby="exampleModalLabel" aria-hidden="false">
-                       
-                 
-                        
-                        
-                    
-                        <div class="modal-dialog" role="document">
-                         
-                            <div class="modal-content">
-                              
-                            
-                          
-                                     
-                                
-                                   
-                              
-                               
-                                    <div class="container" style="margin-top: 20px;">
-                                    
-                                    <ul class="nav nav-tabs">
-                                        
-                    <li class=" nav active" > <a href="#alumno" data-toggle="tab" aria-selected="true" ><button class="btn">Alumno </button></a> </li>
-                                         
-                     <li> <a href="#empresa" data-toggle = "tab"><button class="btn">Empresa </button></a> </li>
-    
-                     </ul>
-                               
-                                    <div class="tab-content ">
-                                   
-                                   
-                                   <div class="tab-pane fade show active " role="tabpanel"  id="alumno">
-                                       
-                                         <form >
-                                    <div class="col-lg-12">
-              <div class="p-5">
-                <h6>Como Alumno puedes enviar una solicitud de registro en este apartado..</h6>
 
-                
-                  <hr>
-                   <form action="" class="user" method="post">
-                  <hr>
-                  <h5>Datos Generales</h5>
-                  <div class="form-group">
-                    <input type="text" class="form-control form-control-user" name="nombre" aria-describedby="emailHelp" placeholder="Nombre de la empresa">
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control form-control-user" name="telefono" aria-describedby="emailHelp" placeholder="Telefono">
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control form-control-user" name="correo" aria-describedby="emailHelp" placeholder="Correo">
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control form-control-user" name="nombre" aria-describedby="emailHelp" placeholder="Nombre de la empresa">
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control form-control-user" name="telefono" aria-describedby="emailHelp" placeholder="Telefono">
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control form-control-user" name="correo" aria-describedby="emailHelp" placeholder="Correo">
-                  </div>
-                  <div class="form-group">
-                    <input type="file" class="form-control form-control-user" name="correo" aria-describedby="emailHelp" placeholder="kardex">
-                  </div>
-                  <hr>
-                 
-                </form>
-                  <hr>
-                 
-                
+                                 <div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="false">
 
-              </div>
-            </div>
-                                    </form>
-                                       
-                                   </div>
-                                   
-                                  
-                                     <div class="tab-pane fade" id="empresa">
-                                       
-                                         <div class="row">
-            <div class="col-lg-12">
-              <div class="p-5">
-                <h6>Como empresa puedes enviar una solicitud de registro en este apartado..</h6>
 
-                <form action="" class="user" method="post">
-                  <hr>
-                  <h5>Datos Generales</h5>
-                  <div class="form-group">
-                    <input type="text" class="form-control form-control-user" name="nombre" aria-describedby="emailHelp" placeholder="Nombre de la empresa">
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control form-control-user" name="telefono" aria-describedby="emailHelp" placeholder="Telefono">
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control form-control-user" name="correo" aria-describedby="emailHelp" placeholder="Correo">
-                  </div>
-                  <hr>
-                 
-                </form>
 
-              </div>
-            </div>
-          </div>
-                                   </div>
-                                </div>
-                                   </div>
-                                    
-                              
-                                
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                    <button type="button" class="btn btn-primary">Enviar Registro</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
-                  
-                    <hr>
-                      <!-- final Modal ////////////////////////////-->
+
+
+                                     <div class="modal-dialog" role="document">
+
+                                         <div class="modal-content">
+
+
+
+
+
+
+
+
+                                             <div class="container" style="margin-top: 20px;">
+
+                                                 <ul class="nav nav-tabs">
+
+                                                     <li class=" nav active"> <a href="#alumno" data-toggle="tab" aria-selected="true"><button class="btn">Alumno </button></a> </li>
+
+                                                     <li> <a href="#empresa" data-toggle="tab"><button class="btn">Empresa </button></a> </li>
+
+                                                 </ul>
+
+                                                 <div class="tab-content ">
+
+
+                                                     <div class="tab-pane fade show active " role="tabpanel" id="alumno">
+
+                                                         <form>
+                                                             <div class="col-lg-12">
+                                                                 <div class="p-5">
+                                                                     <h6>Como Alumno puedes enviar una solicitud de registro en este apartado..</h6>
+
+
+                                                                     <hr>
+                                                                     <form action="" class="user" method="post">
+                                                                         <hr>
+                                                                         <h5>Datos Generales</h5>
+                                                                         <div class="form-group">
+                                                                             <input type="text" class="form-control form-control-user" name="nombre" aria-describedby="emailHelp" placeholder="Nombre de la empresa">
+                                                                         </div>
+                                                                         <div class="form-group">
+                                                                             <input type="text" class="form-control form-control-user" name="telefono" aria-describedby="emailHelp" placeholder="Telefono">
+                                                                         </div>
+                                                                         <div class="form-group">
+                                                                             <input type="text" class="form-control form-control-user" name="correo" aria-describedby="emailHelp" placeholder="Correo">
+                                                                         </div>
+                                                                         <div class="form-group">
+                                                                             <input type="text" class="form-control form-control-user" name="nombre" aria-describedby="emailHelp" placeholder="Nombre de la empresa">
+                                                                         </div>
+                                                                         <div class="form-group">
+                                                                             <input type="text" class="form-control form-control-user" name="telefono" aria-describedby="emailHelp" placeholder="Telefono">
+                                                                         </div>
+                                                                         <div class="form-group">
+                                                                             <input type="text" class="form-control form-control-user" name="correo" aria-describedby="emailHelp" placeholder="Correo">
+                                                                         </div>
+                                                                         <div class="form-group">
+                                                                             <input type="file" class="form-control form-control-user" name="correo" aria-describedby="emailHelp" placeholder="kardex">
+                                                                         </div>
+                                                                         <hr>
+
+                                                                     </form>
+                                                                     <hr>
+
+
+
+                                                                 </div>
+                                                             </div>
+                                                         </form>
+
+                                                     </div>
+
+
+                                                     <div class="tab-pane fade" id="empresa">
+
+                                                         <div class="row">
+                                                             <div class="col-lg-12">
+                                                                 <div class="p-5">
+                                                                     <h6>Como empresa puedes enviar una solicitud de registro en este apartado..</h6>
+
+                                                                     <form action="" class="user" method="post">
+                                                                         <hr>
+                                                                         <h5>Datos Generales</h5>
+                                                                         <div class="form-group">
+                                                                             <input type="text" class="form-control form-control-user" name="nombre" aria-describedby="emailHelp" placeholder="Nombre de la empresa">
+                                                                         </div>
+                                                                         <div class="form-group">
+                                                                             <input type="text" class="form-control form-control-user" name="telefono" aria-describedby="emailHelp" placeholder="Telefono">
+                                                                         </div>
+                                                                         <div class="form-group">
+                                                                             <input type="text" class="form-control form-control-user" name="correo" aria-describedby="emailHelp" placeholder="Correo">
+                                                                         </div>
+                                                                         <hr>
+
+                                                                     </form>
+
+                                                                 </div>
+                                                             </div>
+                                                         </div>
+                                                     </div>
+                                                 </div>
+                                             </div>
+
+
+
+                                             <div class="modal-footer">
+                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                                 <button type="button" class="btn btn-primary">Enviar Registro</button>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+
+
+
+                                 <hr>
+                                 <!-- final Modal ////////////////////////////-->
              
                 </div>
                 
