@@ -84,9 +84,7 @@
 
                                         <hr>
                                     </div>
-                                    <!--Modal ////////////////////////////////////
-                                 /////////////////////////AQUI VA/////////////////////////////////
-                                 -->
+          <!--Modal ///////////////////////////////////AQUI comienza el modal /////////////////////////////////-->
                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Registrate</button>
 
 
@@ -96,31 +94,28 @@
 
 
 
-                                        <div class="modal-dialog" role="document">
+               <div class="modal-dialog" role="document">
 
-                                            <div class="modal-content">
-
-
+               <div class="modal-content">
 
 
+              <div class="container" style="margin-top: 20px;">
 
+                                                    
+          <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#alumno" role="tab" aria-controls="pills-home" aria-selected="true">Alumno</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#empresa" role="tab" aria-controls="pills-profile" aria-selected="false">Empresa</a>
+          </li>
 
+        </ul>
+<        div class="tab-content" id="pills-tabContent">
+ 
+   <!--Modal ///////////////////////////////////AQUI VA LO TUYO, DREW /////////////////////////////////-->
 
-
-                                                <div class="container" style="margin-top: 20px;">
-
-                                                    <ul class="nav nav-tabs ">
-
-                                                        <li class=" nav show active"> <a href="#alumno" data-toggle="tab" aria-selected="true"><button class="btn">Alumno </button></a> </li>
-
-                                                        <li class=""> <a href="#empresa" data-toggle="tab"><button class="btn">Empresa </button></a> </li>
-
-                                                    </ul>
-
-                                                    <div class="tab-content">
-
-
-                                                        <div class="tab-pane fade show active " role="tabpanel" id="alumno">
+              <div class="tab-pane fade show active " role="tabpanel" id="alumno" role="tabpanel" aria-labelledby="pills-profile-tab">
 
                                                             <form>
                                                                 <div class="col-lg-12">
@@ -166,44 +161,46 @@
 
                                                         </div>
 
+   <!--Modal ///////////////////////////////////AQUI VA LO TUYO, ABNER /////////////////////////////////-->
+         <div class="tab-pane fade" id="empresa" role="tabpanel" aria-labelledby="pills-profile-tab">
 
-                                              <div class="tab-pane fade" id="empresa">
+                                 <div class="row">
+                                      <div class="col-lg-12">
+                                       <div class="p-5">
+                                      <h6>Como empresa puedes enviar una solicitud de registro en este apartado..</h6>
 
-                                                  <div class="row">
-                                                   <div class="col-lg-12">
-                                                    <div class="p-5">
-                                                         <h6>Como empresa puedes enviar una solicitud de registro en este apartado..</h6>
-
-                                                         <form action="php/procesamiento/consultasEmpresa.php" class="user" method="post">
+                            <form action="php/procesamiento/empresa/insercionEmpresa.php" class="user" method="post">
                                                                   <hr>
-                                                          <h5>Datos Generales</h5>
-                                                         <div class="form-group">
-                                                      <input type="text" class="form-control form-control-user" name="nombre_emp"  placeholder="Nombre de la empresa" required maxlength="35" minlength="20"  >
+                                 <h5>Datos Generales</h5>
+                             <div class="form-group">
+                         <input type="text" class="form-control form-control-user" name="nombre_emp"  placeholder="Nombre de la empresa" required maxlength="35" minlength="20"  >
                                                                </div>
-                                                        <div class="form-group">
-                                                    <input type="tel"  class="form-control form-control-user" name="telefono" maxlength="10" placeholder="Telefono" required  pattern="[0-9]{10}" >
-                                                            </div>
-                                                           <div class="form-group">
-                                                    <input type="email" class="form-control form-control-user" name="correo" a placeholder="Correo electronico" required maxlength="40" minlength="25" >
-                                                           </div>
-                                                         <hr>
-                                                          <button type="submit" class="btn btn-primary">Enviar Registro</button>
-                                                            <hr>
-                                                         </form>
+                        <div class="form-group">
+                        <input type="tel"  class="form-control form-control-user" name="telefono" maxlength="10" placeholder="Telefono" required  pattern="[0-9]{10}" >
+                         </div>
+                        <div class="form-group">
+                    <input type="email" class="form-control form-control-user" name="correo" a placeholder="Correo electronico" required maxlength="40" minlength="25" >
+                           </div>
+                           <hr>
+                              <button type="submit" class="btn btn-primary">Enviar Registro</button>
+                               <hr>
+                           </form>
 
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </div>
+     </div>
+            </div>
 
-
-
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                                                    
-                                                </div>
+             </div>
+
+
+<div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                                   
+                    </div>
                                             </div>
                                         </div>
                                     </div>
@@ -211,7 +208,7 @@
 
 
                                     <hr>
-                                    <!-- final Modal ////////////////////////////-->
+                                    <!-- ////////////////////////////////////final Modal ////////////////////////////-->
 
                                 </div>
 
