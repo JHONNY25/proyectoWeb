@@ -12,12 +12,6 @@
             <li class="breadcrumb-item active">Empresas</li>
         </ol>
 
-        <a href="../formularios/nuevaEmpresa.php" class="mb-3 btn btn-icon-split btn-add">
-            <span class="icon text-white-50">
-                <i class="fas fa-plus-circle"></i>
-            </span>
-            <span class="text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nueva Empresas</font></font></span>
-        </a>
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
@@ -53,7 +47,5 @@
         <!-- /.container-fluid -->
 
 <?php require_once '../vistas/footer.php'; ?>
-
-<?php require_once '../vistas/logoutModal.php'; ?>
 
 <?php require_once '../vistas/bloqueScriptTabla.php'; ?>
