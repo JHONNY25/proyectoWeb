@@ -25,6 +25,13 @@
 
   <!-- Page Wrapper -->
   <div id="wrapper">
+  <?php
+if (isset($_SESSION['usuario'])) {
+
+  $user->setUser($sesion->getSesion());
+  $tipo = $user->getTipo();
+}
+?>
 
 <!-- Sidebar -->
 <ul class="navbar-nav sidebar sidebar-dark accordion azul-bajo" id="accordionSidebar">
@@ -40,7 +47,7 @@
 
 <!-- Nav Item - Dashboard -->
 <li class="nav-item active">
-  <a class="nav-link" href="php/formularios/presentacion.php">
+  <a class="nav-link" href="../../index.php">
     <i class="fas fa-fw fa-home"></i>
     <span>Inicio</span></a>
 </li>
@@ -48,6 +55,11 @@
 <!-- Divider -->
 <hr class="sidebar-divider">
 
+  <?php
+
+//si es tipo administrador
+    if($tipo == 0){
+  ?>
       <!-- Heading -->
 <div class="sidebar-heading">
   Alumnos
@@ -63,6 +75,7 @@
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Tareas Administrativas:</h6>
       <a class="collapse-item" href="php/post/postFormatos.php">Subir formato</a>
+      <a class="collapse-item" href="php/tablas/alumnos.php">Solicitud de Alumnos</a>
       <a class="collapse-item" href="php/tablas/alumnos.php">Alumnos</a>
       <a class="collapse-item" href="php/tablas/alumnosServicio.php">Alumnos en servicio</a>
     </div>
@@ -84,6 +97,12 @@
     <span>Empresas</span></a>
 </li>
 
+<li class="nav-item">
+  <a class="nav-link" href="php/tablas/solicitudEmpresa.php">
+    <i class="fas fa-fw fa-briefcase"></i>
+    <span>Solicitudes de Empresas</span></a>
+</li>
+
 <!-- Divider -->
 <hr class="sidebar-divider">
 
@@ -101,34 +120,97 @@
 
 <!-- Divider -->
 <hr class="sidebar-divider">
-
+<?php
+    }//termina if de tipo admin
+?>
 <!-- Heading -->
 <div class="sidebar-heading">
   Publicaciones
 </div>
 
+
+<?php
+//tipo empresa
+if($tipo == 2){
+?>
 <li class="nav-item">
-  <a class="nav-link" href="php/tablas/residencias.php">
+<a class="nav-link" href="php/tablas/residencias.php">
     <i class="fas fa-fw fa-globe"></i>
     <span>Residencias</span></a>
+
 </li>
 
 <li class="nav-item">
+
   <a class="nav-link" href="php/tablas/servicioSocial.php">
     <i class="fas fa-fw fa-id-card"></i>
     <span>Servicio Social</span></a>
+
 </li>
 
 <li class="nav-item">
   <a class="nav-link" href="php/tablas/bolsaTrabajo.php">
     <i class="fas fa-fw fa-briefcase"></i>
     <span>Bolsa de trabajo</span></a>
+
 </li>
+  <?php
+  //tipo admin
+  }else if($tipo == 0){
+  ?>
+<li class="nav-item">
+    <a class="nav-link" href="php/tablas/solicutudResidencia.php">
+    <i class="fas fa-fw fa-globe"></i>
+    <span>Residencias</span></a>
+
+</li>
+
+<li class="nav-item">
+
+    <a class="nav-link" href="php/tablas/solicutudServicio.php">
+    <i class="fas fa-fw fa-id-card"></i>
+    <span>Servicio Social</span></a>
+
+</li>
+
+<li class="nav-item">
+    <a class="nav-link" href="php/tablas/solicutudTrabajo.php">
+    <i class="fas fa-fw fa-briefcase"></i>
+    <span>Bolsa de trabajo</span></a>
+
+</li>
+  <?php
+  //tipo alumno
+}else if($tipo == 1){
+  ?>
+<li class="nav-item">
+    <a class="nav-link" href="php/post/postResidencia.php">
+    <i class="fas fa-fw fa-globe"></i>
+    <span>Residencias</span></a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link" href="php/post/postServicio.php">
+    <i class="fas fa-fw fa-id-card"></i>
+    <span>Servicio Social</span></a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link" href="php/post/postTrabajo.php">
+    <i class="fas fa-fw fa-briefcase"></i>
+    <span>Bolsa de trabajo</span></a>
+</li>
+    <?php
+    }
+    ?>
 
 
 <!-- Divider -->
 <hr class="sidebar-divider">
 
+<?php
+  if($tipo == 0){
+?>
 <!-- Heading -->
 <div class="sidebar-heading">
   Usuarios
@@ -143,7 +225,10 @@
 
 
 <!-- Divider -->
-<hr class="sidebar-divider d-none d-md-block">
+<hr class="sidebar-divider">
+<?php
+  }
+?>
 
 <!-- Sidebar Toggler (Sidebar) -->
 <div class="text-center d-none d-md-inline">

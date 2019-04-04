@@ -1,7 +1,7 @@
 <?php require_once '../vistas/cabezera.php'; ?>
 
 <?php require_once '../vistas/sidebar.php'; ?>
-  
+  s
 <?php require_once '../vistas/labelPerfil.php'; ?>
 <div class="container-fluid">
 <ol class="breadcrumb mt-3">
@@ -69,7 +69,5 @@
     
 </div>
 <?php require_once '../vistas/footer.php'; ?>
-
-<?php require_once '../vistas/logoutModal.php'; ?>
 
 <?php require_once '../vistas/bloqueScriptView.php'; ?>

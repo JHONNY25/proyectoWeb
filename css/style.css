@@ -1,4 +1,8 @@
 
+.pagination{
+    display: flex !important;
+    justify-content: flex-end !important;
+}
 .azul-bajo{
     background: #15A5CF;
 }
@@ -41,6 +45,11 @@
 }
 
 .dataTable_filter,#dataTable_filter{
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+
+.dataTables_paginate, .paging_simple_numbers, #dataTable_paginate, .pagination{
     display: flex !important;
     justify-content: flex-end !important;
 }
