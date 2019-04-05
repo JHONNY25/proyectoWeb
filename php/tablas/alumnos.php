@@ -1,3 +1,10 @@
+
+<?php require_once '../vistas/cabezera.php'; ?>
+
+<?php require_once '../vistas/sidebar.php'; ?>
+  
+<?php require_once '../vistas/labelPerfil.php'; ?>
+
 <?php 
 
   require_once '../procesamiento/alumno.php';
@@ -7,12 +14,6 @@
 
   if($resp){
 ?>
-<?php require_once '../vistas/cabezera.php'; ?>
-
-<?php require_once '../vistas/sidebar.php'; ?>
-  
-<?php require_once '../vistas/labelPerfil.php'; ?>
-
       <div class="container-fluid">
         <ol class="breadcrumb mt-3">
             <li class="breadcrumb-item">
@@ -64,6 +65,5 @@
     
 <?php require_once '../vistas/footer.php'; ?>
 
-<?php require_once '../vistas/logoutModal.php'; ?>
 
 <?php require_once '../vistas/bloqueScriptTabla.php'; ?>

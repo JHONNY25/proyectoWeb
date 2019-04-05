@@ -6,7 +6,7 @@
         
         protected $usuario;
         protected $pass;
-
+        
         //datos de usuario
         protected $carrera;
         protected $nombrePersona;
@@ -15,7 +15,11 @@
         protected $correo;
         protected $telefono;
         protected $num_control;
+        protected $tipo;
 
+        public function getTipo(){
+            return $this->tipo;
+        }
 
         public function getNombre(){
             return $this->usuario;
@@ -81,6 +85,7 @@
 
             while($row = mysqli_fetch_array($user)){
                 $this->usuario = $row['usuario'];
+                $this->tipo = $row['tipo_usuario'];
             }
         }
 
@@ -93,11 +98,14 @@
             $user = mysqli_query($this->con,$sql);
 
             while($row = mysqli_fetch_array($user)){
+
+                //hacer condicion de asignacion de datos respecto al tipo de usuario
                 $this->nombrePersona = $row['nombre'];
                 $this->apellidoPaterno = $row['apellido_paterno'];
                 $this->apellidoMaterno = $row['apellido_materno'];
                 $this->correo = $row['correo'];
                 $this->telefono = $row['telefono'];
+                $this->tipo = $row['tipo_usuario'];
 
                 if(isset($row['numero_control']) && isset($row['carrera'])){
                     $this->num_control= $row['numero_control'];
@@ -116,6 +124,7 @@
                 $this->nombrePersona = $row['nombre'];
             }
         }
+
 
     }
 
