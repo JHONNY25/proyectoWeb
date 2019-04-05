@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<?php require_once 'procesamiento/NuevoUsuario.php' ?>
 
 <head>
     <meta charset="utf-8">
@@ -49,10 +50,10 @@
 
                                     <form class="user" method="POST" action="">
 
-                                        <?php 
+                                        <?php
                     if(isset($errorLogin)){
                         echo  "<div class='alert alert-danger' role='alert'>". $errorLogin ."</div>";
-                    } 
+                    }
                   ?>
 
                                         <div class="form-group">
@@ -122,47 +123,22 @@
 
                                                         <div class="tab-pane fade show active " role="tabpanel" id="alumno">
 
-                                                            <form>
+
                                                                 <div class="col-lg-12">
                                                                     <div class="p-5">
                                                                         <h6>Como Alumno puedes enviar una solicitud de registro en este apartado..</h6>
 
 
                                                                         <hr>
-                                                                        <form action="" class="user" method="post">
-                                                                            <hr>
-                                                                            <h5>Datos Generales</h5>
-                                                                            <div class="form-group">
-                                                                                <input type="text" class="form-control form-control-user" name="nombre" aria-describedby="emailHelp" placeholder="Nombre de la empresa">
-                                                                            </div>
-                                                                            <div class="form-group">
-                                                                                <input type="text" class="form-control form-control-user" name="telefono" aria-describedby="emailHelp" placeholder="Telefono">
-                                                                            </div>
-                                                                            <div class="form-group">
-                                                                                <input type="text" class="form-control form-control-user" name="correo" aria-describedby="emailHelp" placeholder="Correo">
-                                                                            </div>
-                                                                            <div class="form-group">
-                                                                                <input type="text" class="form-control form-control-user" name="nombre" aria-describedby="emailHelp" placeholder="Nombre de la empresa">
-                                                                            </div>
-                                                                            <div class="form-group">
-                                                                                <input type="text" class="form-control form-control-user" name="telefono" aria-describedby="emailHelp" placeholder="Telefono">
-                                                                            </div>
-                                                                            <div class="form-group">
-                                                                                <input type="text" class="form-control form-control-user" name="correo" aria-describedby="emailHelp" placeholder="Correo">
-                                                                            </div>
-                                                                            <div class="form-group">
-                                                                                <input type="file" class="form-control form-control-user" name="correo" aria-describedby="emailHelp" placeholder="kardex">
-                                                                            </div>
-                                                                            <hr>
 
-                                                                        </form>
+                                                                        <?php require_once 'vistas/registrarUsuario.php'?>
+
                                                                         <hr>
 
 
 
                                                                     </div>
                                                                 </div>
-                                                            </form>
 
                                                         </div>
 
@@ -202,7 +178,7 @@
 
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                                   
+
                                                 </div>
                                             </div>
                                         </div>
