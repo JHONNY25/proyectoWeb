@@ -96,16 +96,32 @@ if (isset($_SESSION['usuario'])) {
 <?php
     }//termina if de tipo admin
 ?>
-<!-- Heading -->
-<div class="sidebar-heading">
-  Publicaciones
-</div>
+
+
 
 
 <?php
 //tipo empresa
 if($tipo == 2){
 ?>
+
+<!-- Heading -->
+<div class="sidebar-heading">
+  Aceptaciones
+</div>
+
+<li class="nav-item">
+<a class="nav-link" href="../tablas/publicAceptadas.php">
+    <i class="fas fa-fw fa-globe"></i>
+    <span>Publicaciones aceptadas</span></a>
+</li>
+
+
+<!-- Heading -->
+<div class="sidebar-heading">
+  Publicaciones
+</div>
+
 <li class="nav-item">
 <a class="nav-link" href="../tablas/residencias.php">
     <i class="fas fa-fw fa-globe"></i>
@@ -131,6 +147,12 @@ if($tipo == 2){
   //tipo admin
   }else if($tipo == 0){
   ?>
+
+  <!-- Heading -->
+<div class="sidebar-heading">
+  Publicaciones
+</div>
+
 <li class="nav-item">
     <a class="nav-link" href="../tablas/solicitudResidencia.php">
     <i class="fas fa-fw fa-globe"></i>
@@ -156,8 +178,28 @@ if($tipo == 2){
   //tipo alumno
 }else if($tipo == 1){
   ?>
+
+<div class="sidebar-heading">
+Tramite Servicio Social
+</div>
+
+
 <li class="nav-item">
-    <a class="nav-link" href="../post/postResidencia.php">
+    <a class="nav-link" href="../post/tramite.php">
+    <i class="fas fa-fw fa-book"></i>
+    <span>Mi tramite</span></a>
+</li>
+
+<!-- Divider -->
+<hr class="sidebar-divider">
+
+  <!-- Heading -->
+  <div class="sidebar-heading">
+  Publicaciones
+</div>
+
+<li class="nav-item">
+    <a class="nav-link" href="../procesamiento/postResidencia.php">
     <i class="fas fa-fw fa-globe"></i>
     <span>Residencias</span></a>
 </li>

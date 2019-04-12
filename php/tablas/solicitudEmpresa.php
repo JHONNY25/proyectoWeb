@@ -18,9 +18,9 @@
               <h6 class="m-0 font-weight-bold text-primary">Empresas para residencias</h6>
             </div>
             <div class="card-body">
-              <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
+              <div class="table-responsive rounded">
+                <table class="table table-striped table-hover rounded" id="dataTable" width="100%" cellspacing="0">
+                  <thead class="azul-bajo text-white rounded">
                     <tr>
                       <th>Empresa</th>
                       <th>Colonia</th>

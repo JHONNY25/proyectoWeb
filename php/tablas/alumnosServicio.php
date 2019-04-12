@@ -19,8 +19,8 @@
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
+              <table class="table table-striped table-hover rounded" id="dataTable" width="100%" cellspacing="0">
+                  <thead class="azul-bajo text-white rounded">
                     <tr>
                       <th>Nombre</th>
                       <th>Carrera</th>

@@ -9,6 +9,4 @@ vista de servicios para alumno
 </div>
 <?php require_once '../vistas/footer.php'; ?>
 
-<?php require_once '../vistas/logoutModal.php'; ?>
-
 <?php require_once '../vistas/bloqueScriptTabla.php'; ?>

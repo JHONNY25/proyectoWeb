@@ -100,6 +100,14 @@
     color: #fff !important;
 }
 
+
+.btn span.glyphicon {    			
+	opacity: 0;				
+}
+.btn.active span.glyphicon {				
+	opacity: 1;				
+}
+
 /*SCROLLBAR*/
 .scrollbar-deep-purple::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);

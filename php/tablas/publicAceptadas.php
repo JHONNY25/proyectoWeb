@@ -9,23 +9,23 @@
 <div class="container-fluid">
             <ol class="breadcrumb">
             <li class="breadcrumb-item">
-            Institución
+            Aceptaciones
             </li>
-            <li class="breadcrumb-item active">Solicitud de Empresas</li>
+            <li class="breadcrumb-item active">Publicaciones aceptadas</li>
         </ol>
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Empresas para residencias</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Publicaciones aceptadas</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
               <table class="table table-striped table-hover rounded" id="dataTable" width="100%" cellspacing="0">
                   <thead class="azul-bajo text-white rounded">
                     <tr>
-                      <th>Empresa</th>
                       <th>Proyecto</th>
                       <th>Fecha</th>
+                      <th>Descripción</th>
                       <th>Acciones</th>
                     </tr>
                   </thead>
@@ -35,10 +35,8 @@
                       <td>Página web</td>
                       <td>2019-01-02</td>
                       <td  class="d-flex justify-content-center">
-                      <a href="" class="btn btn-success btn-circle mr-2" data-toggle="modal" data-target="#exampleModal">
-                      <i class="fas fa-check"></i></a>
-                      <a href="" class="btn btn-danger btn-circle" data-toggle="modal" data-target="#modalRechazar">
-                      <i class="fas fa-times"></i></a>
+                      <a href="" class="btn btn-danger btn-circle">
+                      <i class="fas fa-trash"></i></a>
                       </td>
                     </tr>
                     <tr>
@@ -46,10 +44,8 @@
                       <td>Estructura de una red</td>
                       <td>2019-01-04</td>
                       <td  class="d-flex justify-content-center">
-                      <a href="" class="btn btn-success btn-circle mr-2" data-toggle="modal" data-target="#exampleModal">
-                      <i class="fas fa-check"></i></a>
-                      <a href="" class="btn btn-danger btn-circle" data-toggle="modal" data-target="#modalRechazar">
-                      <i class="fas fa-times"></i></a>
+                      <a href="" class="btn btn-danger btn-circle">
+                      <i class="fas fa-trash"></i></a>
                       </td>
                     </tr>
                     <tr>
@@ -57,10 +53,8 @@
                       <td>Edinburgh</td>
                       <td>2019-12-23</td>
                       <td  class="d-flex justify-content-center">
-                      <a href="" class="btn btn-success btn-circle mr-2" data-toggle="modal" data-target="#exampleModal">
-                      <i class="fas fa-check"></i></a>
-                      <a href="" class="btn btn-danger btn-circle" data-toggle="modal" data-target="#modalRechazar">
-                      <i class="fas fa-times"></i></a>
+                      <a href="" class="btn btn-danger btn-circle">
+                      <i class="fas fa-trash"></i></a>
                       </td>
                     </tr>
                     <tr>
@@ -68,10 +62,8 @@
                       <td>Edinburgh</td>
                       <td>2019-02-12</td>
                       <td  class="d-flex justify-content-center">
-                      <a href="" class="btn btn-success btn-circle mr-2" data-toggle="modal" data-target="#exampleModal">
-                      <i class="fas fa-check"></i></a>
-                      <a href="" class="btn btn-danger btn-circle" data-toggle="modal" data-target="#modalRechazar">
-                      <i class="fas fa-times"></i></a>
+                      <a href="" class="btn btn-danger btn-circle">
+                      <i class="fas fa-trash"></i></a>
                       </td>
                     </tr>
                   </tbody>

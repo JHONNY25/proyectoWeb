@@ -25,8 +25,9 @@
 
   <!-- Page Wrapper -->
   <div id="wrapper">
+
   <?php
-if (isset($_SESSION['usuario'])) {
+  if (isset($_SESSION['usuario'])) {
 
   $user->setUser($sesion->getSesion());
   $tipo = $user->getTipo();
@@ -47,7 +48,7 @@ if (isset($_SESSION['usuario'])) {
 
 <!-- Nav Item - Dashboard -->
 <li class="nav-item active">
-  <a class="nav-link" href="../../index.php">
+  <a class="nav-link" href="index.php">
     <i class="fas fa-fw fa-home"></i>
     <span>Inicio</span></a>
 </li>
@@ -75,7 +76,7 @@ if (isset($_SESSION['usuario'])) {
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Tareas Administrativas:</h6>
       <a class="collapse-item" href="php/post/postFormatos.php">Subir formato</a>
-      <a class="collapse-item" href="php/tablas/alumnos.php">Solicitud de Alumnos</a>
+      <a class="collapse-item" href="php/tablas/solicitudAlumno.php">Solicitud de Alumnos</a>
       <a class="collapse-item" href="php/tablas/alumnos.php">Alumnos</a>
       <a class="collapse-item" href="php/tablas/alumnosServicio.php">Alumnos en servicio</a>
     </div>
@@ -123,16 +124,20 @@ if (isset($_SESSION['usuario'])) {
 <?php
     }//termina if de tipo admin
 ?>
-<!-- Heading -->
-<div class="sidebar-heading">
-  Publicaciones
-</div>
+
+
 
 
 <?php
 //tipo empresa
 if($tipo == 2){
 ?>
+
+<!-- Heading -->
+<div class="sidebar-heading">
+  Publicaciones
+</div>
+
 <li class="nav-item">
 <a class="nav-link" href="php/tablas/residencias.php">
     <i class="fas fa-fw fa-globe"></i>
@@ -158,8 +163,14 @@ if($tipo == 2){
   //tipo admin
   }else if($tipo == 0){
   ?>
+
+  <!-- Heading -->
+<div class="sidebar-heading">
+  Publicaciones
+</div>
+
 <li class="nav-item">
-    <a class="nav-link" href="php/tablas/solicutudResidencia.php">
+    <a class="nav-link" href="php/tablas/solicitudResidencia.php">
     <i class="fas fa-fw fa-globe"></i>
     <span>Residencias</span></a>
 
@@ -167,14 +178,14 @@ if($tipo == 2){
 
 <li class="nav-item">
 
-    <a class="nav-link" href="php/tablas/solicutudServicio.php">
+    <a class="nav-link" href="php/tablas/solicitudServicio.php">
     <i class="fas fa-fw fa-id-card"></i>
     <span>Servicio Social</span></a>
 
 </li>
 
 <li class="nav-item">
-    <a class="nav-link" href="php/tablas/solicutudTrabajo.php">
+    <a class="nav-link" href="php/tablas/solicitudTrabajo.php">
     <i class="fas fa-fw fa-briefcase"></i>
     <span>Bolsa de trabajo</span></a>
 
@@ -183,6 +194,33 @@ if($tipo == 2){
   //tipo alumno
 }else if($tipo == 1){
   ?>
+
+<div class="sidebar-heading">
+  Alumno
+</div>
+
+<!-- Nav Item - Utilities Collapse Menu -->
+<li class="nav-item">
+  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+    <i class="fas fa-fw fa-book"></i>
+    <span>Tramite Servicio Social</span>
+  </a>
+  <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+    <div class="bg-white py-2 collapse-inner rounded">
+      <a class="collapse-item" href="php/post/docs.php">Documentos para servicio</a>
+      <a class="collapse-item" href="php/post/tramite.php">Mi tramite</a>
+    </div>
+  </div>
+</li>
+
+<!-- Divider -->
+<hr class="sidebar-divider">
+
+  <!-- Heading -->
+  <div class="sidebar-heading">
+  Publicaciones
+</div>
+
 <li class="nav-item">
     <a class="nav-link" href="php/post/postResidencia.php">
     <i class="fas fa-fw fa-globe"></i>
@@ -237,6 +275,7 @@ if($tipo == 2){
 
 </ul>
 <!-- End of Sidebar -->
+
 
 
     <!-- Content Wrapper -->
@@ -312,7 +351,6 @@ if($tipo == 2){
       <span class="mr-2 d-none d-lg-inline text-gray-600 small">
       <?php 
       echo $user->getNombre(); ?></span>
-      <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
     </a>
     <!-- Dropdown - User Information -->
     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

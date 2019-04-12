@@ -3,67 +3,68 @@
 <?php require_once '../vistas/sidebar.php'; ?>
   
 <?php require_once '../vistas/labelPerfil.php'; ?>
+
 <!-- Begin Page Content -->
 <div class="container-fluid">
             <ol class="breadcrumb">
             <li class="breadcrumb-item">
-            Servicios y empleos
+            Publicaciones
             </li>
             <li class="breadcrumb-item active">Residencias</li>
         </ol>
-
-        <a href="#" class="mb-3 btn btn-icon-split btn-add">
-            <span class="icon text-white-50">
-                <i class="fas fa-plus-circle"></i>
-            </span>
-            <span class="text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nueva Publicación</font></font></span>
-        </a>
-        
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Empresas para residencias</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Publicaciones</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                  <thead>
+              <table class="table table-striped table-hover rounded" id="dataTable" width="100%" cellspacing="0">
+                  <thead class="azul-bajo text-white rounded">
                     <tr>
-                      <th>Nombre</th>
-                      <th>Carrera</th>
-                      <th>N° control</th>
-                      <th>Correo</th>
+                      <th>Proyecto</th>
+                      <th>Fecha</th>
+                      <th>Descripción</th>
                       <th>Acciones</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                      <td>61</td>
+                      <td>Marquis</td>
+                      <td>Página web</td>
+                      <td>2019-01-02</td>
                       <td  class="d-flex justify-content-center">
                       <a href="" class="btn btn-danger btn-circle">
                       <i class="fas fa-trash"></i></a>
                       </td>
                     </tr>
                     <tr>
-                      <td>Tiger Nixon</td>
                       <td>System Architect</td>
-                      <td>Edinburgh</td>
-                      <td>61</td>
-                      <td class="d-flex justify-content-center"><a href="" class="btn btn-danger btn-circle">
-                      <i class="fas fa-trash"></i></a></td>
+                      <td>Estructura de una red</td>
+                      <td>2019-01-04</td>
+                      <td  class="d-flex justify-content-center">
+                      <a href="" class="btn btn-danger btn-circle">
+                      <i class="fas fa-trash"></i></a>
+                      </td>
                     </tr>
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
+                      <td>Villa real</td>
                       <td>Edinburgh</td>
-                      <td>61</td>
-                      <td class="d-flex justify-content-center"><a href="" class="btn btn-danger btn-circle">
-                      <i class="fas fa-trash"></i></a></td>
+                      <td>2019-12-23</td>
+                      <td  class="d-flex justify-content-center">
+                      <a href="" class="btn btn-danger btn-circle">
+                      <i class="fas fa-trash"></i></a>
+                      </td>
                     </tr>
-  
+                    <tr>
+                      <td>Villa real</td>
+                      <td>Edinburgh</td>
+                      <td>2019-02-12</td>
+                      <td  class="d-flex justify-content-center">
+                      <a href="" class="btn btn-danger btn-circle">
+                      <i class="fas fa-trash"></i></a>
+                      </td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
@@ -72,7 +73,6 @@
 
         </div>
         <!-- /.container-fluid -->
-    
 <?php require_once '../vistas/footer.php'; ?>
 
 <?php require_once '../vistas/bloqueScriptTabla.php'; ?>

@@ -16,6 +16,21 @@
         protected $telefono;
         protected $num_control;
         protected $tipo;
+        protected $colonia;
+        protected $calle;
+        protected $municipio;
+
+        public function getColonia(){
+            return $this->colonia;
+        }
+
+        public function getCalle(){
+            return $this->calle;
+        }
+
+        public function getMunicipio(){
+            return $this->municipio;
+        }
 
         public function getTipo(){
             return $this->tipo;
@@ -99,10 +114,18 @@
 
             while($row = mysqli_fetch_array($user)){
 
-                //hacer condicion de asignacion de datos respecto al tipo de usuario
+                
                 $this->nombrePersona = $row['nombre'];
-                $this->apellidoPaterno = $row['apellido_paterno'];
-                $this->apellidoMaterno = $row['apellido_materno'];
+
+                if($row['tipo_usuario'] == 1 || $row['tipo_usuario'] == 0){
+                    $this->apellidoPaterno = $row['apellido_paterno'];
+                    $this->apellidoMaterno = $row['apellido_materno'];
+                }else if($row['tipo_usuario'] == 2){
+                    $this->colonia = $row['colonia'];
+                    $this->calle = $row['calle'];
+                    $this->municipio = $row['municipio'];
+                }
+                //hacer condicion de asignacion de datos respecto al tipo de usuario
                 $this->correo = $row['correo'];
                 $this->telefono = $row['telefono'];
                 $this->tipo = $row['tipo_usuario'];
