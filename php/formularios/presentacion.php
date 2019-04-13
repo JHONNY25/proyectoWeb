@@ -25,9 +25,8 @@
 
   <!-- Page Wrapper -->
   <div id="wrapper">
-
   <?php
-  if (isset($_SESSION['usuario'])) {
+if (isset($_SESSION['usuario'])) {
 
   $user->setUser($sesion->getSesion());
   $tipo = $user->getTipo();
@@ -48,7 +47,7 @@
 
 <!-- Nav Item - Dashboard -->
 <li class="nav-item active">
-  <a class="nav-link" href="index.php">
+  <a class="nav-link" href="../../index.php">
     <i class="fas fa-fw fa-home"></i>
     <span>Inicio</span></a>
 </li>
@@ -75,10 +74,10 @@
   <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Tareas Administrativas:</h6>
-      <a class="collapse-item" href="php/post/postFormatos.php">Subir formato</a>
-      <a class="collapse-item" href="php/tablas/solicitudAlumno.php">Solicitud de Alumnos</a>
-      <a class="collapse-item" href="php/tablas/alumnos.php">Alumnos</a>
-      <a class="collapse-item" href="php/tablas/alumnosServicio.php">Alumnos en servicio</a>
+      <a class="collapse-item" href="../post/postFormatos.php">Subir formato</a>
+      <a class="collapse-item" href="../tablas/solicitudAlumno.php">Solicitud de Alumnos</a>
+      <a class="collapse-item" href="../tablas/alumnos.php">Alumnos</a>
+      <a class="collapse-item" href="../tablas/alumnosServicio.php">Alumnos en servicio</a>
     </div>
   </div>
 </li>
@@ -93,13 +92,13 @@
 </div>
 
 <li class="nav-item">
-  <a class="nav-link" href="php/tablas/institucion.php">
+  <a class="nav-link" href="../tablas/institucion.php">
     <i class="fas fa-fw fa-briefcase"></i>
     <span>Empresas</span></a>
 </li>
 
 <li class="nav-item">
-  <a class="nav-link" href="php/tablas/solicitudEmpresa.php">
+  <a class="nav-link" href="../tablas/solicitudEmpresa.php">
     <i class="fas fa-fw fa-briefcase"></i>
     <span>Solicitudes de Empresas</span></a>
 </li>
@@ -135,11 +134,23 @@ if($tipo == 2){
 
 <!-- Heading -->
 <div class="sidebar-heading">
+  Aceptaciones
+</div>
+
+<li class="nav-item">
+<a class="nav-link" href="../tablas/publicAceptadas.php">
+    <i class="fas fa-fw fa-globe"></i>
+    <span>Publicaciones aceptadas</span></a>
+</li>
+
+
+<!-- Heading -->
+<div class="sidebar-heading">
   Publicaciones
 </div>
 
 <li class="nav-item">
-<a class="nav-link" href="php/tablas/residencias.php">
+<a class="nav-link" href="../tablas/residencias.php">
     <i class="fas fa-fw fa-globe"></i>
     <span>Residencias</span></a>
 
@@ -147,14 +158,14 @@ if($tipo == 2){
 
 <li class="nav-item">
 
-  <a class="nav-link" href="php/tablas/servicioSocial.php">
+  <a class="nav-link" href="../tablas/servicioSocial.php">
     <i class="fas fa-fw fa-id-card"></i>
     <span>Servicio Social</span></a>
 
 </li>
 
 <li class="nav-item">
-  <a class="nav-link" href="php/tablas/bolsaTrabajo.php">
+  <a class="nav-link" href="../tablas/bolsaTrabajo.php">
     <i class="fas fa-fw fa-briefcase"></i>
     <span>Bolsa de trabajo</span></a>
 
@@ -170,7 +181,7 @@ if($tipo == 2){
 </div>
 
 <li class="nav-item">
-    <a class="nav-link" href="php/tablas/solicitudResidencia.php">
+    <a class="nav-link" href="../tablas/solicitudResidencia.php">
     <i class="fas fa-fw fa-globe"></i>
     <span>Residencias</span></a>
 
@@ -178,14 +189,14 @@ if($tipo == 2){
 
 <li class="nav-item">
 
-    <a class="nav-link" href="php/tablas/solicitudServicio.php">
+    <a class="nav-link" href="../tablas/solicitudServicio.php">
     <i class="fas fa-fw fa-id-card"></i>
     <span>Servicio Social</span></a>
 
 </li>
 
 <li class="nav-item">
-    <a class="nav-link" href="php/tablas/solicitudTrabajo.php">
+    <a class="nav-link" href="../tablas/solicitudTrabajo.php">
     <i class="fas fa-fw fa-briefcase"></i>
     <span>Bolsa de trabajo</span></a>
 
@@ -196,21 +207,14 @@ if($tipo == 2){
   ?>
 
 <div class="sidebar-heading">
-  Alumno
+Tramite Servicio Social
 </div>
 
-<!-- Nav Item - Utilities Collapse Menu -->
+
 <li class="nav-item">
-  <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+    <a class="nav-link" href="../post/tramite.php">
     <i class="fas fa-fw fa-book"></i>
-    <span>Tramite Servicio Social</span>
-  </a>
-  <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-    <div class="bg-white py-2 collapse-inner rounded">
-      <a class="collapse-item" href="php/post/docs.php">Documentos para servicio</a>
-      <a class="collapse-item" href="php/post/tramite.php">Mi tramite</a>
-    </div>
-  </div>
+    <span>Mi tramite</span></a>
 </li>
 
 <!-- Divider -->
@@ -222,19 +226,19 @@ if($tipo == 2){
 </div>
 
 <li class="nav-item">
-    <a class="nav-link" href="php/post/postResidencia.php">
+    <a class="nav-link" href="../procesamiento/postResidencia.php">
     <i class="fas fa-fw fa-globe"></i>
     <span>Residencias</span></a>
 </li>
 
 <li class="nav-item">
-    <a class="nav-link" href="php/post/postServicio.php">
+    <a class="nav-link" href="../post/postServicio.php">
     <i class="fas fa-fw fa-id-card"></i>
     <span>Servicio Social</span></a>
 </li>
 
 <li class="nav-item">
-    <a class="nav-link" href="php/post/postTrabajo.php">
+    <a class="nav-link" href="../post/postTrabajo.php">
     <i class="fas fa-fw fa-briefcase"></i>
     <span>Bolsa de trabajo</span></a>
 </li>
@@ -256,7 +260,7 @@ if($tipo == 2){
 
 <!-- Nav Item - Tables -->
 <li class="nav-item">
-  <a class="nav-link" href="php/tablas/personal.php">
+  <a class="nav-link" href="../tablas/personal.php">
     <i class="fas fa-fw fa-users"></i>
     <span>Personal</span></a>
 </li>
@@ -275,6 +279,7 @@ if($tipo == 2){
 
 </ul>
 <!-- End of Sidebar -->
+
 
 
 
