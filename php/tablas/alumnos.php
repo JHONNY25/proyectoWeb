@@ -5,15 +5,7 @@
   
 <?php require_once '../vistas/labelPerfil.php'; ?>
 
-<?php 
 
-  require_once '../procesamiento/alumno.php';
-  $listado = new Alumno();
-
-  $resp = $listado->listarAlumno();
-
-  if($resp){
-?>
       <div class="container-fluid">
         <ol class="breadcrumb mt-3">
             <li class="breadcrumb-item">
@@ -39,7 +31,14 @@
                     </tr>
                   </thead>
                   <tbody>
-                  <?php foreach($resp as $row): ?>
+                  <?php 
+                    require_once '../procesamiento/alumno.php';
+                    $listado = new Alumno();
+                  
+                    $resp = $listado->listarAlumno();
+                  
+                    if($resp){
+                      foreach($resp as $row): ?>
                     <tr>
                       <td><?php echo $row['nombre'] ." ". $row['apellido_paterno']. " " . $row['apellido_materno']; ?></td>
                       <td><?php echo $row['numero_control']; ?></td>
@@ -50,10 +49,13 @@
                         
                       </td>
                     </tr>
-                  <?php endforeach; ?>
+                  <?php endforeach; }else{?>
+                    <tr>
+                    <td colspan="4" class="text-center">No hay datos</td>
+                    </tr>
+                  <?php } ?>
                   </tbody>
                 </table>
-                <?php } ?>
               </div>
             </div>
           </div>

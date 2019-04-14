@@ -67,6 +67,7 @@
         public function getNumeroControl(){
             return $this->num_control;
         }
+
         public function existeUsuario($usuario, $password){
             $user = trim($usuario);
     
@@ -90,6 +91,7 @@
             }else{
                 return false;
             }
+            $this->con->close();
         }
 
         public function setUser($usuario){

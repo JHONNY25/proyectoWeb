@@ -20,7 +20,7 @@
             <div class="card-body">
               <div class="table-responsive">
               <table class="table table-striped table-hover rounded" id="dataTable" width="100%" cellspacing="0">
-                  <thead class="azul-bajo text-white rounded">
+              <thead class="azul-bajo text-white rounded">
                     <tr>
                       <th>Proyecto</th>
                       <th>Fecha</th>
@@ -29,42 +29,36 @@
                     </tr>
                   </thead>
                   <tbody>
+                  <?php
+                      require_once '../procesamiento/publicaciones.php';
+                      $publicacion = new Publicacion();
+                      $datos = $publicacion->getPublicaciones(0,2);
+                    
+                      if($datos){
+                        
+                        foreach($datos as $row):
+                    ?>
                     <tr>
-                      <td>Marquis</td>
-                      <td>Página web</td>
-                      <td>2019-01-02</td>
+
+                      <td><?php echo $row['titulo']; ?></td>
+                      <td><?php echo $row['fecha']; ?></td>
+                      <td><?php echo substr($row['descripcion'],0,50)."..."; ?></td>
+
                       <td  class="d-flex justify-content-center">
                       <a href="" class="btn btn-danger btn-circle">
                       <i class="fas fa-trash"></i></a>
                       </td>
-                    </tr>
-                    <tr>
-                      <td>System Architect</td>
-                      <td>Estructura de una red</td>
-                      <td>2019-01-04</td>
-                      <td  class="d-flex justify-content-center">
-                      <a href="" class="btn btn-danger btn-circle">
-                      <i class="fas fa-trash"></i></a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Villa real</td>
-                      <td>Edinburgh</td>
-                      <td>2019-12-23</td>
-                      <td  class="d-flex justify-content-center">
-                      <a href="" class="btn btn-danger btn-circle">
-                      <i class="fas fa-trash"></i></a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Villa real</td>
-                      <td>Edinburgh</td>
-                      <td>2019-02-12</td>
-                      <td  class="d-flex justify-content-center">
-                      <a href="" class="btn btn-danger btn-circle">
-                      <i class="fas fa-trash"></i></a>
-                      </td>
-                    </tr>
+                      </tr>
+                        <?php 
+                      endforeach;  
+                      }else{
+
+                        ?>
+                        <tr>
+                          <td colspan="4" class="text-center">No hay datos</td>
+                          </tr>
+                        <?php } ?>
+                    
                   </tbody>
                 </table>
               </div>

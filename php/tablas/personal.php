@@ -1,12 +1,4 @@
-<?php 
 
-  require_once '../procesamiento/personal.php';
-  $listado = new Personal();
-
-  $resp = $listado->listarPersonas();
-
-  if($resp){
-?>
 <?php require_once '../vistas/cabezera.php'; ?>
 
 <?php require_once '../vistas/sidebar.php'; ?>
@@ -44,7 +36,14 @@
                     </tr>
                   </thead>
                   <tbody>
-                  <?php foreach($resp as $row): ?>
+                  <?php 
+                    require_once '../procesamiento/personal.php';
+                    $listado = new Personal();
+                  
+                    $resp = $listado->listarPersonas();
+                  
+                    if($resp){
+                      foreach($resp as $row): ?>
                     <tr>
                       <td><?php echo $row['nombre'] ." ". $row['apellido_paterno']. " " . $row['apellido_materno']; ?></td>
                       <td><?php echo $row['correo']; ?></td>
@@ -53,10 +52,14 @@
                       <a href="" class="text-danger delete"><i class="fa fa-user-times"></i></a>
                       </td>
                     </tr>
-                    <?php endforeach; ?>
+                    <?php endforeach; 
+                  }else{?>
+                      <tr>
+                      <td colspan="4" class="text-center">No hay datos</td>
+                      </tr>
+                    <?php } ?>
                   </tbody>
                 </table>
-              <?php } ?>
               </div>
             </div>
           </div>
