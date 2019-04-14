@@ -12,6 +12,10 @@
     color: #fff;
 }
 
+.btn-inicio:hover{
+    color: #fff !important;
+}
+
 .margen-inicio{
     margin: 80px;
     

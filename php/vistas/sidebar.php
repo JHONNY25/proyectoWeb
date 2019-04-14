@@ -116,6 +116,12 @@ if($tipo == 2){
     <span>Publicaciones aceptadas</span></a>
 </li>
 
+<li class="nav-item">
+<a class="nav-link" href="../formularios/publicacion.php">
+    <i class="fas fa-fw fa-globe"></i>
+    <span>Nueva Publicación</span></a>
+</li>
+
 
 <!-- Heading -->
 <div class="sidebar-heading">

@@ -53,7 +53,8 @@
                       </td>
                     </tr>
                     <?php endforeach; 
-                  }else{?>
+                      }else{
+                        ?>
                       <tr>
                       <td colspan="4" class="text-center">No hay datos</td>
                       </tr>
