@@ -17,12 +17,12 @@ class Publicacion extends Conexion{
     public function __construct(){
         parent::__construct();
     }
-    
+
     public function getTitulo(){
         return $this->titulo;
     }
 
-    public function getCalsificacion(){
+    public function getClasificacion(){
         return $this->clasificacion;
     }
 
@@ -81,20 +81,69 @@ class Publicacion extends Conexion{
 
     }
 
-    public function postPublicaciones(){
+    public function postPublicaciones($titulo,$descripcion,$vacantes,$usuario,$institucion,$clasificacion,$carrera){
+        $sql = "call registrar_publicacion_bancos('$titulo','$descripcion','$vacantes','$usuario','$institucion','$clasificacion','$carrera')";
 
+        $post = mysqli_query($this->con,$sql);
+        return $post;
+        /*$stmtInsert = $this->con->prepare($sql);
 
-        $this->con->close();
+        $stmtInsert->bind_param("ssiiiii", $titulo, $descripcion, $vacantes, $usuario, 
+        $institucion, $clasificacion, $carrera);
+        $stmtInsert->execute();
+        $stmtInsert->close();*/
     }
 
-    public function getClasificacion(){
+    public function deletePublicacion($id){
+        $sql = "call eliminar_publicacion('$id')";
 
-        $this->con->close();
+        mysqli_query($this->con,$sql);
+
     }
 
-    public function getIdInstitucion(){
+    public function getClasificacionPublic(){
+        $sql = "call ver_clasificacion_publicacion()";
 
-        $this->con->close();
+        $query = $this->con->query($sql);
+
+        $respuesta = $query->fetch_all(MYSQLI_ASSOC);
+
+        if($respuesta){
+            return $respuesta;
+
+            $respuesta->close();
+            $this->con->close();
+        }
+    }
+
+    public function getCarrera(){
+        $sql = "call ver_carrera()";
+
+        $query = $this->con->query($sql);
+
+        $respuesta = $query->fetch_all(MYSQLI_ASSOC);
+
+        if($respuesta){
+            return $respuesta;
+
+            $respuesta->close();
+            $this->con->close();
+        }
+    }
+
+    public function getIdInstitucion($usuario){
+        $sql = "call get_identificador('$usuario')";
+
+        $query = $this->con->query($sql);
+
+        $respuesta = $query->fetch_all(MYSQLI_ASSOC);
+
+        if($respuesta){
+            return $respuesta;
+
+            $respuesta->close();
+            $this->con->close();
+        }
     }
 }
 

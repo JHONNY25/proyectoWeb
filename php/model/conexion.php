@@ -22,6 +22,10 @@ class Conexion {
         
     }
 
+    public function getConexion(){
+        return $this->con;
+      }
+
 
 }
 

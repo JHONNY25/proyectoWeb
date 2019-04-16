@@ -118,7 +118,7 @@ if($tipo == 2){
 
 <li class="nav-item">
 <a class="nav-link" href="../formularios/publicacion.php">
-    <i class="fas fa-fw fa-globe"></i>
+    <i class="fas fa-plus-circle"></i>
     <span>Nueva Publicación</span></a>
 </li>
 

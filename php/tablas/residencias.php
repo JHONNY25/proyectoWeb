@@ -47,9 +47,12 @@
                       <td><?php echo substr($row['descripcion'],0,50)."..."; ?></td>
 
                       <td  class="d-flex justify-content-center">
-                      <a href="" class="btn btn-danger btn-circle">
-                      <i class="fas fa-trash"></i></a>
+                      <button href="" id="" class="btn btn-info btn-circle" >
+                      <i class="fas fa-eye"></i></button>
+                      <button href="" id="" class="delete btn btn-danger btn-circle" onclick="confirm('<?php echo $row['id_publicacion_bancos']; ?>')">
+                      <i class="fas fa-trash"></i></button>
                       </td>
+                      
                       </tr>
                         <?php 
                       endforeach;  
@@ -71,4 +74,26 @@
         <!-- /.container-fluid -->
 <?php require_once '../vistas/footer.php'; ?>
 
-<?php require_once '../vistas/bloqueScriptTabla.php'; ?>
+  <!-- Bootstrap core JavaScript-->
+  <script src="../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="../../js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="../../vendor/datatables/jquery.dataTables.js"></script>
+  <script src="../../vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="../../js/demo/datatables-demo.js"></script>
+
+  <script src="../../js/sweetalert2.all.min.js" type="text/javascript"></script>
+
+  <script type="text/javascript" src="../../js/deletePublic.js"></script>
+</body>
+
+</html>
