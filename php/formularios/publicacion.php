@@ -65,7 +65,7 @@
                     <option value="0"></option>
                         <?php
                       $publicacion = new Publicacion();
-                      $carrea = $publicacion->getCarrera();
+                      $carrea = $publicacion->getCarreras();
 
                       if($carrea){
                         foreach($carrea as $row):

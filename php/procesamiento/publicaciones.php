@@ -13,6 +13,7 @@ class Publicacion extends Conexion{
     protected $nombreClasificacion;
     protected $idInstitucion;
     protected $clasificacion;
+    protected $carrera;
 
     public function __construct(){
         parent::__construct();
@@ -20,6 +21,10 @@ class Publicacion extends Conexion{
 
     public function getTitulo(){
         return $this->titulo;
+    }
+
+    public function getCarrera(){
+        return $this->carrera;
     }
 
     public function getClasificacion(){
@@ -64,6 +69,20 @@ class Publicacion extends Conexion{
             $this->con->close();
         }
 
+    }
+
+    public function getDetallePublicacion($id){
+        $sql = "call ver_detalle_publicacion('$id')";
+        $query = $this->con->query($sql);
+
+        $respuesta = $query->fetch_all(MYSQLI_ASSOC);
+
+        if($respuesta){
+            return $respuesta;
+
+            $respuesta->close();
+            $this->con->close();
+        }
     }
 
     public function getPublicaciones($estado,$clasificacion){
@@ -116,7 +135,7 @@ class Publicacion extends Conexion{
         }
     }
 
-    public function getCarrera(){
+    public function getCarreras(){
         $sql = "call ver_carrera()";
 
         $query = $this->con->query($sql);
