@@ -23,7 +23,7 @@
   }
   </script>
 
-  
+
 </body>
 <?php
 
@@ -64,7 +64,7 @@ if(!empty($_POST) && isset($_POST['newUser'])){
 
   $target_dir = "upload/";
   $temp = explode(".", $_FILES["kardex"]["name"]);
-  $newfilename = 'nControl('.$numeroControl.')'.'-'.$nombre.'-'.$aPat.'-'.$aMat.'-'.date('d_m_Y_H_i_s').'.'.end($temp);
+  $newfilename = $numeroControl.'-kardex'.'.'.end($temp);
 
   $target_file = $target_dir . $newfilename;
   $uploadOk = 0;
@@ -86,14 +86,11 @@ if(!empty($_POST) && isset($_POST['newUser'])){
       $uploadOk = 0;
   }
   // Allow certain file formats
-  if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" ) {
+  if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "JPEG"
+&& $imageFileType != "JPG" && $imageFileType != "PNG" && $imageFileType != "pdf" && $imageFileType != "PDF") {
       $uploadOk = 0;
-  }
-  // Check if $uploadOk is set to 0 by an error
-  if ($uploadOk == 0) {
-  // if everything is ok, try to upload file
   } else {
-
+    $uploadOk = 1;
   }
 
 
@@ -261,15 +258,31 @@ if(!empty($_POST) && isset($_POST['newUser'])){
 
 
 //HAY QUE ACTUALIZAR EL PROCEDIMIENTO PARA INSERTAR NUMERO DE CONTROL Y CARRERA
-    $stm = $conexion->prepare("CALL registrar_persona(?,?,?,?,?,?,?,?)");
-    $stm->bind_param("ssisssss",$nombreUsuario,$contrasena,$tipo,$nombre,$aPat,$aMat,$correo,$telefono);
-    $stm->execute();
-    $stm->close();
-    ?>
-    <script type="text/javascript">
-      alertaExito();
-    </script>
-    <?php
+
+    try {
+      $opciones = [
+        'cost' => 10,
+      ];
+      $passwordHash = password_hash($contrasena, PASSWORD_BCRYPT, $opciones);
+      echo "$passwordHash";
+      echo "$contrasena";
+      $stm = $conexion->prepare("CALL registrar_usuario_todo(?,?,?,?,?,?,?,?,?,?)");
+      $stm->bind_param("sssssssssi",$nombreUsuario,$contrasena,$nombre,$aPat,$aMat,$numeroControl,$correo,$telefono,$newfilename,$idCarrera);
+      $stm->execute();
+      $stm->close();
+
+      ?>
+      <script type="text/javascript">
+        alertaExito();
+      </script>
+      <?php
+
+    } catch (\Exception $e) {
+      echo "ERROR: ";
+      echo "$e";
+    }
+
+
 
 
 /*

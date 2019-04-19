@@ -1,7 +1,7 @@
 <?php require_once '../vistas/cabezera.php'; ?>
 
 <?php require_once '../vistas/sidebar.php'; ?>
-  
+
 <?php require_once '../vistas/labelPerfil.php'; ?>
 
 <!-- Begin Page Content -->
@@ -35,7 +35,7 @@
                       <td>System Architect</td>
                       <td>sin nombre</td>
                       <td>marquis@hotmail.com</td>
-                      
+
                       <td  class="d-flex justify-content-center">
                       <a href="" class="btn btn-success btn-circle mr-2" data-toggle="modal" data-target="#exampleModal">
                       <i class="fas fa-check"></i></a>

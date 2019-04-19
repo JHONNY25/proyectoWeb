@@ -227,7 +227,7 @@
           if (!empty($_POST) && isset($_POST['newUser'])) {
             if ($uploadOk==0) {
               ?>
-              <p class="text-danger">X Por favor verifíca tu kardex, debes subir una imagen en formato PNG, JPG o JPEG</p>
+              <p class="text-danger">X Por favor verifíca tu kardex, debes subir una archivo en formato PNG, JPG, JPEG o PDF</p>
               <?php
             }
           }
