@@ -38,7 +38,7 @@ try {
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = $asunto;
     $mail->Body    = $mensaje;
-
+$mail->CharSet = 'UTF-8';
     $mail->send();
 
 } catch (Exception $e) {
