@@ -30,40 +30,8 @@
                       <th>Acciones</th>
                     </tr>
                   </thead>
-                  <tbody>
-                  <?php
-                      require_once '../procesamiento/publicaciones.php';
-                      $publicacion = new Publicacion();
-                      $datos = $publicacion->getPublicaciones(0,2);
-                    
-                      if($datos){
-                        
-                        foreach($datos as $row):
-                    ?>
-                    <tr class="fila" id="<?php echo $row['id_publicacion_bancos']; ?>">
-
-                      <td><?php echo $row['titulo']; ?></td>
-                      <td><?php echo $row['fecha']; ?></td>
-                      <td><?php echo substr($row['descripcion'],0,50)."..."; ?></td>
-
-                      <td  class="d-flex justify-content-center">
-                      <a href="" class="btn btn-info btn-circle view" data-toggle="modal" data-target="#modal" id="<?php echo $row["id_publicacion_bancos"]; ?>">
-                      <i class="fas fa-eye"></i></a>
-                      <button href="" id="" class="delete btn btn-danger btn-circle" onclick="confirm('<?php echo $row['id_publicacion_bancos']; ?>')">
-                      <i class="fas fa-trash"></i></button>
-                      </td>
-                      
-                      </tr>
-                        <?php 
-                      endforeach;  
-                      }else{
-
-                        ?>
-                        <tr>
-                          <td colspan="4" class="text-center">No hay datos</td>
-                          </tr>
-                        <?php } ?>
-                    
+                  <tbody id="tabla1">
+                  
                   </tbody>
                 </table>
               </div>
@@ -103,7 +71,7 @@
                 <p for="tipo ">
                       Tipo de publicación
                     <select require  name="tipo" id="tipo" class="custom-select">
-                        <option id="tipoActual" value="" selected></option>
+                        <option id="tipoActual" value="" ></option>
 
                         <?php
                       require_once '../procesamiento/publicaciones.php';
@@ -134,7 +102,7 @@
                 <p for="tipo ">
                       Enfocado a:
                     <select require name="carrera" id="carrera" class="custom-select">
-                      <option id="carreraActual" value="" selected></option>
+                      <option id="carreraActual" value=""></option>
 
                       <?php
                       $publicacion = new Publicacion();
@@ -159,12 +127,12 @@
               </div>
 
                 <div class="form-group">
-                   <input id="titulo" name="titulo" type="text" maxlength="24" placeholder="Ingrese el titulo del proyecto" class="form-control" aria-describedby="emailHelp" require>
+                   <input id="titulo" name="titulo" type="text" maxlength="24" placeholder="Ingresé el título del proyecto" class="form-control" aria-describedby="emailHelp" require>
 
                 </div>
 
                 <div class="form-group">
-                   <input name="vacantes" id="vacante" type="text" maxlength="24" placeholder="Ingrese el numero de Vacantes" class="form-control" aria-describedby="emailHelp" require>
+                   <input name="vacantes" id="vacante" type="text" maxlength="2" placeholder="Ingresé el numero de Vacantes" class="form-control" aria-describedby="emailHelp" require>
 
                 </div>
 
@@ -176,7 +144,7 @@
                     </textarea>
                     </P>
                 </div>
-                <input type="hidden" id="id" value="">
+                <input type="hidden" id="id" value="" name="id">
                 <button id="update" name="update" href="#" class="btn btn-inicio btn-user btn-block">Actualizar publicación</button>
             </form>
                 </div>
@@ -204,8 +172,7 @@
   <script src="../../js/demo/datatables-demo.js"></script>
 
   <script src="../../js/sweetalert2.all.min.js" type="text/javascript"></script>
-
-  <script type="text/javascript" src="../../js/public.js"></script>
+  <script type="text/javascript" src="../../js/residencia.js"></script>
 </body>
 
 </html>

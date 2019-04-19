@@ -1,5 +1,18 @@
 
-$("#vacante").hide();
+function obtenerDato(){
+    $.ajax({
+      url:"../procesamiento/mostrarTrabajo.php",  
+      method:"POST",   
+      success:function(data){  
+           $('#dataTable #tabla3').html(data);
+      } 
+    });
+  }
+  
+  obtenerDato();
+
+  $("#vacante").hide();
+
 
 function confirm(dato){
     Swal.fire({
@@ -37,10 +50,12 @@ function eliminar(dato){
                       showConfirmButton: false,
                       timer: 2000
                     })
-
+                    
+                    //obtenerDato();
                     setTimeout(function(){
-                      $( "#dataTable" ).load( "residencias.php #dataTable" );
-                   }, 2000);
+                      $("#tabla3").load("../procesamiento/mostrarTrabajo.php").fadeIn("slow");
+                    },1500);
+                    
               }else{
                 Swal.fire({
                   type: 'error',
@@ -86,9 +101,12 @@ function eliminar(dato){
                  $('#carreraActual').val(data.id_carrera);
                  carrera.innerHTML = data.carrera;  
                  $('#titulo').val(data.titulo); 
-                 if($('#vacante').val(data.vacantes)!=0){
+                 if($('#tipoActual').val(data.id_clasificacion_publicacion)!=3){
                   $('#vacante').val(data.vacantes);
                   $("#vacante").hide();
+                 }else{
+                  $('#vacante').val(data.vacantes);
+                  $("#vacante").show();
                  }
                  $('#desc').val(data.descripcion); 
                  $('#id').val(data.id_publicacion_bancos); 
@@ -98,39 +116,89 @@ function eliminar(dato){
   }            
 });
 
-$(document).on('click', '#update', function(){ 
-          vacantes = '';
-        if($('#vacante').val(data.vacantes)!=''){
-          vacantes = $('#vacante').val(data.vacantes);
+$(document).ready(function(){
+  $('#publicacion #update').click(function(){
 
+
+    if($('#tipo').val() ==''){
+      Swal.fire({
+        type: 'error',
+        title: 'Lo sentimos...',
+        text: '¡Debe seleccionar un tipo de publicación!'
+        
+      })
+    }else if($('#carrera').val() == ''){
+      Swal.fire({
+        type: 'error',
+        title: 'Lo sentimos...',
+        text: '¡Debe seleccionar un enfoque a una carrera!'
+      })
+    }else if($('#titulo').val() == ''){
+      Swal.fire({
+        type: 'error',
+        title: 'Lo sentimos...',
+        text: '¡Ha dejado vacio el campo del título!'
+      })
+    }else if($('#vacante').val() == ''){
+      Swal.fire({
+        type: 'error',
+        title: 'Lo sentimos...',
+        text: '¡Ha dejado vacio el campo de vacantes'
+      })
+  }else if($('#vacante').val() == 0){
+    $("#vacante").val(1);
+  }else if($('#desc').val() == ''){
+      Swal.fire({
+        type: 'error',
+        title: 'Lo sentimos...',
+        text: '¡Ha dejado vacio el campo de descripción!'
+      })
+  }else{
+
+      var datos = $('#publicacion').serialize();
+
+      $.ajax({
+        type:"POST",
+        url: "../procesamiento/updatePublic.php",
+        data: datos,
+        success:function(r){
+          if(r == 1){
+            $('#modal2').modal('hide'); 
+            Swal.fire({
+              type: 'success',
+              title: 'Modificado!',
+              title: 'Datos modificados con éxito',
+              showConfirmButton: false,
+              timer: 1600
+            })
+
+            setTimeout(function(){
+              $("#tabla3").load("../procesamiento/mostrarTrabajo.php").fadeIn("slow");
+            },1500);
+          }else{
+            Swal.fire({
+              type: 'error',
+              title: 'Lo sentimos...',
+              text: '¡Error en el servidor!'
+            })
+          }
         }
-         var datos= {
-           tipo: $('#tipo').val(data.clasificacion),
-           carrera: $('#carrera').val(data.carrera),
-           titulo: $('#titulo').val(data.titulo),
-           vacante: vacantes,
-           desc:  $('#desc').val(data.descripcion),
-           id:  $('#id').val(data.id_publicacion_bancos)
-         };       
-                            
-  if(dato != '') {  
-       $.ajax({  
-            url:"../procesamiento/updatePublic.php",  
-            method:"POST",  
-            data:{datos:datos},  
-            success:function(data){  
- 
-            }  
-       });  
-  }            
+      });
+
+    }
+    
+    return false;
+  });
 });
 
 $(document).ready(function(){
   $("#tipo").change(function(){
 
    if ($(this).val()==3) {
+    $("#vacante").val(0);
       $("#vacante").show();
     }else{
+        $("#vacante").val(1);
         $("#vacante").hide();
         }
      });

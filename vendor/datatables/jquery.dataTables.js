@@ -11388,7 +11388,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sNext": "Next",
+				"sNext": "Siguiente",
 	
 	
 				/**
@@ -11411,7 +11411,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sPrevious": "Previous"
+				"sPrevious": "Anterior"
 			},
 	
 			/**
@@ -11434,7 +11434,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sEmptyTable": "No data available in table",
+			"sEmptyTable": "No hay datos en la tabla",
 	
 	
 			/**
@@ -11466,7 +11466,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Mostrando _START_ a _END_ registros de _TOTAL_ registros",
+			"sInfo": "",
 	
 	
 			/**
@@ -11487,7 +11487,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoEmpty": "Mostrando 0 a 0 registros de 0 registros",
+			"sInfoEmpty": "",
 	
 	
 			/**
@@ -11509,7 +11509,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfoFiltered": "(filtered from _MAX_ total entries)",
+			"sInfoFiltered": "(Filtrado para _MAX_ total entradas)",
 	
 	
 			/**
@@ -11765,7 +11765,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sZeroRecords": "No matching records found"
+			"sZeroRecords": "No hay datos relacionados"
 		},
 	
 	
@@ -14486,32 +14486,32 @@
 	
 	$.extend( extPagination, {
 		simple: function ( page, pages ) {
-			return [ 'Anterior', 'Siguiente' ];
+			return [ 'previous', 'next' ];
 		},
-	
+
 		full: function ( page, pages ) {
-			return [  'Primera', 'Anterior', 'Siguiente', 'Ultima' ];
+			return [  'first', 'previous', 'next', 'last' ];
 		},
-	
+
 		numbers: function ( page, pages ) {
 			return [ _numbers(page, pages) ];
 		},
-	
+
 		simple_numbers: function ( page, pages ) {
-			return [ 'Anterior', _numbers(page, pages), 'Siguiente' ];
+			return [ 'previous', _numbers(page, pages), 'next' ];
 		},
-	
+
 		full_numbers: function ( page, pages ) {
-			return [ 'Primera', 'Anterior', _numbers(page, pages), 'Siguiente', 'Ultima' ];
+			return [ 'first', 'previous', _numbers(page, pages), 'next', 'last' ];
 		},
-		
+
 		first_last_numbers: function (page, pages) {
-	 		return ['Primera', _numbers(page, pages), 'Ultima'];
+	 		return ['first', _numbers(page, pages), 'last'];
 	 	},
-	
+
 		// For testing and plug-ins to use
 		_numbers: _numbers,
-	
+
 		// Number of number buttons (including ellipsis) to show. _Must be odd!_
 		numbers_length: 7
 	} );
