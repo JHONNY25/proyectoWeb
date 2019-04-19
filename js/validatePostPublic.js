@@ -1,38 +1,43 @@
 
 $("#vacante").hide();
 
-/*
-function validarForm(idForm) {
-	var exprTel = /^([0-9]+){9}$/;
-	var exprText = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-	//Validamos cualquier input con la clase 'require'
-	if( $(idForm + " input.require").val() == "" )
-	{
-    Swal.fire({
-      type: 'error',
-      title: 'Lo sentimos...',
-      text: '¡Verifiqué que haya llenado los campos!'
-    })
-		return false;
-	}
-  else if($.trim($("#desc").val()) == ''){
-    Swal.fire({
-      type: 'error',
-      title: 'Lo sentimos...',
-      text: '¡Verifiqué que haya llenado los campos!'
-    })
-    return false;
-  }
-
-	//Devuelve true si todo está correcto
-	else {
-		return true;
-	}
-}*/
 
 $(document).ready(function(){
     $('#guardar').click(function(){
-
+      if($('#tipo').val() ==0){
+        Swal.fire({
+          type: 'error',
+          title: 'Lo sentimos...',
+          text: '¡Debe seleccionar un tipo de publicación!'
+          
+        })
+      }else if($('#carrera').val() == 0){
+        Swal.fire({
+          type: 'error',
+          title: 'Lo sentimos...',
+          text: '¡Debe seleccionar un enfoque a una carrera!'
+        })
+      }else if($('#titulo').val() == ''){
+        Swal.fire({
+          type: 'error',
+          title: 'Lo sentimos...',
+          text: '¡Ha dejado vacio el campo del título!'
+        })
+      }else if($('#vacante').val() == ''){
+          Swal.fire({
+            type: 'error',
+            title: 'Lo sentimos...',
+            text: '¡Ha dejado vacio el campo de vacantes'
+          })
+      }else if($('#vacante').val() == 0){
+        $("#vacante").val(1);
+      }else if($('#desc').val() == ''){
+      Swal.fire({
+        type: 'error',
+        title: 'Lo sentimos...',
+        text: '¡Ha dejado vacio el campo de descripción!'
+      })
+    }else{
         var datos = $('#publicacion').serialize();
 
         $.ajax({
@@ -42,9 +47,9 @@ $(document).ready(function(){
           success:function(r){
             if(r == 1){
               Swal.fire({
-                title: '¡Éxito!',
                 type: 'success',
-                title: 'Publicación registrada correctamente',
+                title: '¡Guardado!',
+                text: 'Publicación registrada con éxito',
                 showConfirmButton: false,
                 timer: 1600
               })
@@ -62,12 +67,12 @@ $(document).ready(function(){
               Swal.fire({
                 type: 'error',
                 title: 'Lo sentimos...',
-                text: '¡Verifiqué que haya llenado los campos!'
+                text: '¡Error en el servidor!'
               })
             }
           }
         });
-      
+    }
    
       return false;
     });
@@ -77,9 +82,12 @@ $(document).ready(function(){
       $("#tipo").change(function(){
 
        if ($(this).val()==3) {
+          $("#vacante").val(0);
           $("#vacante").show();
         }else{
+            $("#vacante").val(1);
             $("#vacante").hide();
             }
          });
         });
+

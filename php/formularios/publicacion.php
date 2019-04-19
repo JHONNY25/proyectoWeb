@@ -86,12 +86,12 @@
               </div>
 
                 <div class="form-group">
-                   <input id="titulo" name="titulo" type="text" maxlength="24" placeholder="Ingrese el titulo del proyecto" class="form-control" aria-describedby="emailHelp" require>
+                   <input id="titulo" name="titulo" type="text" maxlength="24" placeholder="Ingresé el tétulo del proyecto" class="form-control" aria-describedby="emailHelp" require>
 
                 </div>
 
                 <div class="form-group">
-                   <input name="vacantes" id="vacante" type="text" maxlength="24" placeholder="Ingrese el numero de Vacantes" class="form-control" aria-describedby="emailHelp" require>
+                   <input name="vacantes" id="vacante" type="text" maxlength="2" placeholder="Ingresé el numero de Vacantes" class="form-control" aria-describedby="emailHelp" require>
 
                 </div>
 
