@@ -1,0 +1,13 @@
+
+#valido entradas a directorios
+Options -Indexes
+
+#activo escritura y condicion de archivos 
+RewriteEngine on 
+RewriteBase /proyectoWeb/
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f 
+
+#regla para terminacion con php
+RewriteRule ^(.*)$ $1.php
+
