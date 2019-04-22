@@ -86,7 +86,7 @@
               </div>
 
                 <div class="form-group">
-                   <input id="titulo" name="titulo" type="text" maxlength="24" placeholder="Ingresé el tétulo del proyecto" class="form-control" aria-describedby="emailHelp" require>
+                   <input id="titulo" name="titulo" type="text" placeholder="Ingresé el tétulo del proyecto" class="form-control" aria-describedby="emailHelp" require>
 
                 </div>
 
@@ -128,7 +128,7 @@
   <!-- Custom scripts for all pages-->
   <script src="../../js/sb-admin-2.min.js"></script>
   <script src="../../js/sweetalert2.all.min.js" type="text/javascript"></script>
-
+  <script src="../../js/validate.js"></script>
   <script type="text/javascript" src="../../js/validatePostPublic.js"></script>
 </body>
 

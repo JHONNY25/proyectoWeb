@@ -19,9 +19,14 @@
         protected $colonia;
         protected $calle;
         protected $municipio;
+        protected $id;
 
         public function getColonia(){
             return $this->colonia;
+        }
+
+        public function getId(){
+            return $this->id;
         }
 
         public function getCalle(){
@@ -68,26 +73,30 @@
             return $this->num_control;
         }
 
+        public function getContra(){
+            return $this->pass;
+        }
+
         public function existeUsuario($usuario, $password){
             $user = trim($usuario);
     
-            $sql = "select * from usuario where usuario = '$user' and contrasena='$password'";
-            $user = mysqli_query($this->con,$sql);
+            $sql = "select * from usuario where usuario = '$user'";
+            $query = mysqli_query($this->con,$sql);
     
     
-            if ($user && mysqli_num_rows($user) == 1) {
-                return true;
+            if ($query && mysqli_num_rows($query) == 1) {
+                
                 //comprobar la contraseña
-               /* 
-               $arreglo = mysqli_fetch_assoc($user);
+               
+               $arreglo = mysqli_fetch_assoc($query);
                $verifica = password_verify($password, $arreglo['contrasena']);
     
                 if($verifica){
-                    return true
+                    return true;
     
                 }else{
                     return false;
-                }*/
+                }
             }else{
                 return false;
             }
@@ -103,6 +112,8 @@
             while($row = mysqli_fetch_array($user)){
                 $this->usuario = $row['usuario'];
                 $this->tipo = $row['tipo_usuario'];
+                $this->pass = $row['contrasena'];
+                $this->id = $row['id_usuario'];
             }
         }
 
@@ -118,6 +129,7 @@
 
                 
                 $this->nombrePersona = $row['nombre'];
+                $this->id = $row['id_usuario'];
 
                 if($row['tipo_usuario'] == 1 || $row['tipo_usuario'] == 0){
                     $this->apellidoPaterno = $row['apellido_paterno'];

@@ -5,6 +5,14 @@
         $sesion = new Sesion();
         $user = new User();
         
+ 
+
+        if (!isset($_SESSION['usuario'])) {
+          $host  = $_SERVER['HTTP_HOST'];
+
+          header("Location: http://$host/proyectoWeb/");
+          exit;
+        }
       ?>
 <!DOCTYPE html>
 <html lang="en">
