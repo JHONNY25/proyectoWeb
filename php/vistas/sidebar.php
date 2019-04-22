@@ -10,7 +10,7 @@ if (isset($_SESSION['usuario'])) {
 <ul class="navbar-nav sidebar sidebar-dark accordion azul-bajo" id="accordionSidebar">
 
 <!-- Sidebar - Brand -->
-<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+<a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
 
   <div class="sidebar-brand-text mx-3">ITES LOS CABOS</div>
 </a>
@@ -20,7 +20,7 @@ if (isset($_SESSION['usuario'])) {
 
 <!-- Nav Item - Dashboard -->
 <li class="nav-item active">
-  <a class="nav-link" href="../../index.php">
+  <a class="nav-link" href="../../index">
     <i class="fas fa-fw fa-home"></i>
     <span>Inicio</span></a>
 </li>
@@ -47,10 +47,10 @@ if (isset($_SESSION['usuario'])) {
   <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">Tareas Administrativas:</h6>
-      <a class="collapse-item" href="../post/postFormatos.php">Subir formato</a>
-      <a class="collapse-item" href="../tablas/solicitudAlumno.php">Solicitud de Alumnos</a>
-      <a class="collapse-item" href="../tablas/alumnos.php">Alumnos</a>
-      <a class="collapse-item" href="../tablas/alumnosServicio.php">Alumnos en servicio</a>
+      <a class="collapse-item" href="../post/postFormatos">Subir formato</a>
+      <a class="collapse-item" href="../tablas/solicitudAlumno">Solicitud de Alumnos</a>
+      <a class="collapse-item" href="../tablas/alumnos">Alumnos</a>
+      <a class="collapse-item" href="../tablas/alumnosServicio">Alumnos en servicio</a>
     </div>
   </div>
 </li>
@@ -65,13 +65,13 @@ if (isset($_SESSION['usuario'])) {
 </div>
 
 <li class="nav-item">
-  <a class="nav-link" href="../tablas/institucion.php">
+  <a class="nav-link" href="../tablas/institucion">
     <i class="fas fa-fw fa-briefcase"></i>
     <span>Empresas</span></a>
 </li>
 
 <li class="nav-item">
-  <a class="nav-link" href="../tablas/solicitudEmpresa.php">
+  <a class="nav-link" href="../tablas/solicitudEmpresa">
     <i class="fas fa-fw fa-briefcase"></i>
     <span>Solicitudes de Empresas</span></a>
 </li>
@@ -111,13 +111,13 @@ if($tipo == 2){
 </div>
 
 <li class="nav-item">
-<a class="nav-link" href="../tablas/publicAceptadas.php">
+<a class="nav-link" href="../tablas/publicAceptadas">
     <i class="fas fa-fw fa-globe"></i>
     <span>Publicaciones aceptadas</span></a>
 </li>
 
 <li class="nav-item">
-<a class="nav-link" href="../formularios/publicacion.php">
+<a class="nav-link" href="../formularios/publicacion">
     <i class="fas fa-plus-circle"></i>
     <span>Nueva Publicación</span></a>
 </li>
@@ -129,7 +129,7 @@ if($tipo == 2){
 </div>
 
 <li class="nav-item">
-<a class="nav-link" href="../tablas/residencias.php">
+<a class="nav-link" href="../tablas/residencias">
     <i class="fas fa-fw fa-globe"></i>
     <span>Residencias</span></a>
 
@@ -137,14 +137,14 @@ if($tipo == 2){
 
 <li class="nav-item">
 
-  <a class="nav-link" href="../tablas/servicioSocial.php">
+  <a class="nav-link" href="../tablas/servicioSocial">
     <i class="fas fa-fw fa-id-card"></i>
     <span>Servicio Social</span></a>
 
 </li>
 
 <li class="nav-item">
-  <a class="nav-link" href="../tablas/bolsaTrabajo.php">
+  <a class="nav-link" href="../tablas/bolsaTrabajo">
     <i class="fas fa-fw fa-briefcase"></i>
     <span>Bolsa de trabajo</span></a>
 
@@ -160,7 +160,7 @@ if($tipo == 2){
 </div>
 
 <li class="nav-item">
-    <a class="nav-link" href="../tablas/solicitudResidencia.php">
+    <a class="nav-link" href="../tablas/solicitudResidencia">
     <i class="fas fa-fw fa-globe"></i>
     <span>Residencias</span></a>
 
@@ -168,14 +168,14 @@ if($tipo == 2){
 
 <li class="nav-item">
 
-    <a class="nav-link" href="../tablas/solicitudServicio.php">
+    <a class="nav-link" href="../tablas/solicitudServicio">
     <i class="fas fa-fw fa-id-card"></i>
     <span>Servicio Social</span></a>
 
 </li>
 
 <li class="nav-item">
-    <a class="nav-link" href="../tablas/solicitudTrabajo.php">
+    <a class="nav-link" href="../tablas/solicitudTrabajo">
     <i class="fas fa-fw fa-briefcase"></i>
     <span>Bolsa de trabajo</span></a>
 
@@ -191,7 +191,7 @@ Tramite Servicio Social
 
 
 <li class="nav-item">
-    <a class="nav-link" href="../post/tramite.php">
+    <a class="nav-link" href="../post/tramite">
     <i class="fas fa-fw fa-book"></i>
     <span>Mi tramite</span></a>
 </li>
@@ -205,19 +205,19 @@ Tramite Servicio Social
 </div>
 
 <li class="nav-item">
-    <a class="nav-link" href="../procesamiento/postResidencia.php">
+    <a class="nav-link" href="../procesamiento/postResidencia">
     <i class="fas fa-fw fa-globe"></i>
     <span>Residencias</span></a>
 </li>
 
 <li class="nav-item">
-    <a class="nav-link" href="../post/postServicio.php">
+    <a class="nav-link" href="../post/postServicio">
     <i class="fas fa-fw fa-id-card"></i>
     <span>Servicio Social</span></a>
 </li>
 
 <li class="nav-item">
-    <a class="nav-link" href="../post/postTrabajo.php">
+    <a class="nav-link" href="../post/postTrabajo">
     <i class="fas fa-fw fa-briefcase"></i>
     <span>Bolsa de trabajo</span></a>
 </li>
@@ -239,7 +239,7 @@ Tramite Servicio Social
 
 <!-- Nav Item - Tables -->
 <li class="nav-item">
-  <a class="nav-link" href="../tablas/personal.php">
+  <a class="nav-link" href="../tablas/personal">
     <i class="fas fa-fw fa-users"></i>
     <span>Personal</span></a>
 </li>

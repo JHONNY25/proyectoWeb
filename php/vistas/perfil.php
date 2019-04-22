@@ -21,7 +21,7 @@
                   <h1>Detalles usuario</h1>
                 </div>
 
-                <form action="../procesamiento/NuevoUsuario.php" class="user" method="post">
+                <form class="user" method="post" id="detallePerfil">
                   <hr>
 
                   <div class="row text-center">
@@ -113,12 +113,25 @@
                   </div>
                   </div>
                   <div class="d-flex justify-content-end">
-                  <a href="" class="mt-2 mb-3 btn btn-info" data-toggle="modal" data-target="#modalDocs">
+                  <?php if($user->getTipo() == 2){ ?>
+                  <a href="" class="mt-2 mb-3 btn btn-info" data-toggle="modal" data-target="#modal" id="edit">
                     <i class="fas fa-user"></i> Editar</a>
                   </div>
+                  <?php } ?>
+
+                  <?php if($user->getTipo() == 1){ ?>
+                  <a href="" class="mt-2 mb-3 btn btn-info" data-toggle="modal" data-target="#modal2" id="edit2">
+                    <i class="fas fa-user"></i> Editar</a>
+                  </div>
+                  <?php } ?>
+
+                  <?php if($user->getTipo() == 0){ ?>
+                  <a href="" class="mt-2 mb-3 btn btn-info" data-toggle="modal" data-target="#modal3" id="edit3">
+                    <i class="fas fa-user"></i> Editar</a>
+                  </div>
+                  <?php } ?>
 
                 </form>
-
 
               </div>
             </div>
@@ -132,7 +145,177 @@
 
 </div>
 
+<!-- FORMULARIO PARA EMPRESA -->
+<div class="modal fade bd-example-modal-lg" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+          
+              <div class="modal-content pl-5 pb-5 pr-5 pt-0">
+              <div class="modal-header">  
+                     <button type="button" class="close" data-dismiss="modal">&times;</button>
+                         
+                </div>  
+                <div class="modal-body" >  
+                <form action="" class="user" method="post" id="perfilEdit">
+                  <h5>Datos Generales</h5>
+  
+                  <div class="form-group">
+                    <input id="nombre" type="text" class="form-control " name="nombre" aria-describedby="emailHelp" placeholder="Nombre de la empresa">
+                  </div>
+                
+                  <div class="form-group">
+                    <input id="telefono" type="text" class="form-control " name="telefono" aria-describedby="emailHelp" placeholder="Telefono">
+                  </div>
+                  <div class="form-group">
+                    <input id="correo" type="text" class="form-control " name="correo" aria-describedby="emailHelp" placeholder="Correo">
+                  </div>
+                  
+                  <hr>
+                  <h5>Dirección de la empresa</h5>
+                  <div class="form-group">
+                    <input id="municipio" type="text" class="form-control " name="municipio" aria-describedby="emailHelp" placeholder="Delegación / Municipio">
+                  </div>
+                  <div class="form-group">
+                    <input id="colonia" type="text" class="form-control " name="colonia" aria-describedby="emailHelp" placeholder="Colonia">
+                  </div>
+                  <div class="form-group">
+                    <input id="calle" type="text" class="form-control " name="calle" aria-describedby="emailHelp" placeholder="Calle">
+                  </div>
+                  
+                  <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input check" id="defaultUnchecked">
+                      <label class="custom-control-label" for="defaultUnchecked">Cambiar contraseña</label>
+                  </div>
+
+                  <h5 class="contra">Contraseña</h5>
+
+                  <div class="form-group">
+                    <input id="pass1" type="password" class="form-control " name="pass1" aria-describedby="emailHelp" placeholder="Nueva contraseña">
+                  </div>
+                  <div class="form-group">
+                    <input id="pass2" type="password" class="form-control " name="pass2" aria-describedby="emailHelp" placeholder="Repita la contraseña">
+                  </div>
+                  <div class="form-group">
+                  <input id="editar" type="submit" value="Modificar perfil" href="#" class="btn btn-inicio btn-user btn-block" />
+                  </div>
+                  
+                <input type="hidden" name="id" id="clave" value="">
+                </form>
+                </div>
+
+          </div>
+        </div>
+      </div>
+
+<!-- FORMULARIO PARA ALUMNO -->
+      <div class="modal fade bd-example-modal-lg" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+          
+              <div class="modal-content pl-5 pb-5 pr-5 pt-0">
+                <div class="modal-header">  
+                     <button type="button" class="close" data-dismiss="modal">&times;</button>
+                         
+                </div>  
+                <div class="modal-body" >  
+                <form action="" class="user" method="post" id="perfilEdit2">
+                  <h5>Datos Generales</h5>
+ 
+                  <div class="form-group">
+                    <input id="telefono2" type="text" class="form-control " name="telefono" aria-describedby="emailHelp" placeholder="Telefono">
+                  </div>
+                  <div class="form-group">
+                    <input id="correo2" require type="text" class="form-control " name="correo" aria-describedby="emailHelp" placeholder="Correo">
+                  </div>
+
+                  <h5>Contraseña</h5>
+                  <div class="form-group">
+                    <input type="password" class="form-control " name="pass1" aria-describedby="emailHelp" placeholder="Contraseña actual">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control " name="pass2" aria-describedby="emailHelp" placeholder="Nueva contraseña">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control " name="pass2" aria-describedby="emailHelp" placeholder="Repita la contraseña">
+                  </div>
+                  <div class="form-group">
+                  <input id="editar2" type="submit" value="Modificar perfil" href="#" class="btn btn-inicio btn-user btn-block" />
+                  </div>
+                  
+                <input type="hidden" name="id2" id="clave2" value="">
+                </form>
+                </div>
+
+          </div>
+        </div>
+      </div>
+
+<!-- FORMULARIO PARA ADMIN -->
+<div class="modal fade bd-example-modal-lg" id="modal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+          
+              <div class="modal-content pl-5 pb-5 pr-5 pt-0">
+              <div class="modal-header">  
+                     <button type="button" class="close" data-dismiss="modal">&times;</button>
+                         
+                </div>  
+                <div class="modal-body" >  
+                <form action="" class="user" method="post" id="perfilEdit3">
+                  <h5>Datos Generales</h5>
+   
+                    <div class="form-group">
+                    <input id="nombre3" type="text" class="form-control " name="nombre" aria-describedby="emailHelp" placeholder="Nombre">
+                  </div>
+                  <div class="form-group">
+                    <input id="apeP" type="text" class="form-control " name="apeP" aria-describedby="emailHelp" placeholder="Apellido paterno">
+                  </div>
+                  <div class="form-group">
+                    <input id="apeM" type="text" class="form-control " name="apeM" aria-describedby="emailHelp" placeholder="Apellido materno">
+                  </div>
+                  
+
+                  <div class="form-group">
+                    <input id="telefono3" type="text" class="form-control " name="telefono" aria-describedby="emailHelp" placeholder="Telefono">
+                  </div>
+                  <div class="form-group">
+                    <input id="correo3" type="text" class="form-control " name="correo" aria-describedby="emailHelp" placeholder="Correo">
+                  </div>
+                  
+
+                  <h5>Contraseña</h5>
+                  <div class="form-group">
+                    <input type="password" class="form-control " name="pass1" aria-describedby="emailHelp" placeholder="Contraseña actual">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control " name="pass2" aria-describedby="emailHelp" placeholder="Nueva contraseña">
+                  </div>
+                  <div class="form-group">
+                    <input type="password" class="form-control " name="pass2" aria-describedby="emailHelp" placeholder="Repita la contraseña">
+                  </div>
+                  <div class="form-group">
+                  <input id="editar3" type="submit" value="Modificar perfil" href="#" class="btn btn-inicio btn-user btn-block" />
+                  </div>
+                  
+                <input type="hidden" name="id3" id="clave3" value="">
+                </form>
+                </div>
+
+          </div>
+        </div>
+      </div>
 
 <?php require_once '../vistas/footer.php'; ?>
 
-<?php require_once '../vistas/bloqueScriptView.php'; ?>
+  <!-- Bootstrap core JavaScript-->
+  <script src="../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="../../js/sb-admin-2.min.js"></script>
+  <script src="../../js/sweetalert2.all.min.js" type="text/javascript"></script>
+  <script src="../../js/validate.js"></script>
+  <script src="../../js/edit.js"></script>
+</body>
+
+</html>

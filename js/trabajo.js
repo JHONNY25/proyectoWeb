@@ -120,14 +120,14 @@ $(document).ready(function(){
   $('#publicacion #update').click(function(){
 
 
-    if($('#tipo').val() ==''){
+    if($('#tipo').val() ==0){
       Swal.fire({
         type: 'error',
         title: 'Lo sentimos...',
         text: '¡Debe seleccionar un tipo de publicación!'
         
       })
-    }else if($('#carrera').val() == ''){
+    }else if($('#carrera').val() == 0){
       Swal.fire({
         type: 'error',
         title: 'Lo sentimos...',
@@ -139,20 +139,38 @@ $(document).ready(function(){
         title: 'Lo sentimos...',
         text: '¡Ha dejado vacio el campo del título!'
       })
+    }else if(lenghTitulo($('#titulo').val()) == false){
+      Swal.fire({
+        type: 'error',
+        title: 'Lo sentimos...',
+        text: '¡El titulo no debe de ser mayor a 100 caracteres!'
+      })
     }else if($('#vacante').val() == ''){
+        Swal.fire({
+          type: 'error',
+          title: 'Lo sentimos...',
+          text: '¡Ha dejado vacio el campo de vacantes!'
+        })
+    }else if($('#vacante').val() == 0){
+      $("#vacante").val(1);
+    }else if(soloNumeros($('#vacante').val()) == false){
       Swal.fire({
         type: 'error',
         title: 'Lo sentimos...',
-        text: '¡Ha dejado vacio el campo de vacantes'
+        text: '¡Vacantes debe ser numerico!'
       })
-  }else if($('#vacante').val() == 0){
-    $("#vacante").val(1);
-  }else if($('#desc').val() == ''){
+    }else if(lenghVacantes($('#vacante').val()) == false){
       Swal.fire({
         type: 'error',
         title: 'Lo sentimos...',
-        text: '¡Ha dejado vacio el campo de descripción!'
+        text: '¡No puede ingresar mas de 99 vacantes!'
       })
+    }else if($('#desc').val() == ''){
+    Swal.fire({
+      type: 'error',
+      title: 'Lo sentimos...',
+      text: '¡Ha dejado vacio el campo de descripción!'
+    })
   }else{
 
       var datos = $('#publicacion').serialize();
