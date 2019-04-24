@@ -53,7 +53,7 @@ function obtenerDato(){
                       
                       //obtenerDato();
                       setTimeout(function(){
-                        $("#tabla1").load("../procesamiento/mostrarResidencia.php").fadeIn("slow");
+                        $("#tabla1").load("../procesamiento/mostrarResidencia.php");
                       },1500);
                       
                 }else{
@@ -191,7 +191,7 @@ function obtenerDato(){
               })
   
               setTimeout(function(){
-                $("#tabla1").load("../procesamiento/mostrarResidencia.php").fadeIn("slow");
+                $("#tabla1").load("../procesamiento/mostrarResidencia");
               },1500);
             }else{
               Swal.fire({

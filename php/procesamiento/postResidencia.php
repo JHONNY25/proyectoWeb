@@ -14,13 +14,16 @@
             </div>
             <div class="card-body">
               <div class="d-flex justify-content-end mb-3">
-              <form action="" >
-                <input type="text" class="form-control form-control-user" name="buscar" placeholder="Buscar ...">
+              <form action="" method="post">
+                <input id="buscador" type="text" class="form-control form-control-user" name="buscar" placeholder="Buscar ...">
               </form>
               </div>
 
               <div class="table-responsive">
                 <div class="paginacion">
+
+                </div>
+                <div class="alerta">
 
                 </div>
                 <div class="links"></div>
@@ -71,4 +74,17 @@
     
 <?php require_once '../vistas/footer.php'; ?>
 
-<?php require_once '../vistas/bloqueScriptView.php'; ?>
+  <!-- Bootstrap core JavaScript-->
+  <script src="../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="../../js/sb-admin-2.min.js"></script>
+  <script type="text/javascript" src="ajax.js"></script>
+ 
+</body>
+
+</html>

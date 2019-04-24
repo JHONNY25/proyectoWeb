@@ -74,14 +74,20 @@ $(document).ready(function(){
       Swal.fire({
         type: 'error',
         title: 'Lo sentimos...',
-        text: '¡Ha dejado vacio el campo de correo'
+        text: '¡Ha dejado vacio el campo de correo!'
+      })
+    }else if(validarCorreo($('#correo').val()) == false){
+      Swal.fire({
+        type: 'error',
+        title: 'Lo sentimos...',
+        text: '¡Correo invalido!'
       })
     }
     else if(lengh($('#correo').val()) == false){
       Swal.fire({
         type: 'error',
         title: 'Lo sentimos...',
-        text: '¡El correo no debe de ser mayor a 40 caracteres'
+        text: '¡El correo no debe de ser mayor a 40 caracteres!'
       })
     }else if($('#municipio').val() == ''){
       Swal.fire({
@@ -93,7 +99,7 @@ $(document).ready(function(){
     Swal.fire({
       type: 'error',
       title: 'Lo sentimos...',
-      text: '¡Municipio no debe de ser mayor a 40 caracteres'
+      text: '¡Municipio no debe de ser mayor a 40 caracteres!'
     })
   }else if($('#colonia').val() == ''){
     Swal.fire({
@@ -105,7 +111,7 @@ $(document).ready(function(){
   Swal.fire({
     type: 'error',
     title: 'Lo sentimos...',
-    text: '¡La colonia no debe de ser mayor a 40 caracteres'
+    text: '¡La colonia no debe de ser mayor a 40 caracteres!'
   })
 }else if($('#calle').val() == ''){
   Swal.fire({
@@ -117,7 +123,7 @@ $(document).ready(function(){
   Swal.fire({
     type: 'error',
     title: 'Lo sentimos...',
-    text: '¡Calle no debe de ser mayor a 40 caracteres'
+    text: '¡Calle no debe de ser mayor a 40 caracteres!'
   })
 }else if($('#pass2').val() != $('#pass1').val()){
   Swal.fire({
@@ -145,7 +151,7 @@ $(document).ready(function(){
             })
 
             setTimeout(function(){
-              $("#detallePerfil").load("perfil.php #detallePerfil").fadeIn("slow");
+              $("#detallePerfil").load("perfil #detallePerfil").fadeIn("slow");
             },1500);
           }else{
             Swal.fire({

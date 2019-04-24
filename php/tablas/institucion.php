@@ -21,22 +21,16 @@
               <div class="table-responsive">
               <table class="table table-striped table-hover rounded" id="dataTable" width="100%" cellspacing="0">
                   <thead class="azul-bajo text-white rounded">
-                    <tr>
-                      <th>Nombre</th>
+                  <tr>
+                      <th>Empresa</th>
+                      <th>Colonia</th>
+                      <th>Calle</th>
                       <th>Correo</th>
-                      <th>Telefono</th>
                       <th>Acciones</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <td>Hotel Marquis</td>
-                      <td>marquis@hotmail.com</td>
-                      <td>6241244554</td>
-                      <td class="d-flex justify-content-center">
-                      <a href="" class="text-danger delete"><i class="fa fa-user-times"></i></a>
-                      </td>
-                    </tr>
+                  <tbody id="tblEmpresaActivas">
+  
                   </tbody>
                 </table>
               </div>
@@ -48,4 +42,24 @@
 
 <?php require_once '../vistas/footer.php'; ?>
 
-<?php require_once '../vistas/bloqueScriptTabla.php'; ?>
+  <!-- Bootstrap core JavaScript-->
+  <script src="../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="../../js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="../../vendor/datatables/jquery.dataTables.js"></script>
+  <script src="../../vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="../../js/demo/datatables-demo.js"></script>
+  <script src="../../js/empresaActiva.js"></script>
+
+</body>
+
+</html>

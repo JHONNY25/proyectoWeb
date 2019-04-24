@@ -53,7 +53,7 @@ function eliminar(dato){
                     
                     //obtenerDato();
                     setTimeout(function(){
-                      $("#tabla3").load("../procesamiento/mostrarTrabajo.php").fadeIn("slow");
+                      $("#tabla3").load("../procesamiento/mostrarTrabajo.php");
                     },1500);
                     
               }else{
@@ -191,7 +191,7 @@ $(document).ready(function(){
             })
 
             setTimeout(function(){
-              $("#tabla3").load("../procesamiento/mostrarTrabajo.php").fadeIn("slow");
+              $("#tabla3").load("../procesamiento/mostrarTrabajo.php");
             },1500);
           }else{
             Swal.fire({

@@ -29,44 +29,8 @@
                       <th>Acciones</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <td>Marquis</td>
-                      <td>System Architect</td>
-                      <td>sin nombre</td>
-                      <td>marquis@hotmail.com</td>
+                  <tbody id="tblEmpresa">
 
-                      <td  class="d-flex justify-content-center">
-                      <a href="" class="btn btn-success btn-circle mr-2" data-toggle="modal" data-target="#exampleModal">
-                      <i class="fas fa-check"></i></a>
-                      <a href="" class="btn btn-danger btn-circle" data-toggle="modal" data-target="#modalRechazar">
-                      <i class="fas fa-times"></i></a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Las palmas</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                      <td>palmas@hotmail.com</td>
-                      <td  class="d-flex justify-content-center">
-                      <a href="" class="btn btn-success btn-circle mr-2" data-toggle="modal" data-target="#exampleModal">
-                      <i class="fas fa-check"></i></a>
-                      <a href="" class="btn btn-danger btn-circle" data-toggle="modal" data-target="#modalRechazar">
-                      <i class="fas fa-times"></i></a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Villa real</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                      <td>villa@hotmail.com</td>
-                      <td  class="d-flex justify-content-center">
-                      <a href="" class="btn btn-success btn-circle mr-2" data-toggle="modal" data-target="#exampleModal">
-                      <i class="fas fa-check"></i></a>
-                      <a href="" class="btn btn-danger btn-circle" data-toggle="modal" data-target="#modalRechazar">
-                      <i class="fas fa-times"></i></a>
-                      </td>
-</tr>
                   </tbody>
                 </table>
               </div>
@@ -77,7 +41,24 @@
         <!-- /.container-fluid -->
 <?php require_once '../vistas/footer.php'; ?>
 
-<?php require_once '../vistas/modalAcept.php'; ?>
-<?php require_once '../vistas/modalRechazar.php'; ?>
+  <!-- Bootstrap core JavaScript-->
+  <script src="../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<?php require_once '../vistas/bloqueScriptTabla.php'; ?>
+  <!-- Core plugin JavaScript-->
+  <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="../../js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="../../vendor/datatables/jquery.dataTables.js"></script>
+  <script src="../../vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="../../js/demo/datatables-demo.js"></script>
+  <script src="../../js/empresa.js"></script>
+
+</body>
+
+</html>
