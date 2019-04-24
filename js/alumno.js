@@ -1,5 +1,4 @@
 
-
 function confirm(dato,mensaje,asunto,destino,nombre){
     Swal.fire({
         title: 'Rechazará a este alumno',
@@ -13,6 +12,17 @@ function confirm(dato,mensaje,asunto,destino,nombre){
       }).then((result) => {
         if (result.value) {
             eliminar(dato,mensaje,asunto,destino,nombre);
+            Swal.fire({
+                title: 'Procesando',
+                text: 'Espere un momento por favor',
+                onOpen: () => {
+                swal.showLoading();
+              },
+                showCancelButton: false,
+                showConfirmButton: false,
+                allowOutsideClick: false,
+                allowEscapeKey: false,
+              })
         }
       })
 }
@@ -21,8 +31,9 @@ function confirm(dato,mensaje,asunto,destino,nombre){
 function eliminar(dato,mensaje,asunto,destino,nombre){
         var datos = {
           "id": dato,
-          "mensaje":mensaje,
-          "asunto":asunto,
+          "mensaje":"<p><img style='display: block; margin-left: auto; margin-right: auto;' src='http://drive.google.com/uc?export=view&id=1Zw8krE9QgMdUtBNkjRHu-VfwoLxsFHgU' alt='' width='225' height='140' /></p> <table style='height: 152px; margin-left: auto; margin-right: auto;' width='410'> <tbody> <tr> <td style='width: 400px;'> <h3 style='text-align: center;'><strong>Haz sido rechazado en el portal de vinculaci&oacute;n debido a que no cumples con los requisitos.</strong></h3> <h3 style='text-align: center;'><strong>si crees que se trata de un error vuelve a intentar tu registro, si el problema persiste ponte en contacto con el encargado de vinculaci&oacute;n</strong></h3> </td> </tr> </tbody> </table> <p>&nbsp;</p> <p><strong>&nbsp;</strong></p>",
+          "asunto":"ITES Los Cabos. No cumples con los requisitos para registrarte en el portal de vinculación",
+          "mensajeNoHTML":"Haz sido rechazado en el portal de vinculación debido a que no cumples con los requisitos. si crees que se trata de un error vuelve a intentar tu registro, si el problema persiste ponte en contacto con el encargado de vinculación",
           "destino":destino,
           "nombre":nombre
         };
@@ -42,7 +53,7 @@ function eliminar(dato,mensaje,asunto,destino,nombre){
                     })
 
                     setTimeout(function(){
-                      $( "#dataTable" ).load( "solicitudAlumno.php #dataTable" );
+                      window.location.reload();
                    }, 2000);
               }else{
                 Swal.fire({
@@ -71,6 +82,18 @@ function eliminar(dato,mensaje,asunto,destino,nombre){
           }).then((result) => {
             if (result.value) {
                 aceptarAlu(dato,mensaje,asunto,destino,nombre);
+                Swal.fire({
+                    title: 'Procesando',
+                    text: 'Espere un momento por favor',
+                    onOpen: () => {
+                    swal.showLoading();
+                  },
+                    showCancelButton: false,
+                    showConfirmButton: false,
+                    allowOutsideClick: false,
+                    allowEscapeKey: false,
+
+                  })
             }
           })
 
@@ -81,8 +104,9 @@ function eliminar(dato,mensaje,asunto,destino,nombre){
     function aceptarAlu(dato,mensaje,asunto,destino,nombre){
             var datos = {
                 "id": dato,
-                "mensaje":mensaje,
-                "asunto":asunto,
+                "mensaje":"<p><img style='display: block; margin-left: auto; margin-right: auto;' src='http://drive.google.com/uc?export=view&id=1Zw8krE9QgMdUtBNkjRHu-VfwoLxsFHgU' alt='' width='225' height='140' /></p> <table style='height: 152px; margin-left: auto; margin-right: auto;' width='410'> <tbody> <tr> <td style='width: 400px;'> <h3 style='text-align: center;'>&iexcl;Haz sido aceptado en el portal de vinculaci&oacute;n!.</h3> <h3 style='text-align: center;'>ya puedes iniciar sesi&oacute;n y comenzar con tustramites</h3> </td> </tr> </tbody> </table> <p>&nbsp;</p> <p><strong>&nbsp;</strong></p>",
+                "asunto":"ITES Los Cabos. Haz sido aceptado en el portal de vinculacion",
+                "mensajeNoHTML":"¡Haz sido aceptado en el portal de vinculación!. ya puedes iniciar sesión y comenzar con tustramites",
                 "destino":destino,
                 "nombre":nombre
 
@@ -103,7 +127,7 @@ function eliminar(dato,mensaje,asunto,destino,nombre){
                         })
 
                         setTimeout(function(){
-                          $( "#dataTable" ).load( "solicitudAlumno.php #dataTable" );
+                          window.location.reload();
                        }, 2000);
                   }else{
                     Swal.fire({

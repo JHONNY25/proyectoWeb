@@ -11,12 +11,14 @@ $conect = $con->getConexion();
 
 $identificador = $_POST['id'];
 $mensaje = $_POST['mensaje'];
+$mensajeNoHTML = $_POST['mensajeNoHTML'];
 $asunto = $_POST['asunto'];
 $destino = $_POST['destino'];
 $nombre = $_POST['nombre'];
 
+
  $email = new enviar();
- $email->notificaUsuario($mensaje,$asunto,$destino,$nombre);
+ $email->notificaUsuario($mensaje,$mensajeNoHTML,$asunto,$destino,$nombre);
 
     $sql = "call modificar_estado_usuario('$identificador')";
     echo mysqli_query($conect,$sql);

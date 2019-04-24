@@ -17,13 +17,15 @@
     <div class="col-md-6">
     <form>
         <div class="form-group">
-            <Strong><h4 id="section1">Agregar Solicitud de servicio social</h4></Strong>
-            <input type="file" class="form-control-file btn btn-add" id="exampleFormControlFile1">
+          <Strong><h4 id="section1">Formato de Solicitud de servicio social (.doc o .docx)</h4></Strong>
+          <input type="file" class="form-control-file btn btn-add" id="servicioSocial">
+          <Strong><h4 id="section1">Imagen ejemplo de llenado (jpg, jpeg o png)</h4></Strong>
+          <input type="file" class="form-control-file btn btn-add" id="ejemploServicioSocial">
             <textarea class="form-control border rounded mt-3" name="descripcion" id="" rows="4" placeholder="Ingrese una dexcripción para el documento"></textarea>
             <input type="submit" value="Subir Formato" class="btn btn-add d-block mt-2">
         </div>
         <div>
-            
+
         </div>
     </form>
     </div>
@@ -36,13 +38,15 @@
     <div class="col-md-6">
     <form>
         <div class="form-group">
-            <Strong><h4 id="section1">Agregar Carta aceptación</h4></Strong>
-            <input type="file" class="form-control-file btn btn-add" id="exampleFormControlFile1">
+          <Strong><h4 id="section1">Formato de carta de aceptacion (.doc o .docx)</h4></Strong>
+          <input type="file" class="form-control-file btn btn-add" id="cartaAceptacion">
+          <Strong><h4 id="section1">Imagen ejemplo de llenado (jpg, jpeg o png)</h4></Strong>
+          <input type="file" class="form-control-file btn btn-add" id="ejemploCarta">
             <textarea class="form-control border rounded mt-3" name="descripcion" id="" rows="4" placeholder="Ingrese una dexcripción para el documento"></textarea>
             <input type="submit" value="Subir Formato" class="btn btn-add d-block mt-2">
         </div>
         <div>
-            
+
         </div>
     </form>
     </div>
@@ -50,23 +54,25 @@
 
 <div class="container-fluid d-flex border rounded mb-4 flex-wrap ml-2 mr-2">
     <div class="col-md-6 d-flex align-items-center t-center">
-        <Strong><h1>Solicitud de servicio social</h1></Strong>
+        <Strong><h1>Reportes bimestrales</h1></Strong>
     </div>
     <div class="col-md-6">
     <form>
         <div class="form-group">
-            <Strong><h4 id="section1">Agregar Solicitud de servicio social</h4></Strong>
-            <input type="file" class="form-control-file btn btn-add" id="exampleFormControlFile1">
+          <Strong><h4 id="section1">Formato de carta de reportes (.doc o .docx)</h4></Strong>
+          <input type="file" class="form-control-file btn btn-add" id="reportes">
+          <Strong><h4 id="section1">Imagen ejemplo de llenado (jpg, jpeg o png)</h4></Strong>
+          <input type="file" class="form-control-file btn btn-add" id="ejemploReportes">
             <textarea class="form-control border rounded mt-3" name="descripcion" id="" rows="4" placeholder="Ingrese una dexcripción para el documento"></textarea>
             <input type="submit" value="Subir Formato" class="btn btn-add d-block mt-2">
         </div>
         <div>
-            
+
         </div>
     </form>
     </div>
 </div>
-    
+
 </div>
 <?php require_once '../vistas/footer.php'; ?>
 

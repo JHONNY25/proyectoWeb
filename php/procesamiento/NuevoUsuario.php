@@ -3,18 +3,30 @@
 <script src="/proyectoWeb/js/sweetalert2.all.min.js" type="text/javascript"></script>
 <script src="/proyectoWeb/js/bootstrap.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="/proyectoWeb/css/sweetalert2.min.css">
+<?php require_once 'phpMailer/Enviar.php'; ?>
 
 
 <body>
   <script type="text/javascript">
+  function alertaProcesando(){
+    Swal.fire({
+        title: 'Procesando',
+        text: 'Espere un momento por favor',
+        type: 'info',
+        showCancelButton: false,
+        showConfirmButton: false,
+        allowOutsideClick: false
+      })
+  }
   function alertaExito(){
     Swal.fire({
-  title: '¡Éxito!',
-  text: "El usuario se registó correctamente",
-  type: 'success',
-  confirmButtonText: 'Aceptar'
-}).then((result) => {
-  if (result.value) {
+    title: '¡Éxito!',
+    text: "El usuario se registó correctamente",
+    type: 'success',
+    confirmButtonText: 'Aceptar',
+    allowOutsideClick: false
+  }).then((result) => {
+    if (result.value) {
 
       window.location.replace('/proyectoWeb/index.php');
 
@@ -34,6 +46,7 @@ require 'Valida_NuevoUsuario.php';
 $mysql = new coneccion();
 $conexion = $mysql->get_connection();
 if(!empty($_POST) && isset($_POST['newUser'])){
+
 
 
   //----------------------------------------------------------------------------VARIABLES DE FORMULARIO
@@ -62,7 +75,7 @@ if(!empty($_POST) && isset($_POST['newUser'])){
 
 
 
-  $target_dir = "upload/";
+  $target_dir = "upload/kardex/";
   $temp = explode(".", $_FILES["kardex"]["name"]);
   $newfilename = $numeroControl.'-kardex'.'.'.end($temp);
 
@@ -248,6 +261,8 @@ if(!empty($_POST) && isset($_POST['newUser'])){
       && $errorContra2==0 && $errorCoincidencia==0 && $errorControlVacio==0
       && $errorUsuarioCorrecto==0 && $uploadOk == 1 && $nControlRepetido == 0){
 
+
+
 //===============================================================================SUBIR IMAGEN
         if (move_uploaded_file($_FILES["kardex"]["tmp_name"], $target_file)) {
         } else {
@@ -260,12 +275,13 @@ if(!empty($_POST) && isset($_POST['newUser'])){
 //HAY QUE ACTUALIZAR EL PROCEDIMIENTO PARA INSERTAR NUMERO DE CONTROL Y CARRERA
 
     try {
+
       $opciones = [
         'cost' => 10,
       ];
       $passwordHash = password_hash($contrasena, PASSWORD_BCRYPT, $opciones);
-      echo "$passwordHash";
-      echo "$contrasena";
+      $contrasena = $passwordHash;
+      //echo "$contrasena";
       $stm = $conexion->prepare("CALL registrar_usuario_todo(?,?,?,?,?,?,?,?,?,?)");
       $stm->bind_param("sssssssssi",$nombreUsuario,$contrasena,$nombre,$aPat,$aMat,$numeroControl,$correo,$telefono,$newfilename,$idCarrera);
       $stm->execute();
@@ -273,7 +289,24 @@ if(!empty($_POST) && isset($_POST['newUser'])){
 
       ?>
       <script type="text/javascript">
-        alertaExito();
+
+
+
+
+        <?php
+        $email = new enviar();
+        $email->notificaUsuario("Te haz registrado exitosamente
+        en el portal de vinculacion de ITES los Cabos.
+        Debes esperar a que el encargado verifique tus datos para ser aceptado.
+        Una vez verificado podrás iniciar sesión y comenzar con tus trámites","
+        Te haz registrado exitosamente
+        en el portal de vinculacion de ITES los Cabos.
+        Debes esperar a que el encargado verifique tus datos para ser aceptado.
+        Una vez verificado podrás iniciar sesión y comenzar con tus trámites","
+        Confirmación de registro vinculacion ITES Los Cabos",$correo," ");
+         ?>
+
+         alertaExito();
       </script>
       <?php
 

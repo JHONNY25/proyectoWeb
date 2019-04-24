@@ -4,8 +4,7 @@
   </a>
     <!-- Logout Modal-->
     <div class="modal fade " id="modalInfo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-xl" role="document">
-        <?php echo $row['numero_control']; ?>
+      <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Informacion de solicitud del alumno</h5>
@@ -19,8 +18,8 @@
             <button href="" class="btn btn-success btn-circle mr-2" data-dismiss="modal" onclick="confirmaAceptar
             (
             '<?php echo $row['numero_control']; ?>',
-            '<?php echo "¡Haz sido aceptado en el portal de vinculación!, ya puedes iniciar sesión y comenzar con tustramites"; ?>',
-            '<?php echo "ITES Los Cabos. Haz sido aceptado en el portal de vinculacion"; ?>',
+            '<?php echo ""; ?>',
+            '<?php echo ""; ?>',
             '<?php echo $row['correo']; ?>',
             '<?php echo $row['nombre'] ." ". $row['apellido_paterno']. " " . $row['apellido_materno']; ?>'
             )">
@@ -28,8 +27,8 @@
             <button href="" class="btn btn-danger btn-circle" data-dismiss="modal" onclick="confirm
             (
             '<?php echo $row['numero_control']; ?>',
-            '<?php echo "Haz sido rechazado en el portal de vinculación debido a que no cumples con los requisitos. si crees que se trata de un error vuelve a intentar tu registro, si el problema persiste ponte en contacto con el encargado de vinculación"; ?>',
-            '<?php echo "ITES Los Cabos. No cumples con los requisitos para registrarte en el portal de vinculación"; ?>',
+            '<?php echo ""; ?>',
+            '<?php echo ""; ?>',
             '<?php echo $row['correo']; ?>',
             '<?php echo $row['nombre'] ." ". $row['apellido_paterno']. " " . $row['apellido_materno']; ?>'
             )">

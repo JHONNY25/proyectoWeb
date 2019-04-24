@@ -12,6 +12,8 @@
 
 <?php
 
+$rechazado = "";
+$rechazadoAsunto = "";
 
   require_once '../procesamiento/alumno.php';
   $listado = new Alumno();
@@ -62,8 +64,8 @@
                       <button href="" class="btn btn-success btn-circle mr-2" onclick="confirmaAceptar
                       (
                       '<?php echo $row['numero_control']; ?>',
-                      '<?php echo "¡Haz sido aceptado en el portal de vinculación!, ya puedes iniciar sesión y comenzar con tustramites"; ?>',
-                      '<?php echo "ITES Los Cabos. Haz sido aceptado en el portal de vinculacion"; ?>',
+                      '<?php echo ""; ?>',
+                      '<?php echo ""; ?>',
                       '<?php echo $row['correo']; ?>',
                       '<?php echo $row['nombre'] ." ". $row['apellido_paterno']. " " . $row['apellido_materno']; ?>'
                       )">
@@ -71,8 +73,8 @@
                       <button href="" id="" class="btn btn-danger btn-circle" onclick="confirm
                       (
                       '<?php echo $row['numero_control']; ?>',
-                      '<?php echo "Haz sido rechazado en el portal de vinculación debido a que no cumples con los requisitos. si crees que se trata de un error vuelve a intentar tu registro, si el problema persiste ponte en contacto con el encargado de vinculación"; ?>',
-                      '<?php echo "ITES Los Cabos. No cumples con los requisitos para registrarte en el portal de vinculación"; ?>',
+                      '<?php echo $rechazado; ?>',
+                      '<?php echo $rechazadoAsunto; ?>',
                       '<?php echo $row['correo']; ?>',
                       '<?php echo $row['nombre'] ." ". $row['apellido_paterno']. " " . $row['apellido_materno']; ?>'
                       )">
@@ -106,7 +108,7 @@ $('.open-AddBookDialog').on('click',function () {
     var telefono = $(this).data("telefono");
     var carrera = $(this).data("carrera");
     var kardex = $(this).data("kardex");
-    var ruta = '../../upload/'+kardex;
+    var ruta = '../../upload/kardex/'+kardex;
     $("[name='control']").val(id);
     $("[name='nombre']").val(nombre);
     $("[name='correo']").val(correo);
@@ -128,7 +130,7 @@ $('#fila').dblclick(function () {
   var telefono = $(this).data("telefono");
   var carrera = $(this).data("carrera");
   var kardex = $(this).data("kardex");
-  var ruta = '../../upload/'+kardex;
+  var ruta = '../../upload/kardex/'+kardex;
   $("[name='control']").val(id);
   $("[name='nombre']").val(nombre);
   $("[name='correo']").val(correo);
