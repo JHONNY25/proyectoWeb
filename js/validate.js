@@ -51,3 +51,14 @@ function validarNumero(parametro){
       return true;
     }
   }
+
+
+  function validarCorreo(parametro){
+    var valido =   /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+    if(!valido.test(parametro)){
+      return false;
+    }else{
+      return true;
+    }
+  }

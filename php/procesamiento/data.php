@@ -17,6 +17,9 @@ if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQU
 	//obtenemos los posts
 	$pag = $paginacion->get_posts($offset,$limit);
 
+	if(isset($_POST['dato'])){
+		$pag = $paginacion->get_postsBuscador($offset,$limit,$_POST['dato']);
+	}
 
 	//obtenemos los enlaces para estos posts
 	$links = $paginacion->crea_links();

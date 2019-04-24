@@ -1,0 +1,2 @@
+
+obtenerDato(3);

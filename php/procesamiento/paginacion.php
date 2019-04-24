@@ -52,8 +52,7 @@ class Paginacion{
 
 
     //creamos los enlaces de nuestra paginación
-    public function crea_links()
-    {
+    public function crea_links(){
 
         //html para retornar
         $html = "";
@@ -114,8 +113,8 @@ class Paginacion{
         '<li class="page-item disabled"> <a href="#" class="page-link disabled">Primera</a> </li>';
 
         $html .= ($actual_pag > 1) ?
-        '<li class="page-item"> <a href="" class="page-link" onclick="paginate('.(($actual_pag-2)*$limit).','.$limit.')">Anterior</a> </li>' :
-        '<li class="page-item disabled"> <a href="" class="page-link disabled">Anterior</a> </li>';
+        '<li class="page-item"> <a href="#" class="page-link" onclick="paginate('.(($actual_pag-2)*$limit).','.$limit.')">Anterior</a> </li>' :
+        '<li class="page-item disabled"> <a href="#" class="page-link disabled">Anterior</a> </li>';
 
         for($i=$primera_pag; $i<=$ultima_pag+1; $i++)
         {
@@ -140,8 +139,7 @@ class Paginacion{
     }
 
 
-    public function get_posts($offset = 0, $limit = 10)
-    {
+    public function get_posts($offset = 0, $limit = 10){
         if($offset == 0){
             $_SESSION["actual"] = 1;
         }else{
@@ -159,6 +157,40 @@ class Paginacion{
             //si existe el usuario
             if($query->rowCount() > 0)
             {
+
+                 return $query->fetchAll();
+
+            }
+
+        }catch(PDOException $e){
+
+            print "Error!: " . $e->getMessage();
+
+        }
+
+    }
+
+    public function get_postsBuscador($offset = 0, $limit = 10,$valor){
+        if($offset == 0){
+            $_SESSION["actual"] = 1;
+        }else{
+            $_SESSION["actual"] = ($offset+$limit)/$limit;
+        }
+        $_SESSION["limit"] = $limit;
+        try {
+
+            $sql = "SELECT titulo,descripcion,fecha FROM publicacion_bancos 
+            WHERE titulo LIKE '%".$valor."%'  OR 
+            descripcion LIKE '%".$valor."%'  OR 
+            fecha LIKE '%".$valor."%'  
+            LIMIT ?,?";
+            $query = $this->con->prepare($sql);
+            $query->bindValue(1, (int) $offset, PDO::PARAM_INT);
+            $query->bindValue(2, (int) $limit, PDO::PARAM_INT);
+            $query->execute();
+
+            //si existe el usuario
+            if($query->rowCount() > 0){
 
                  return $query->fetchAll();
 

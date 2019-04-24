@@ -1,4 +1,64 @@
 
+$('.alerta').hide();
+
+String.prototype.trim = function() { return this.replace(/^\s+|\s+$/g, ""); };
+
+$(document).on('keyup', '#buscador', function(){
+	var busqueda = $(this).val().trim();
+
+	if(busqueda != ''){
+		buscador(busqueda);
+	}else{
+		$('.alerta').hide();
+		paginate();
+	}
+});
+
+function buscador(dato){
+
+	$.ajax({
+		url: 'buscador.php',
+		type: 'POST',
+		data: {dato: dato},
+		dataType:"json",  
+        success:function(data){  
+			if(data.publicacion_bancos){
+				$html = "";
+				//parseamos el json
+				//json = JSON.parse(data);
+				//lo recorremos e insertamos en la variable $html
+				for(datos in data.publicacion_bancos){
+					var datad= data.publicacion_bancos[datos].descripcion;
+					$html += '<div class="border rounded p-3 mb-4">';
+					/*$html += "<p>Id: " + json.posts[datos].id + "</p>";*/
+						$html += "<h4>" + data.publicacion_bancos[datos].titulo + "</h4>"; 
+						$html += '<hr class="sidebar-divider">';
+						$html += "<div>" + datad.substr(0,180) +"..."+ "</div>";
+						$html += '<p class="mt-2">' + data.publicacion_bancos[datos].fecha + "</p>";
+						$html += '<a class="" href="" data-toggle="modal" data-target="#modalResident">';
+						$html += '<i class="fas fa-eye"></i>';
+						$html += ' '+'Ver detalles</a>';
+					$html += "</div>";
+				}
+				$('.alerta').hide();
+				//cargamos los posts en el div paginacion
+				$(".paginacion").html("");
+				$(".paginacion").html($html);
+				//cargamos los links en el div links
+				$(".links").html("");
+				$(".links").html(data.links);
+
+			}else if(data.error){
+				$(".paginacion").html("");
+				$('.alerta').html(data.error);
+				$('.alerta').show();
+			}
+
+        }  
+	})
+
+	
+}
 
 function paginate(offset, limit)
 {

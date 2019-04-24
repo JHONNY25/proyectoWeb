@@ -1,6 +1,6 @@
 <?php
 
-require_once '../procesamiento/publicaciones.php';
+require_once 'publicaciones.php';
 $publicacion = new Publicacion();
 $datos = $publicacion->getPublicaciones(0,3);
 
