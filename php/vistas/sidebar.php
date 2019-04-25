@@ -1,9 +1,7 @@
 <?php
-if (isset($_SESSION['usuario'])) {
 
-  $user->setUser($sesion->getSesion());
   $tipo = $user->getTipo();
-}
+
 ?>
 
 <!-- Sidebar -->

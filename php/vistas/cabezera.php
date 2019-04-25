@@ -12,6 +12,8 @@
 
           header("Location: http://$host/proyectoWeb/");
           exit;
+        }else{
+          $user->setUser($sesion->getSesion());
         }
       ?>
 <!DOCTYPE html>

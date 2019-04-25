@@ -1,5 +1,5 @@
 <?php require_once '../vistas/cabezera.php'; ?>
-
+<?php if($user->getTipo() == 2){?>
 <?php require_once '../vistas/sidebar.php'; ?>
   
 <?php require_once '../vistas/labelPerfil.php'; ?>
@@ -86,12 +86,12 @@
               </div>
 
                 <div class="form-group">
-                   <input id="titulo" name="titulo" type="text" placeholder="Ingresé el tétulo del proyecto" class="form-control" aria-describedby="emailHelp" require>
+                   <input id="titulo" name="titulo" type="text" placeholder="Ingrese el titulo del proyecto" class="form-control" aria-describedby="emailHelp" require>
 
                 </div>
 
                 <div class="form-group">
-                   <input name="vacantes" id="vacante" type="text" maxlength="2" placeholder="Ingresé el numero de Vacantes" class="form-control" aria-describedby="emailHelp" require>
+                   <input name="vacantes" id="vacante" type="text" maxlength="2" placeholder="Ingrese el numero de Vacantes" class="form-control" aria-describedby="emailHelp" require>
 
                 </div>
 
@@ -115,7 +115,7 @@
 
   </div>
 </div>
-    
+
 <?php require_once '../vistas/footer.php'; ?>
 
   <!-- Bootstrap core JavaScript-->
@@ -133,3 +133,10 @@
 </body>
 
 </html>
+
+<?php }else{
+        $host  = $_SERVER['HTTP_HOST'];
+
+        header("Location: http://$host/proyectoWeb/");
+        exit;
+    } ?>

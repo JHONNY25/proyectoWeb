@@ -181,9 +181,13 @@
                     <input id="calle" type="text" class="form-control " name="calle" aria-describedby="emailHelp" placeholder="Calle">
                   </div>
                   
-                  <div class="custom-control custom-checkbox">
-                      <input type="checkbox" class="custom-control-input check" id="defaultUnchecked">
-                      <label class="custom-control-label" for="defaultUnchecked">Cambiar contraseña</label>
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="check">
+                      <label class="form-check-label" for="invalidCheck2">
+                        Cambiar contraseña
+                      </label>
+                    </div>
                   </div>
 
                   <h5 class="contra">Contraseña</h5>
@@ -223,18 +227,25 @@
                     <input id="telefono2" type="text" class="form-control " name="telefono" aria-describedby="emailHelp" placeholder="Telefono">
                   </div>
                   <div class="form-group">
-                    <input id="correo2" require type="text" class="form-control " name="correo" aria-describedby="emailHelp" placeholder="Correo">
+                    <input id="correo2" require type="text" class="form-control " name="correo2" aria-describedby="emailHelp" placeholder="Correo">
                   </div>
 
-                  <h5>Contraseña</h5>
                   <div class="form-group">
-                    <input type="password" class="form-control " name="pass1" aria-describedby="emailHelp" placeholder="Contraseña actual">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="check1">
+                      <label class="form-check-label" for="invalidCheck2">
+                        Cambiar contraseña
+                      </label>
+                    </div>
+                  </div>
+
+                  <h5 class="contra">Contraseña</h5>
+ 
+                  <div class="form-group">
+                    <input id="passalumno" type="password" class="form-control " name="pass1" aria-describedby="emailHelp" placeholder="Nueva contraseña">
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control " name="pass2" aria-describedby="emailHelp" placeholder="Nueva contraseña">
-                  </div>
-                  <div class="form-group">
-                    <input type="password" class="form-control " name="pass2" aria-describedby="emailHelp" placeholder="Repita la contraseña">
+                    <input id="passalumno2" type="password" class="form-control " name="pass2" aria-describedby="emailHelp" placeholder="Repita la contraseña">
                   </div>
                   <div class="form-group">
                   <input id="editar2" type="submit" value="Modificar perfil" href="#" class="btn btn-inicio btn-user btn-block" />
@@ -262,7 +273,7 @@
                   <h5>Datos Generales</h5>
    
                     <div class="form-group">
-                    <input id="nombre3" type="text" class="form-control " name="nombre" aria-describedby="emailHelp" placeholder="Nombre">
+                    <input id="nombre3" type="text" class="form-control " name="nombre2" aria-describedby="emailHelp" placeholder="Nombre">
                   </div>
                   <div class="form-group">
                     <input id="apeP" type="text" class="form-control " name="apeP" aria-describedby="emailHelp" placeholder="Apellido paterno">
@@ -273,28 +284,34 @@
                   
 
                   <div class="form-group">
-                    <input id="telefono3" type="text" class="form-control " name="telefono" aria-describedby="emailHelp" placeholder="Telefono">
+                    <input id="telefono3" type="text" class="form-control " name="telefono2" aria-describedby="emailHelp" placeholder="Telefono">
                   </div>
                   <div class="form-group">
-                    <input id="correo3" type="text" class="form-control " name="correo" aria-describedby="emailHelp" placeholder="Correo">
+                    <input id="correo3" type="text" class="form-control " name="correo2" aria-describedby="emailHelp" placeholder="Correo">
                   </div>
                   
+                  <div class="form-group">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="check2">
+                      <label class="form-check-label" for="invalidCheck2">
+                        Cambiar contraseña
+                      </label>
+                    </div>
+                  </div>
 
-                  <h5>Contraseña</h5>
-                  <div class="form-group">
-                    <input type="password" class="form-control " name="pass1" aria-describedby="emailHelp" placeholder="Contraseña actual">
+                  <h5 class="contra2">Contraseña</h5>
+
+                   <div class="form-group">
+                    <input id="passadmin" type="password" class="form-control " name="pass1" aria-describedby="emailHelp" placeholder="Nueva contraseña">
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control " name="pass2" aria-describedby="emailHelp" placeholder="Nueva contraseña">
-                  </div>
-                  <div class="form-group">
-                    <input type="password" class="form-control " name="pass2" aria-describedby="emailHelp" placeholder="Repita la contraseña">
+                    <input id="passadmin2" type="password" class="form-control " name="pass3" aria-describedby="emailHelp" placeholder="Repita la contraseña">
                   </div>
                   <div class="form-group">
                   <input id="editar3" type="submit" value="Modificar perfil" href="#" class="btn btn-inicio btn-user btn-block" />
                   </div>
                   
-                <input type="hidden" name="id3" id="clave3" value="">
+                <input type="hidden" name="id2" id="clave3" value="">
                 </form>
                 </div>
 
