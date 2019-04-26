@@ -209,13 +209,13 @@ Tramite Servicio Social
 </li>
 
 <li class="nav-item">
-    <a class="nav-link" href="../post/postServicio">
+    <a class="nav-link" href="../procesamiento/postServicio">
     <i class="fas fa-fw fa-id-card"></i>
     <span>Servicio Social</span></a>
 </li>
 
 <li class="nav-item">
-    <a class="nav-link" href="../post/postTrabajo">
+    <a class="nav-link" href="../procesamiento/postTrabajo">
     <i class="fas fa-fw fa-briefcase"></i>
     <span>Bolsa de trabajo</span></a>
 </li>

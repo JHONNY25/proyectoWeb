@@ -1,4 +1,5 @@
 
+
 $('.alerta').hide();
 
 String.prototype.trim = function() { return this.replace(/^\s+|\s+$/g, ""); };
@@ -7,7 +8,7 @@ $(document).on('keyup', '#buscador', function(){
 	var busqueda = $(this).val().trim();
 
 	if(busqueda != ''){
-		buscador(busqueda,2);
+		buscador(busqueda,1);
 	}else{
 		$('.alerta').hide();
 		paginate();
@@ -71,7 +72,7 @@ function buscador(dato,tipo){
 
 function paginate(offset, limit){
 	//obtenemos los posts via get con jQuery
-	$.get("data.php/?offset=" + offset + "&limit=" + limit, function(data){
+	$.get("data1.php/?offset=" + offset + "&limit=" + limit, function(data){
 		if(data){
 			$html = "";
 			//parseamos el json
