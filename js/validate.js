@@ -24,7 +24,16 @@ function validarNumero(parametro){
       return true;
     }
   }
-  
+
+  function lengh24(parametro){
+    
+    if(parametro.length > 24){
+      return false;
+    }else{
+      return true;
+    }
+  }
+
   function lengh(parametro){
     
     if(parametro.length > 40){

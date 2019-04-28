@@ -27,11 +27,11 @@ class Paginacion{
     }
 
     //obtenemos el número de posts totales
-    public function get_all_posts()
-    {
+    public function get_all_posts($clasificacion){
          try {
 
-            $sql = "SELECT COUNT(*) from publicacion_bancos";
+            $sql = "SELECT COUNT(*) from publicacion_bancos 
+            WHERE estado = 0 and fk_clasificacion_publicacion = '$clasificacion'";
             $query = $this->con->prepare($sql);
             $query->execute();
 
@@ -52,7 +52,7 @@ class Paginacion{
 
 
     //creamos los enlaces de nuestra paginación
-    public function crea_links(){
+    public function crea_links($clasificacion){
 
         //html para retornar
         $html = "";
@@ -64,7 +64,7 @@ class Paginacion{
         $limit = $_SESSION["limit"];
 
         //total de enlaces que existen
-        $totalPag = floor($this->get_all_posts()/$limit);
+        $totalPag = floor($this->get_all_posts($clasificacion)/$limit);
 
         //links delante y detrás que queremos mostrar
         $pagVisibles = 2;
@@ -139,7 +139,7 @@ class Paginacion{
     }
 
 
-    public function get_posts($offset = 0, $limit = 10){
+    public function get_posts($offset = 0, $limit = 10,$clasificacion){
         if($offset == 0){
             $_SESSION["actual"] = 1;
         }else{
@@ -148,7 +148,8 @@ class Paginacion{
         $_SESSION["limit"] = $limit;
         try {
 
-            $sql = "SELECT titulo,descripcion,fecha FROM publicacion_bancos LIMIT ?,?";
+            $sql = "SELECT id_publicacion_bancos,titulo,descripcion,fecha FROM publicacion_bancos
+            WHERE estado = 0 and fk_clasificacion_publicacion = '$clasificacion' LIMIT ?,?";
             $query = $this->con->prepare($sql);
             $query->bindValue(1, (int) $offset, PDO::PARAM_INT);
             $query->bindValue(2, (int) $limit, PDO::PARAM_INT);
@@ -170,7 +171,7 @@ class Paginacion{
 
     }
 
-    public function get_postsBuscador($offset = 0, $limit = 10,$valor){
+    public function get_postsBuscador($offset = 0, $limit = 10,$valor,$clasificacion){
         if($offset == 0){
             $_SESSION["actual"] = 1;
         }else{
@@ -179,8 +180,9 @@ class Paginacion{
         $_SESSION["limit"] = $limit;
         try {
 
-            $sql = "SELECT titulo,descripcion,fecha FROM publicacion_bancos 
-            WHERE titulo LIKE '%".$valor."%'  OR 
+            $sql = "SELECT id_publicacion_bancos,titulo,descripcion,fecha FROM publicacion_bancos 
+            WHERE estado = 0 and fk_clasificacion_publicacion = '$clasificacion' and
+             titulo LIKE '%".$valor."%'  OR 
             descripcion LIKE '%".$valor."%'  OR 
             fecha LIKE '%".$valor."%'  
             LIMIT ?,?";

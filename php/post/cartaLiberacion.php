@@ -1,5 +1,5 @@
 <?php require_once '../vistas/cabezera.php'; ?>
-
+<?php if($user->getTipo() == 0 || $user->getTipo() == 1){?>
 <?php require_once '../vistas/sidebar.php'; ?>
   
 <?php require_once '../vistas/labelPerfil.php'; ?>
@@ -59,3 +59,10 @@
 <?php require_once '../vistas/footer.php'; ?>
 
 <?php require_once '../vistas/bloqueScriptView.php'; ?>
+
+<?php }else{
+        $host  = $_SERVER['HTTP_HOST'];
+
+        header("Location: http://$host/proyectoWeb/");
+        exit;
+    } ?>

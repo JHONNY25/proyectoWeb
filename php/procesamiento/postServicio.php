@@ -1,4 +1,3 @@
-
 <?php require_once '../vistas/cabezera.php'; ?>
 <?php if($user->getTipo() == 1){?>
 <?php require_once '../vistas/sidebar.php'; ?>
@@ -10,7 +9,7 @@
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Residencias</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Servicio social</h6>
             </div>
             <div class="card-body">
               <div class="d-flex justify-content-end mb-3">
@@ -61,9 +60,6 @@
           </div>
         </div>
       </div>
-
-
-    
 <?php require_once '../vistas/footer.php'; ?>
 
   <!-- Bootstrap core JavaScript-->
@@ -75,13 +71,8 @@
 
   <!-- Custom scripts for all pages-->
   <script src="../../js/sb-admin-2.min.js"></script>
-  
-  <script type="text/javascript" src="ajax.js"></script>
+  <script type="text/javascript" src="ajax1.js"></script>
  
-</body>
-
-</html>
-
 <?php }else{
         $host  = $_SERVER['HTTP_HOST'];
 
