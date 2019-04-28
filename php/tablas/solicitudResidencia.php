@@ -1,10 +1,12 @@
 <?php require_once '../vistas/cabezera.php'; ?>
 
 <?php require_once '../vistas/sidebar.php'; ?>
-  
+
 <?php require_once '../vistas/labelPerfil.php'; ?>
 
+<?php require_once '../../phpMailer/Enviar.php'; ?>
 
+<?php $id='3' ?>
 <!-- Begin Page Content -->
 <div class="container-fluid">
             <ol class="breadcrumb">
@@ -60,6 +62,8 @@
   <script src="../../js/demo/datatables-demo.js"></script>
   <script src="../../js/mostrarPublicaciones.js"></script>
   <script src="../../js/accionesResidencia.js"></script>
-</body>
+<script src="../../js/sweetalert2.all.min.js" type="text/javascript"></script>
 
-</html>
+  <script type="text/javascript" src="../../js/alertPublicaciones.js"></script>
+
+  <?php require_once '../vistas/modalBancoInfo.php'; ?>

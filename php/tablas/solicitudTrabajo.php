@@ -1,7 +1,7 @@
 <?php require_once '../vistas/cabezera.php'; ?>
 
 <?php require_once '../vistas/sidebar.php'; ?>
-  
+
 <?php require_once '../vistas/labelPerfil.php'; ?>
 
 <!-- Begin Page Content -->
@@ -59,6 +59,8 @@
   <script src="../../js/demo/datatables-demo.js"></script>
   <script src="../../js/mostrarPublicaciones.js"></script>
   <script src="../../js/accionesTrabajo.js"></script>
+  <script src="../../js/sweetalert2.all.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="../../js/alertPublicaciones.js"></script>
 </body>
 
 </html>
