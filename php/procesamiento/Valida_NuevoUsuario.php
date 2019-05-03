@@ -52,6 +52,23 @@
     }
   }
 
+  function existeCorreoEmp($correo){
+    global $conexion;
+    $stm = $conexion->prepare("SELECT correo FROM institucion WHERE correo = ?");
+
+    $stm->bind_param("s",$correo);
+    $stm->execute();
+    $stm->store_result();
+    $num = $stm->num_rows;
+    $stm->close();
+
+    if($num >0){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
 
   function obtIdUsuario($id){
     global $conexion;

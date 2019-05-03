@@ -1,14 +1,14 @@
 
 function obtenerDato(){
     $.ajax({
-      url:"../procesamiento/mostrarEmpresa.php",  
-      method:"POST",   
-      success:function(data){  
+      url:"../procesamiento/mostrarEmpresa.php",
+      method:"POST",
+      success:function(data){
            $('#dataTable #tblEmpresa').html(data);
-      } 
+      }
     });
   }
-  
+
   obtenerDato();
 
   function confirm(dato){
@@ -26,32 +26,32 @@ function obtenerDato(){
               eliminar(dato);
           }
         })
-  
+
   }
-  
-  function eliminar(dato){ 
+
+  function eliminar(dato){
           var datos = {
               "id": dato
           };
-              
+
             $.ajax({
               type:"POST",
               url: "tu archivo",
               data: datos,
               success:function(r){
                 if(r == 1){
-                    Swal.fire({ 
+                    Swal.fire({
                         title: '¡Eliminado!',
                         text: 'La publicación ha sido eliminada.',
                         type: 'success',
                         showConfirmButton: false,
                         timer: 2000
                       })
-                      
+
                       /*setTimeout(function(){
                         $("#tabla1").load("../procesamiento/mostrarResidencia.php");
                       },1500);*/
-                      
+
                 }else{
                   Swal.fire({
                     type: 'error',
@@ -63,18 +63,18 @@ function obtenerDato(){
             });
         return false;
       }
-  
-      $(document).on('click', '.view', function(){  
-        var dato = $(this).attr("id");  
-        if(dato != ''){  
-             $.ajax({  
-                  url:"tu archivo",  
-                  method:"POST",  
-                  data:{dato:dato},  
-                  success:function(data){  
-                       //$('#').html(data);  
-                       //$('#modal').modal('show');  
-                  }  
-             });  
-        }            
+
+      $(document).on('click', '.view', function(){
+        var dato = $(this).attr("id");
+        if(dato != ''){
+             $.ajax({
+                  url:"tu archivo",
+                  method:"POST",
+                  data:{dato:dato},
+                  success:function(data){
+                       //$('#').html(data);
+                       //$('#modal').modal('show');
+                  }
+             });
+        }
    }); 

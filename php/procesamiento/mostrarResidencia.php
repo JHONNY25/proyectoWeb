@@ -6,11 +6,11 @@ $datos = $publicacion->getPublicaciones(0,2);
 
 $contenido = '';
 
-    
+
         if($datos){
-          
+
           foreach($datos as $row):
- 
+
         $contenido .= "<tr class='fila' id=".$row['id_publicacion_bancos']. ">
             <td>".$row['titulo'] ."</td>
             <td>".$row['fecha'] ."</td>
@@ -23,15 +23,15 @@ $contenido = '';
             </td>
             </tr>";
 
-            endforeach;  
+            endforeach;
         }else{
 
             $contenido .= "<tr>
             <td colspan='4' class='text-center'>No hay datos</td>
             </tr>";
-           } 
-    
-      
+           }
+
+
 
 
   echo $contenido;

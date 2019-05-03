@@ -110,7 +110,7 @@
 
                                                 <div class="container" style="margin-top: 20px;">
 
-                                                    
+
   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#alumno" role="tab" aria-controls="pills-home" aria-selected="true">Alumno</a>
@@ -118,10 +118,10 @@
   <li class="nav-item">
     <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#empresa" role="tab" aria-controls="pills-profile" aria-selected="false">Empresa</a>
   </li>
-  
+
 </ul>
 <div class="tab-content" id="pills-tabContent">
- 
+
 
 
                                                         <div class="tab-pane fade show active " role="tabpanel" id="alumno" role="tabpanel" aria-labelledby="pills-profile-tab">
@@ -132,7 +132,7 @@
                                                                         <h6>Como Alumno puedes enviar una solicitud de registro en este apartado..</h6>
 
 
-                                                                        <hr>
+
 
                                                                         <?php require_once 'vistas/registrarUsuario.php'?>
 
@@ -153,22 +153,7 @@
                                        <div class="p-5">
                                       <h6>Como empresa puedes enviar una solicitud de registro en este apartado..</h6>
 
-                            <form action="php/procesamiento/empresa/insercionEmpresa.php" class="user" method="post">
-                                                                  <hr>
-                                 <h5>Datos Generales</h5>
-                             <div class="form-group">
-                         <input type="text" class="form-control form-control-user" name="nombre_emp"  placeholder="Nombre de la empresa" required maxlength="35" minlength="20"  >
-                                                               </div>
-                        <div class="form-group">
-                        <input type="tel"  class="form-control form-control-user" name="telefono" maxlength="10" placeholder="Telefono" required  pattern="[0-9]{10}" >
-                         </div>
-                        <div class="form-group">
-                    <input type="email" class="form-control form-control-user" name="correo" a placeholder="Correo electronico" required maxlength="40" minlength="25" >
-                                       </div>
-                                      <hr>
-                                         <button type="submit" class="btn btn-primary">Enviar Registro</button>
-                                            <hr>
-                                         </form>
+                            <?php require_once 'vistas/registrarEmpresa.php'?>
 
                                                                     </div>
                                                                 </div>
@@ -177,7 +162,7 @@
                                                     </div>
 </div>
 
-                                                   
+
                                                 </div>
 
 
