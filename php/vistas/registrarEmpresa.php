@@ -206,6 +206,9 @@
 
 
   <div class="form-group">
+
+    <p class="text-danger">Atención: </p><p>Asegurate de verificar tus datos, ya que de haber
+    un error serás rechazado y tendrás que reintentar tu registro con los datos correctos.</p>
   </div>
   <p><input id="boton2" type="submit" name="newEmp" value="Registrar Usuario" href="#" class="btn btn-inicio btn-user btn-block" />
   </p>
