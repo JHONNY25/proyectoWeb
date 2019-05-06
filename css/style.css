@@ -199,6 +199,17 @@
     overflow-y: scroll;
     height: 300px; }
 
+    .example-2 {
+        position: relative;
+        overflow-y: scroll;
+        height: 550px; }
+
+    .notify:active{
+        background: powderblue;
+    }
+
+
+
 @media screen and (max-width: 991px){
     .text-inicio{
         display: none !important;
