@@ -80,7 +80,7 @@
         public function existeUsuario($usuario, $password){
             $user = trim($usuario);
     
-            $sql = "select * from usuario where usuario = '$user' where estado =1";
+            $sql = "select * from usuario where usuario = '$user' && estado =1";
             $query = mysqli_query($this->con,$sql);
     
     
