@@ -72,7 +72,10 @@
   <!-- Custom scripts for all pages-->
   <script src="../../js/sb-admin-2.min.js"></script>
   <script type="text/javascript" src="ajax1.js"></script>
- 
+  <script type="text/javascript" src="../../js/listaNotificacion.js"></script>
+  </body>
+
+</html>
 <?php }else{
         $host  = $_SERVER['HTTP_HOST'];
 
