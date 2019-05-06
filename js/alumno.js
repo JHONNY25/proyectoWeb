@@ -104,9 +104,9 @@ function eliminar(dato,mensaje,asunto,destino,nombre){
     function aceptarAlu(dato,mensaje,asunto,destino,nombre){
             var datos = {
                 "id": dato,
-                "mensaje":"<p><img style='display: block; margin-left: auto; margin-right: auto;' src='http://drive.google.com/uc?export=view&id=1Zw8krE9QgMdUtBNkjRHu-VfwoLxsFHgU' alt='' width='225' height='140' /></p> <table style='height: 152px; margin-left: auto; margin-right: auto;' width='410'> <tbody> <tr> <td style='width: 400px;'> <h3 style='text-align: center;'>&iexcl;Haz sido aceptado en el portal de vinculaci&oacute;n!.</h3> <h3 style='text-align: center;'>ya puedes iniciar sesi&oacute;n y comenzar con tustramites</h3> </td> </tr> </tbody> </table> <p>&nbsp;</p> <p><strong>&nbsp;</strong></p>",
+                "mensaje":"<p><img style='display: block; margin-left: auto; margin-right: auto;' src='http://drive.google.com/uc?export=view&id=1Zw8krE9QgMdUtBNkjRHu-VfwoLxsFHgU' alt='' width='225' height='140' /></p> <table style='height: 152px; margin-left: auto; margin-right: auto;' width='410'> <tbody> <tr> <td style='width: 400px;'> <h3 style='text-align: center;'>&iexcl;Haz sido aceptado en el portal de vinculaci&oacute;n!.</h3> <h3 style='text-align: center;'>ya puedes iniciar sesi&oacute;n y comenzar con tus tramites</h3> </td> </tr> </tbody> </table> <p>&nbsp;</p> <p><strong>&nbsp;</strong></p>",
                 "asunto":"ITES Los Cabos. Haz sido aceptado en el portal de vinculacion",
-                "mensajeNoHTML":"¡Haz sido aceptado en el portal de vinculación!. ya puedes iniciar sesión y comenzar con tustramites",
+                "mensajeNoHTML":"¡Haz sido aceptado en el portal de vinculación!. ya puedes iniciar sesión y comenzar con tus tramites",
                 "destino":destino,
                 "nombre":nombre
 

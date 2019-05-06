@@ -3,10 +3,10 @@
     require_once 'model/conexion.php';
 
     class User extends Conexion{
-        
+
         protected $usuario;
         protected $pass;
-        
+
         //datos de usuario
         protected $carrera;
         protected $nombrePersona;
@@ -79,21 +79,21 @@
 
         public function existeUsuario($usuario, $password){
             $user = trim($usuario);
-    
-            $sql = "select * from usuario where usuario = '$user' where estado =1";
+
+            $sql = "select * from usuario where usuario = '$user' && estado =1";
             $query = mysqli_query($this->con,$sql);
-    
-    
+
+
             if ($query && mysqli_num_rows($query) == 1) {
-                
+
                 //comprobar la contraseña
-               
+
                $arreglo = mysqli_fetch_assoc($query);
                $verifica = password_verify($password, $arreglo['contrasena']);
-    
+
                 if($verifica){
                     return true;
-    
+
                 }else{
                     return false;
                 }
@@ -105,7 +105,7 @@
 
         public function setUser($usuario){
             $user = trim($usuario);
-    
+
             $sql = "select * from usuario where usuario = '$user'";
             $user = mysqli_query($this->con,$sql);
 
@@ -121,13 +121,13 @@
 
         public function getDetallesUsuario($usuario){
             $user = trim($usuario);
-    
+
             $sql = "CALL getDetallesUsuario('$user')";
             $user = mysqli_query($this->con,$sql);
 
             while($row = mysqli_fetch_array($user)){
 
-                
+
                 $this->nombrePersona = $row['nombre'];
                 $this->id = $row['id_usuario'];
 
@@ -153,7 +153,7 @@
 
         public function NombrePersona($usuario){
             $user = trim($usuario);
-    
+
             $sql = "CALL getNombreUsuario('$user')";
             $user = mysqli_query($this->con,$sql);
 

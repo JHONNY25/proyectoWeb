@@ -29,7 +29,7 @@ $mail->Helo = "www.squirrelsoft.ml"; //Muy importante para que llegue a hotmail 
     $mail->Host       = 'smtp-mail.outlook.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth   = true;                            // Enable SMTP authentication
     $mail->Username   = 'vinculacion_ITES_Cabo@outlook.com';      //vinculacion.ites.cabos@gmail.com               // SMTP username
-    $mail->Password   = 'vinculacionITES';                               // SMTP password
+    $mail->Password   = 'vinculacionITES2019';                               // SMTP password
     $mail->SMTPSecure = 'starttls';                                  // Enable TLS encryption, `ssl` also accepted
     $mail->Port       = 587;                                    // TCP port to connect to
 
