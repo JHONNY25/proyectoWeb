@@ -109,11 +109,11 @@ $('.open-AddBookDialog').on('click',function () {
     var carrera = $(this).data("carrera");
     var kardex = $(this).data("kardex");
     var ruta = '../../upload/kardex/'+kardex;
-    $("[name='control']").val(id);
-    $("[name='nombre']").val(nombre);
-    $("[name='correo']").val(correo);
-    $("[name='telefono']").val(telefono);
-    $("[name='carrera']").val(carrera);
+    $("#nombre").text(nombre);
+    $("#control").text(id);
+    $("#correo").text(correo);
+    $("#telefono").text(telefono);
+    $("#carrera").text(carrera);
     $("[name='imagen']").attr('src', ruta);
     $("[name='detImagen']").attr('href', ruta);
     $("[name='abrir']").attr('href', ruta);

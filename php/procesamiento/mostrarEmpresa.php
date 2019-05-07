@@ -68,12 +68,12 @@ $('.open-AddBookDialog').on('click',function () {
     var municipio = $(this).data("municipio");
     var correo = $(this).data("correo");
     var telefono = $(this).data("telefono");
-    $("[name='nombre']").val(nombre);
-    $("[name='calle']").val(calle);
-    $("[name='colonia']").val(colonia);
-    $("[name='municipio']").val(municipio);
-    $("[name='correo']").val(correo);
-    $("[name='telefono']").val(telefono);
+    $("#nombre").text(nombre);
+    $("#calle").text(calle);
+    $("#colonia").text(colonia);
+    $("#municipio").text(municipio);
+    $("#correo").text(correo);
+    $("#telefono").text(telefono);
 });
 </script>
 

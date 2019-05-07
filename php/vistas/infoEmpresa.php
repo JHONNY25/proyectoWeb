@@ -1,30 +1,39 @@
 <form class="user" action="index.html" method="post">
-  <div class="form-group">
-    <h4>Nombre de la empresa
-    <input type="text" class="form-control form-control-user" name="nombre" aria-describedby="emailHelp" placeholder="Nombre" value= "ASDASDA" readonly></h4>
-  </div>
 
-  <div class="form-group">
-    <h4>Calle
-    <input type="text" class="form-control form-control-user" name="calle" aria-describedby="emailHelp" placeholder="Calle" value= "ASDASDA" readonly></h4>
-  </div>
 
-  <div class="form-group">
-    <h4>Colonia
-    <input type="text" class="form-control form-control-user" name="colonia" aria-describedby="emailHelp" placeholder="colonia" value= "ASDASDA" readonly></h4>
-  </div>
+  <div class="row text-center">
+                <div class="col-12">
 
-  <div class="form-group">
-    <h4>Municipio
-    <input type="text" class="form-control form-control-user" name="municipio" aria-describedby="emailHelp" placeholder="Municipio" value= "ASDASDA" readonly></h4>
-  </div>
+                  <div class="form-group">
+                   <h5>Nombre</h5>
+                  <label for="" id="nombre"></label>
+                  </div>
 
-<div>
-  <h4>Correo
-  <input type="text" class="form-control form-control-user" name="correo" aria-describedby="emailHelp" placeholder="Nombre" value= "ASDASDA" readonly></h4>
-</div>
+                  <div class="form-group">
+                  <h5>Calle</h5>
+                  <label for="" id="calle"></label>
+                  </div>
 
-  <div class="form-group">
-    <h4>Teléfono
-    <input type="text" class="form-control form-control-user" name="telefono" aria-describedby="emailHelp" placeholder="Teléfono" value= "ASDASDA" readonly></h4>
-  </div>
+                  <div class="form-group">
+                  <h5>Colonia</h5>
+                  <label for="" id="colonia"></label>
+                  </div>
+
+                  <div class="form-group">
+                  <h5>Municipio</h5>
+                  <label for="" id="municipio"></label>
+                  </div>
+
+                  <div class="form-group">
+                  <h5>Correo</h5>
+                  <label for="" id="correo"></label>
+                  </div>
+
+                  <div class="form-group">
+                  <h5>Teléfono</h5>
+                  <label for="" id="telefono"></label>
+                  </div>
+
+                </div>
+
+    </div>

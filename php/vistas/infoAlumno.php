@@ -1,28 +1,33 @@
-<form class="user" action="index.html" method="post">
-  <div class="form-group">
-    <h4>Nombre
-    <input type="text" maxlength="24" class="form-control form-control-user" name="nombre" aria-describedby="emailHelp" placeholder="Nombre" value= "ASDASDA" readonly></h4>
-  </div>
+  <div class="row text-center">
+                <div class="col-12">
 
-  <div class="form-group">
-    <h4>Numero de control
-    <input type="text" maxlength="24" class="form-control form-control-user" name="control" aria-describedby="emailHelp" placeholder="Nombre" value= "ASDASDA" readonly></h4>
-  </div>
+                  <div class="form-group">
+                   <h5>Nombre</h5>
+                  <label for="" id="nombre"></label>
+                  </div>
 
-  <div class="form-group">
-    <h4>Correo
-    <input type="text" maxlength="24" class="form-control form-control-user" name="correo" aria-describedby="emailHelp" placeholder="Nombre" value= "ASDASDA" readonly></h4>
-  </div>
+                  <div class="form-group">
+                   <h5>Número de control</h5>
+                  <label for="" id="control"></label>
+                  </div>
 
-  <div class="form-group">
-    <h4>Teléfono
-    <input type="text" maxlength="24" class="form-control form-control-user" name="telefono" aria-describedby="emailHelp" placeholder="Nombre" value= "ASDASDA" readonly></h4>
-  </div>
+                  <div class="form-group">
+                   <h5>Carrera</h5>
+                  <label for="" id="carrera"></label>
+                  </div>
 
-  <div class="form-group">
-    <h4>Carrera
-    <input type="text" maxlength="24" class="form-control form-control-user" name="carrera" aria-describedby="emailHelp" placeholder="Nombre" value= "ASDASDA" readonly></h4>
-  </div>
+                  <div class="form-group">
+                   <h5>Correo</h5>
+                  <label for="" id="correo"></label>
+                  </div>
+
+                  <div class="form-group">
+                   <h5>Teléfono</h5>
+                  <label for="" id="telefono"></label>
+                  </div>
+
+                </div>
+    </div>
 
 <div class="form-group">
   <h4>kardex:

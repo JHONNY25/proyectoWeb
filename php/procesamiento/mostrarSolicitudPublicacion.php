@@ -33,6 +33,7 @@ if(isset($_POST['dato'])){
                 data-correo = \"".$row['correo']."\"
                 data-nombre = \"".$row['nombre']."\"
                 data-titulo = \"".$row['titulo']."\"
+                data-accion = \"".$_POST['dato']."\"
 
                 href='' class='open-AddBookDialog btn btn-info btn-circle mr-2' data-toggle='modal' data-target='#modalInfo'>
                  <i class='fas fa-eye'></i></a>
@@ -79,11 +80,17 @@ $('.open-AddBookDialog').on('click',function () {
     var correo = $(this).data("correo");
     var nombre = $(this).data("nombre");
     var titulo = $(this).data("titulo");
-    $("[name='empresa']").val(empresa);
-    $("[name='correo']").val(correo);
-    $("[name='para']").val(nombre);
-    $("[name='proyecto']").val(titulo);
-    $("[name='descripcion']").val(descripcion);
-    $("[name='fecha']").val(fecha);
+    var accion = $(this).data("accion");
+
+    $("#empresa").text(empresa);
+    $("#desc").text(descripcion);
+    $("#fecha").text(fecha);
+    $("#correo").text(correo);
+    $("#para").text(nombre);
+    $("#proyecto").text(titulo);
+    $("#vacantes").text(vacantes);
+    if (accion!=3) {
+      $("#vacantesDiv").hide();
+    }
 });
 </script>
