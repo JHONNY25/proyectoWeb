@@ -26,23 +26,24 @@
 
                   <div class="row text-center">
                   <div class="col-6">
-                  
+
                   <div class="form-group">
                   <h5>Nombre</h5>
-                  <?php  
+                  <?php
                   $user->setUser($sesion->getSesion());
                   $usuario = $user->getNombre();
-                  $user->getDetallesUsuario($usuario); 
+                  $user->getDetallesUsuario($usuario);
                   ?>
 
-                    <label for=""><?php echo $user->getNombrePersona(); ?></label>
-                  
+                    <label for=""><?php echo $user->getNombrePersona(); ?> <?php echo $user->getApellidoP(); ?> <?php echo $user->getApellidoM(); ?></label>
+
                     </div>
 
-                    
+
                     <?php
                       if($user->getTipo() == 0 || $user->getTipo() == 1){
                     ?>
+                    <!--
                       <div class="form-group">
                       <h5>Apellido paterno</h5>
                         <label for=""><?php echo $user->getApellidoP(); ?></label>
@@ -51,10 +52,11 @@
                       <h5>Apellido materno</h5>
                         <label for=""><?php echo $user->getApellidoM(); ?></label>
                       </div>
+                      -->
                   <?php
                       }
                   ?>
-                  <?php 
+                  <?php
                     if(!is_null($user->getCarrera())){
                         echo "<div class='form-group'>";
                         echo "<h5>Carrera</h5>";
@@ -70,7 +72,7 @@
                     <h5>Colonia</h5>
                       <label for=""><?php echo $user->getColonia(); ?></label>
                     </div>
-                    
+
                     <div>
                     <h5>Calle</h5>
                       <label for=""><?php echo $user->getCalle(); ?></label>
@@ -148,27 +150,27 @@
 <!-- FORMULARIO PARA EMPRESA -->
 <div class="modal fade bd-example-modal-lg" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-md" role="document">
-          
+
               <div class="modal-content pl-5 pb-5 pr-5 pt-0">
-              <div class="modal-header">  
+              <div class="modal-header">
                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                         
-                </div>  
-                <div class="modal-body" >  
+
+                </div>
+                <div class="modal-body" >
                 <form action="" class="user" method="post" id="perfilEdit">
                   <h5>Datos Generales</h5>
-  
+
                   <div class="form-group">
                     <input id="nombre" type="text" class="form-control " name="nombre" aria-describedby="emailHelp" placeholder="Nombre de la empresa">
                   </div>
-                
+
                   <div class="form-group">
                     <input id="telefono" type="text" class="form-control " name="telefono" aria-describedby="emailHelp" placeholder="Telefono">
                   </div>
                   <div class="form-group">
                     <input id="correo" type="text" class="form-control " name="correo" aria-describedby="emailHelp" placeholder="Correo">
                   </div>
-                  
+
                   <hr>
                   <h5>Dirección de la empresa</h5>
                   <div class="form-group">
@@ -180,7 +182,7 @@
                   <div class="form-group">
                     <input id="calle" type="text" class="form-control " name="calle" aria-describedby="emailHelp" placeholder="Calle">
                   </div>
-                  
+
                   <div class="form-group">
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="" id="check">
@@ -201,7 +203,7 @@
                   <div class="form-group">
                   <input id="editar" type="submit" value="Modificar perfil" href="#" class="btn btn-inicio btn-user btn-block" />
                   </div>
-                  
+
                 <input type="hidden" name="id" id="clave" value="">
                 </form>
                 </div>
@@ -213,16 +215,16 @@
 <!-- FORMULARIO PARA ALUMNO -->
       <div class="modal fade bd-example-modal-lg" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-md" role="document">
-          
+
               <div class="modal-content pl-5 pb-5 pr-5 pt-0">
-                <div class="modal-header">  
+                <div class="modal-header">
                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                         
-                </div>  
-                <div class="modal-body" >  
+
+                </div>
+                <div class="modal-body" >
                 <form action="" class="user" method="post" id="perfilEdit2">
                   <h5>Datos Generales</h5>
- 
+
                   <div class="form-group">
                     <input id="telefono2" type="text" class="form-control " name="telefono" aria-describedby="emailHelp" placeholder="Telefono">
                   </div>
@@ -240,7 +242,7 @@
                   </div>
 
                   <h5 class="contra">Contraseña</h5>
- 
+
                   <div class="form-group">
                     <input id="passalumno" type="password" class="form-control " name="pass1" aria-describedby="emailHelp" placeholder="Nueva contraseña">
                   </div>
@@ -250,7 +252,7 @@
                   <div class="form-group">
                   <input id="editar2" type="submit" value="Modificar perfil" href="#" class="btn btn-inicio btn-user btn-block" />
                   </div>
-                  
+
                 <input type="hidden" name="id2" id="clave2" value="">
                 </form>
                 </div>
@@ -262,16 +264,16 @@
 <!-- FORMULARIO PARA ADMIN -->
 <div class="modal fade bd-example-modal-lg" id="modal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-md" role="document">
-          
+
               <div class="modal-content pl-5 pb-5 pr-5 pt-0">
-              <div class="modal-header">  
+              <div class="modal-header">
                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                         
-                </div>  
-                <div class="modal-body" >  
+
+                </div>
+                <div class="modal-body" >
                 <form action="" class="user" method="post" id="perfilEdit3">
                   <h5>Datos Generales</h5>
-   
+
                     <div class="form-group">
                     <input id="nombre3" type="text" class="form-control " name="nombre2" aria-describedby="emailHelp" placeholder="Nombre">
                   </div>
@@ -281,7 +283,7 @@
                   <div class="form-group">
                     <input id="apeM" type="text" class="form-control " name="apeM" aria-describedby="emailHelp" placeholder="Apellido materno">
                   </div>
-                  
+
 
                   <div class="form-group">
                     <input id="telefono3" type="text" class="form-control " name="telefono2" aria-describedby="emailHelp" placeholder="Telefono">
@@ -289,7 +291,7 @@
                   <div class="form-group">
                     <input id="correo3" type="text" class="form-control " name="correo2" aria-describedby="emailHelp" placeholder="Correo">
                   </div>
-                  
+
                   <div class="form-group">
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="" id="check2">
@@ -310,7 +312,7 @@
                   <div class="form-group">
                   <input id="editar3" type="submit" value="Modificar perfil" href="#" class="btn btn-inicio btn-user btn-block" />
                   </div>
-                  
+
                 <input type="hidden" name="id2" id="clave3" value="">
                 </form>
                 </div>
