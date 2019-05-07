@@ -51,6 +51,29 @@ class Paginacion{
     }
 
 
+    public function getCountNotificacion(){
+        try {
+
+           $sql = "SELECT COUNT(*) from notificacion 
+           WHERE estado = 1";
+           $query = $this->con->prepare($sql);
+           $query->execute();
+
+           //si es true
+           if($query->rowCount() == 1)
+           {
+
+                return $query->fetchColumn();
+
+           }
+
+       }catch(PDOException $e){
+
+           print "Error!: " . $e->getMessage();
+
+       }
+   }
+
     //creamos los enlaces de nuestra paginación
     public function crea_links($clasificacion){
 
