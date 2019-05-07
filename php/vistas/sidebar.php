@@ -83,11 +83,7 @@
 </div>
 
 <li class="nav-item">
-<<<<<<< HEAD
-  <a class="nav-link" href="../tablas/notificacion.php">
-=======
   <a class="nav-link" href="../tablas/notificacion">
->>>>>>> jonathan
     <i class="fas fa-bell fa-fw"></i>
     <span>Notificaciones</span></a>
 </li>
