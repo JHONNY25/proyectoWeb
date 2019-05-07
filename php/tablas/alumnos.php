@@ -49,11 +49,7 @@
                         
                       </td>
                     </tr>
-                  <?php endforeach; }else{?>
-                    <tr>
-                    <td colspan="4" class="text-center">No hay datos</td>
-                    </tr>
-                  <?php } ?>
+                  <?php endforeach; }?>
                   </tbody>
                 </table>
               </div>
@@ -62,6 +58,31 @@
 
   </div>
         <!-- /.container-fluid -->
+<!-- MODAL TABLA DE SERVICIOS ACTIVOS -->
+        <div class="modal fade bd-example-modal-lg" id="modalDocs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+          <!-- Nested Row within Card Body -->
+              <div class="modal-content p-5">
+              <div class="table-responsive">
+              <table class="table table-striped table-hover rounded" id="dataTable" width="100%" cellspacing="0">
+                  <thead class="azul-bajo text-white rounded">
+                    <tr>
+                      <th>Nombre</th>
+                      <th>N° control</th>
+                      <th>Correo</th>
+                      <th>Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody id="servicios">
+                  
+                  </tbody>
+                </table>
+              </div>
+          </div>
+        </div>
+      </div>
+</div>
+
                             
 
     

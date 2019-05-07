@@ -7,21 +7,6 @@
 <?php require_once '../../phpMailer/Enviar.php'; ?>
 
 
-
-
-
-<?php
-
-$rechazado = "";
-$rechazadoAsunto = "";
-
-  require_once '../procesamiento/alumno.php';
-  $listado = new Alumno();
-
-  $resp = $listado->listarAlumnoInactivo();
-
-  if($resp){
-?>
       <div class="container-fluid">
         <ol class="breadcrumb mt-3">
             <li class="breadcrumb-item">
@@ -47,7 +32,19 @@ $rechazadoAsunto = "";
                     </tr>
                   </thead>
                   <tbody>
-                  <?php foreach($resp as $row): ?>
+                  <?php 
+                  
+                  $rechazado = "";
+                  $rechazadoAsunto = "";
+
+                    require_once '../procesamiento/alumno.php';
+                    $listado = new Alumno();
+
+                    $resp = $listado->listarAlumnoInactivo();
+
+                    if($resp){
+
+                  foreach($resp as $row): ?>
                     <tr>
                       <td id="fila"><?php echo $row['nombre'] ." ". $row['apellido_paterno']. " " . $row['apellido_materno']; ?></td>
                       <td><?php echo $row['numero_control']; ?></td>
