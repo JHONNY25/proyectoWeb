@@ -250,7 +250,16 @@
 
   <!-- Page level custom scripts -->
   <script src="../../js/demo/datatables-demo.js"></script>
+<<<<<<< HEAD
   <script type="text/javascript" src="../../js/listaNotificacion.js"></script>
+=======
+  <script src="../../js/listaNotificacion.js"></script>
+
+
+</body>
+
+</html>
+>>>>>>> jonathan
 
 <?php }else{
         $host  = $_SERVER['HTTP_HOST'];
