@@ -13,10 +13,19 @@
 
 <!-- Topbar Navbar -->
 <ul class="navbar-nav ml-auto">
+<<<<<<< HEAD
 
 <?php if($user->getTipo() == 1){ ?>
   <!-- Nav Item - Alerts -->
   <li class="nav-item dropdown no-arrow mx-1" id="listaNotificaciones">
+=======
+<?php if($user->getTipo() == 1){ ?>
+  <!-- Nav Item - Alerts -->
+  <li class="nav-item dropdown no-arrow mx-1" id="listaNotificaciones">
+
+  </li>
+<?php } ?>
+>>>>>>> jonathan
 
   </li>
 <?php } ?>
