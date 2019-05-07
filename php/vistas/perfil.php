@@ -87,7 +87,7 @@
                   <?php
                   if(!is_null($user->getNumeroControl())){
                         echo "<div class='form-group'>";
-                        echo "<h5>Numero de control</h5>";
+                        echo "<h5>Número de control</h5>";
                         echo  "<label >" . $user->getNumeroControl() ."</label>";
                         echo "</div>";
                     }
@@ -108,7 +108,7 @@
                     <label for=""><?php echo $user->getCorreo(); ?></label>
                   </div>
                   <div class="form-group">
-                  <h5>Telefono</h5>
+                  <h5>Teléfono</h5>
                     <label for=""><?php echo $user->getTelefono(); ?></label>
                   </div>
 
@@ -165,7 +165,7 @@
                   </div>
 
                   <div class="form-group">
-                    <input id="telefono" type="text" class="form-control " name="telefono" aria-describedby="emailHelp" placeholder="Telefono">
+                    <input id="telefono" type="text" class="form-control " name="telefono" aria-describedby="emailHelp" placeholder="Teléfono">
                   </div>
                   <div class="form-group">
                     <input id="correo" type="text" class="form-control " name="correo" aria-describedby="emailHelp" placeholder="Correo">
@@ -226,7 +226,7 @@
                   <h5>Datos Generales</h5>
 
                   <div class="form-group">
-                    <input id="telefono2" type="text" class="form-control " name="telefono" aria-describedby="emailHelp" placeholder="Telefono">
+                    <input id="telefono2" type="text" class="form-control " name="telefono" aria-describedby="emailHelp" placeholder="Teléfono">
                   </div>
                   <div class="form-group">
                     <input id="correo2" require type="text" class="form-control " name="correo2" aria-describedby="emailHelp" placeholder="Correo">
@@ -286,7 +286,7 @@
 
 
                   <div class="form-group">
-                    <input id="telefono3" type="text" class="form-control " name="telefono2" aria-describedby="emailHelp" placeholder="Telefono">
+                    <input id="telefono3" type="text" class="form-control " name="telefono2" aria-describedby="emailHelp" placeholder="Teléfono">
                   </div>
                   <div class="form-group">
                     <input id="correo3" type="text" class="form-control " name="correo2" aria-describedby="emailHelp" placeholder="Correo">
