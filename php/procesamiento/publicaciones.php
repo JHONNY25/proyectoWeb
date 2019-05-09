@@ -100,6 +100,21 @@ class Publicacion extends Conexion{
 
     }
 
+    public function getPublicacionesServicio($carrera){
+        $sql = "call ver_publicaciones_servicio('$carrera')";
+        $query = $this->con->query($sql);
+
+        $respuesta = $query->fetch_all(MYSQLI_ASSOC);
+
+        if($respuesta){
+            return $respuesta;
+
+            $respuesta->close();
+            $this->con->close();
+        }
+
+    }
+
     public function getPublicacionesInactivas($estado,$clasificacion){
         $sql = "call ver_publicacionInactiva('$estado','$clasificacion')";
         $query = $this->con->query($sql);

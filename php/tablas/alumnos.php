@@ -30,26 +30,8 @@
                       <th>Acciones</th>
                     </tr>
                   </thead>
-                  <tbody>
-                  <?php 
-                    require_once '../procesamiento/alumno.php';
-                    $listado = new Alumno();
-                  
-                    $resp = $listado->listarAlumno();
-                  
-                    if($resp){
-                      foreach($resp as $row): ?>
-                    <tr>
-                      <td><?php echo $row['nombre'] ." ". $row['apellido_paterno']. " " . $row['apellido_materno']; ?></td>
-                      <td><?php echo $row['numero_control']; ?></td>
-                      <td><?php echo $row['correo']; ?></td>
-                      <td class="acciones">
-                        <a href="" class="text-warning delete"><i class="fa fa-folder"></i></a>
-                        <a href="" class="text-danger delete"><i class="fa fa-user-times"></i></a>
-                        
-                      </td>
-                    </tr>
-                  <?php endforeach; }?>
+                  <tbody id="alumnos">
+
                   </tbody>
                 </table>
               </div>
@@ -58,35 +40,48 @@
 
   </div>
         <!-- /.container-fluid -->
-<!-- MODAL TABLA DE SERVICIOS ACTIVOS -->
-        <div class="modal fade bd-example-modal-lg" id="modalDocs" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-          <!-- Nested Row within Card Body -->
-              <div class="modal-content p-5">
-              <div class="table-responsive">
-              <table class="table table-striped table-hover rounded" id="dataTable" width="100%" cellspacing="0">
-                  <thead class="azul-bajo text-white rounded">
-                    <tr>
-                      <th>Nombre</th>
-                      <th>N° control</th>
-                      <th>Correo</th>
-                      <th>Acciones</th>
-                    </tr>
-                  </thead>
-                  <tbody id="servicios">
-                  
-                  </tbody>
-                </table>
-              </div>
+
+
+
+      <div class="modal fade bd-example-modal-lg" id="modalUsuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+          
+              <div class="modal-content pl-5 pb-5 pr-5 pt-0">
+              <div class="modal-header">  
+                     <button type="button" class="close" data-dismiss="modal">&times;</button>
+                         
+                </div>  
+                <div class="modal-body" id="detalleAlumno">  
+
+                </div>
+
           </div>
         </div>
       </div>
-</div>
-
                             
 
     
 <?php require_once '../vistas/footer.php'; ?>
 
+  <!-- Bootstrap core JavaScript-->
+  <script src="../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<?php require_once '../vistas/bloqueScriptTabla.php'; ?>
+  <!-- Core plugin JavaScript-->
+  <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="../../js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="../../vendor/datatables/jquery.dataTables.js"></script>
+  <script src="../../vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="../../js/demo/datatables-demo.js"></script>
+  <script src="../../js/sweetalert2.all.min.js" type="text/javascript"></script>
+  <script src="../../js/tableAlumno.js"></script>
+
+</body>
+
+</html>
