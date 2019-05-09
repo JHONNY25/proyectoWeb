@@ -1,20 +1,16 @@
 <?php require_once '../vistas/cabezera.php'; ?>
 <?php if($user->getTipo() == 0 || $user->getTipo() == 1){?>
 <?php require_once '../vistas/sidebar.php'; ?>
-  
+
 <?php require_once '../vistas/labelPerfil.php'; ?>
 
 <div class="container-fluid d-flex flex-wrap">
     <div class="col-md-6">
-    <form>
-        <div class="form-group">
-            <Strong><h4 id="section1">Agregar carta de liberación</h4></Strong>
-            <input type="file" class="form-control-file btn btn-add" id="exampleFormControlFile1">
-        </div>
-        <div>
-            <img src="../../img/carta.jpg" alt="carta liberación" class="mw-100">
-        </div>
-    </form>
+
+    <?php require_once '../vistas/subirCarta.php'; ?>
+
+    
+
     </div>
   <!-- Grid column -->
   <div class="col-md-6 mb-4">
@@ -55,7 +51,7 @@
   <!-- Grid column -->
   </div>
 
-    
+
 <?php require_once '../vistas/footer.php'; ?>
 
 <?php require_once '../vistas/bloqueScriptView.php'; ?>
