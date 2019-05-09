@@ -335,13 +335,7 @@
   <script src="../../js/sweetalert2.all.min.js" type="text/javascript"></script>
   <script src="../../js/validate.js"></script>
   <script src="../../js/edit.js"></script>
-<<<<<<< HEAD
   <script type="text/javascript" src="../../js/listaNotificacion.js"></script>
-=======
-  <script src="../../js/listaNotificacion.js"></script>
-
-
->>>>>>> jonathan
 </body>
 
 </html>

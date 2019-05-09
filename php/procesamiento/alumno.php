@@ -10,7 +10,21 @@ class Alumno extends Conexion{
 
     public function listarAlumno(){
         $sql = "CALL ver_alumnnos_activos()";
-        $ejecuta = $this->con->query($sql);
+        $ejecuta = $this->con->query($sql); 
+
+        $respuesta = $ejecuta->fetch_all(MYSQLI_ASSOC);
+
+        if($respuesta){
+            return $respuesta;
+
+            $respuesta->close();
+            $this->con->close();
+        }
+    }
+
+    public function verAlumno($id){
+        $sql = "CALL ver_alumno('$id')";
+        $ejecuta = $this->con->query($sql); 
 
         $respuesta = $ejecuta->fetch_all(MYSQLI_ASSOC);
 
