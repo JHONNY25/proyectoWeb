@@ -50,6 +50,20 @@ class Alumno extends Conexion{
         }
     }
 
+    public function listarAlumnoServicio(){
+        $sql = "CALL ver_todos_alumnos_servicio()";
+        $ejecuta = $this->con->query($sql);
+
+        $respuesta = $ejecuta->fetch_all(MYSQLI_ASSOC);
+
+        if($respuesta){
+            return $respuesta;
+
+            $respuesta->close();
+            $this->con->close();
+        }
+    }
+
     public function rechazarAlumno($control){
         $sql = "CALL rechazar_alumno()";
         $ejecuta = $this->con->query($sql);

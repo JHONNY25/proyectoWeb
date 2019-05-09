@@ -29,41 +29,7 @@
                       <th>Acciones</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                      <td>61</td>
-                      <td class="acciones">
-                        <a href="" class="notificacion"><i class="fas fa-bell fa-fw"></i></a>
-                        <a href="../post/cartaLiberacion.php" class="text-success subir-carta"><i class="fa fa-upload"></i></a>
-                        <a href="" class="text-danger delete"><i class="fa fa-user-times"></i></a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                      <td>61</td>
-                      <td class="acciones">
-                        <a href="" class="notificacion"><i class="fas fa-bell fa-fw"></i></a>
-                        <a href="" class="text-success subir-carta"><i class="fa fa-upload"></i></a>
-                        <a href="" class="text-danger delete"><i class="fa fa-user-times"></i></a>
-                      </td>
-                    </tr>
-                   
-                    <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                      <td>61</td>
-                      <td class="acciones">
-                        <a href="" class="notificacion"><i class="fas fa-bell fa-fw"></i></a>
-                        <a href="" class="text-success subir-carta"><i class="fa fa-upload"></i></a>
-                        <a href="" class="text-danger delete"><i class="fa fa-user-times"></i></a>
-                      </td>
-                    </tr>
+                  <tbody id="alumnoServicio">
                    
                   </tbody>
                 </table>
@@ -77,5 +43,26 @@
 
     
 <?php require_once '../vistas/footer.php'; ?>
+  <!-- Bootstrap core JavaScript-->
+  <script src="../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<?php require_once '../vistas/bloqueScriptTabla.php'; ?>
+  <!-- Core plugin JavaScript-->
+  <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="../../js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="../../vendor/datatables/jquery.dataTables.js"></script>
+  <script src="../../vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="../../js/demo/datatables-demo.js"></script>
+
+  <script src="../../js/solicitudServicio.js"></script>
+
+
+</body>
+
+</html>
