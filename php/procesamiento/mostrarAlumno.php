@@ -12,7 +12,7 @@ $contenido = '';
 
           foreach($datos as $row):
 
-        $contenido .= "<tr class='fila' id=".$row['id_usuario']. ">
+        $contenido .= "<tr class='fila' id=".$row['id_persona']. ">
             <td>".$row['nombre'] ." ". $row['apellido_paterno']. " " . $row['apellido_materno']."</td>
             <td>".$row['numero_control'] ."</td>
             <td>".$row['correo'] ."</td>

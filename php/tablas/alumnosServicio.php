@@ -1,7 +1,7 @@
 <?php require_once '../vistas/cabezera.php'; ?>
 
 <?php require_once '../vistas/sidebar.php'; ?>
-  
+
 <?php require_once '../vistas/labelPerfil.php'; ?>
 
       <div class="container-fluid">
@@ -30,7 +30,7 @@
                     </tr>
                   </thead>
                   <tbody id="alumnoServicio">
-                   
+
                   </tbody>
                 </table>
               </div>
@@ -39,9 +39,9 @@
 
   </div>
         <!-- /.container-fluid -->
-                            
 
-    
+
+
 <?php require_once '../vistas/footer.php'; ?>
   <!-- Bootstrap core JavaScript-->
   <script src="../../vendor/jquery/jquery.min.js"></script>
@@ -59,8 +59,10 @@
 
   <!-- Page level custom scripts -->
   <script src="../../js/demo/datatables-demo.js"></script>
-
+<script src="../../js/sweetalert2.all.min.js" type="text/javascript"></script>
   <script src="../../js/solicitudServicio.js"></script>
+  <script src="../../js/eliminarAlumnoServicio.js"></script>
+
 
 
 </body>

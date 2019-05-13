@@ -47,7 +47,7 @@ $mail->Timeout=60;
     $mail->send();
 
 } catch (Exception $e) {
-  echo 'Mensaje no se envió';
+
 }
     }
 }

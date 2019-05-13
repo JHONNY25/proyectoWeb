@@ -3,13 +3,13 @@
 <?php require_once '../vistas/sidebar.php'; ?>
 
 <?php require_once '../vistas/labelPerfil.php'; ?>
-
+<?php require_once '../procesamiento/carta.php'; ?>
 <div class="container-fluid d-flex flex-wrap">
     <div class="col-md-6">
 
     <?php require_once '../vistas/subirCarta.php'; ?>
 
-    
+
 
     </div>
   <!-- Grid column -->

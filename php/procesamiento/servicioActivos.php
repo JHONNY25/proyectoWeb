@@ -9,11 +9,11 @@ if(!empty($_POST['dato'])){
 
 $contenido = '';
 
-    
+
         if($datos){
-          
+
           foreach($datos as $row):
- 
+
         $contenido .= "<tr class='fila' id=".$row['id_publicacion_bancos']. ">
         <td>".$row['empresa'] ."</td>
             <td>".$row['titulo'] ."</td>
@@ -21,15 +21,15 @@ $contenido = '';
             <td>".$row['fecha'] ."</td>
             </tr>";
 
-            endforeach;  
+            endforeach;
         }else{
 
             $contenido .= "<tr>
             <td colspan='4' class='text-center'>No hay datos</td>
             </tr>";
-           } 
-    
-      
+           }
+
+
 
 
   echo $contenido;
