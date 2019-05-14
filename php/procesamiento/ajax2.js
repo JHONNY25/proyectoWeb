@@ -6,13 +6,15 @@ String.prototype.trim = function() { return this.replace(/^\s+|\s+$/g, ""); };
 
 $(document).on('keyup', '#buscador', function(){
 	var busqueda = $(this).val().trim();
+	if (!$('#noData').length) {
+			if(busqueda != ''){
+				buscador(busqueda,3);
+			}else{
+				$('.alerta').hide();
+				paginate();
+			}
+	  }
 
-	if(busqueda != ''){
-		buscador(busqueda,3);
-	}else{
-		$('.alerta').hide();
-		paginate();
-	}
 });
 
 $(document).on('click', '.page-link', function(){

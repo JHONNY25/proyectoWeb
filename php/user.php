@@ -20,6 +20,7 @@
         protected $calle;
         protected $municipio;
         protected $id;
+        protected $idcarrera;
 
         public function getColonia(){
             return $this->colonia;
@@ -27,6 +28,10 @@
 
         public function getId(){
             return $this->id;
+        }
+
+        public function getIdcarrera(){
+            return $this->idcarrera;
         }
 
         public function getCalle(){
@@ -147,6 +152,7 @@
                 if(isset($row['numero_control']) && isset($row['carrera'])){
                     $this->num_control= $row['numero_control'];
                     $this->carrera = $row['carrera'];
+                    $this->idcarrera = $row['id_carrera'];
                 }
             }
         }
