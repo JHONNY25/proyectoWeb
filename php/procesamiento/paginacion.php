@@ -118,6 +118,8 @@ class Paginacion{
 
         return $html;
     }
+
+
     public function get_posts($offset = 0, $limit = 10,$clasificacion,$carrera){
         if($offset == 0){
             $_SESSION["actual"] = 1;

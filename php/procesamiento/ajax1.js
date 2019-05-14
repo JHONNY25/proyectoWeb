@@ -89,7 +89,7 @@ function paginate(offset, limit){
 					$html += '<a id="'+ json.publicacion_bancos[datos].id_publicacion_bancos +'" class="detalle" href="" data-toggle="modal" data-target="#modalResident">';
 					$html += '<i class="fas fa-eye"></i>';
 					$html += ' '+'Ver detalles</a>';
-            	$html += "</div>";
+          $html += "</div>";
 			}
 
 			//cargamos los posts en el div paginacion
@@ -113,7 +113,7 @@ $(document).on('click', '.detalle', function(){
               data:{dato:dato},
               dataType:"json",  
               success:function(data){  
-				$('#titulo').html(data.titulo);
+									$('#titulo').html(data.titulo);
                    $('#empresa').html(data.empresa);
                    $('#descripcion').html(data.descripcion); 
                    $('#fecha').html(data.fecha);  

@@ -33,10 +33,62 @@
                   <p class="pt-1">Durante el servicio social se llevara a cabo un tramite, el cual será verificado por el personal de vinculación. </p>
                 </div>
                 <div>
-                Cuando el documento este con una <a href="" class="ml-1 text-primary"><i class="fas fa-check"></i></a>
-                significa que ha sido verificado por el personal, si no esta macada
+                Cuando el documento este con un <span class="text-info">Sí</span>
+                significa que ha sido verificado por el personal de vinculación, si es un <span class="text-info">NO</span>
                 significa que no ha sido verificado y estas a espera de revisión.
                 </div>
+
+                <a href="#" class="btn azul-bajo text-white btn-icon-split mb-2 mt-3" data-toggle='modal' data-target='#modalTable'>
+                        <span class="icon text-white-50">
+                            <i class="fas fa-upload"></i>
+                        </span>
+                        <span class="text">Subir documento</span>
+                    </a>
+
+                <h5 class="mt-2 mb-2">Documentos entregados:</h5>
+
+                <div class="table-responsive">
+              <table class=" table table-striped table-hover rounded" id="" width="100%" cellspacing="0">
+                  <thead class="azul-bajo text-white rounded">
+                    <tr>
+                      <th>Documento</th>
+                      <th>Notificaciones</th>
+                      <th>Aceptado</th>
+                    </tr>
+                  </thead>
+                  <tbody id="" >
+                    <tr>
+                      <td >Solicitud de servicio social</td>
+                      <td >
+                      <a href='' class='notificacion'><i class='fas fa-bell fa-fw'></i></a>
+                      </td>
+                      <td>Si</td>
+                    </tr>
+                    <tr>
+                      <td >Solicitud de prestador de servicio social</td>
+                      <td >
+                      <a href='' class='notificacion'><i class='fas fa-bell fa-fw'></i></a>
+                      </td>
+                      <td>Si</td>
+                    </tr>
+                    <tr>
+                      <td >Carta compromiso</td>
+                      <td >
+                      <a href='' class='notificacion'><i class='fas fa-bell fa-fw'></i></a>
+                      </td>
+                      <td>Si</td>
+                    </tr>
+                    <tr>
+                      <td >Constancia de tutorias (Departamento de desarrollo academico)</td>
+                      <td >
+                      <a href='' class='notificacion'><i class='fas fa-bell fa-fw'></i></a>
+                      </td>
+                      <td>No</td>
+                    </tr>
+     
+                  </tbody>
+                </table>
+              </div>
                 <?php
                     }else if($tipo == 0){
                   $usuario = $user->getNombre();
@@ -62,13 +114,11 @@
                     </div>
                     </div>
                   </div>
-                <?php
-                    }
-                ?>
-                
-                <h5 class="mt-2 mb-2">Documnetos entregados:</h5>
+
+                  <h5 class="mt-2 mb-2">Documnetos entregados:</h5>
                     
-                <div class="row pt-3">
+                
+                <div class="row pt-3" id="checks">
                   
                 <div class="col-6">
                 <form action="">
@@ -139,7 +189,10 @@
                   </form>
                 </div>
                 </div>
-
+                <?php
+                    }
+                ?>
+                
               </div>
             </div>
           </div>
@@ -250,17 +303,11 @@
 
   <!-- Page level custom scripts -->
   <script src="../../js/demo/datatables-demo.js"></script>
-<<<<<<< HEAD
   <script type="text/javascript" src="../../js/listaNotificacion.js"></script>
-=======
-  <script src="../../js/listaNotificacion.js"></script>
 
-
-</body>
+  </body>
 
 </html>
->>>>>>> jonathan
-
 <?php }else{
         $host  = $_SERVER['HTTP_HOST'];
 
