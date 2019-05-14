@@ -1,7 +1,7 @@
 <?php require_once '../vistas/cabezera.php'; ?>
 <?php if($user->getTipo() == 1){?>
 <?php require_once '../vistas/sidebar.php'; ?>
-  
+
 <?php require_once '../vistas/labelPerfil.php'; ?>
 
 <!-- Begin Page Content -->
@@ -55,7 +55,7 @@
 
                 </div>
                 <div class="p-5 row text-justify" id="descripcion">
-                    
+
                 </div>
           </div>
         </div>
@@ -72,17 +72,9 @@
   <!-- Custom scripts for all pages-->
   <script src="../../js/sb-admin-2.min.js"></script>
   <script type="text/javascript" src="ajax1.js"></script>
-<<<<<<< HEAD
+
   <script type="text/javascript" src="../../js/listaNotificacion.js"></script>
   </body>
-=======
- 
-  <script src="../../js/listaNotificacion.js"></script>
-
-
-</body>
->>>>>>> jonathan
-
 </html>
 <?php }else{
         $host  = $_SERVER['HTTP_HOST'];
