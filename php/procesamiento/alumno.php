@@ -22,6 +22,20 @@ class Alumno extends Conexion{
         }
     }
 
+    public function listarAlumnoSinServicio(){
+        $sql = "CALL alumnos_sin_servicio()";
+        $ejecuta = $this->con->query($sql); 
+
+        $respuesta = $ejecuta->fetch_all(MYSQLI_ASSOC);
+
+        if($respuesta){
+            return $respuesta;
+
+            $respuesta->close();
+            $this->con->close();
+        }
+    }
+
     public function verAlumno($id){
         $sql = "CALL ver_alumno('$id')";
         $ejecuta = $this->con->query($sql); 

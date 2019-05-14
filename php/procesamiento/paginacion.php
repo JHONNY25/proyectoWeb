@@ -162,7 +162,7 @@ class Paginacion{
     }
 
 
-    public function get_posts($offset = 0, $limit = 10,$clasificacion){
+    public function get_posts($offset = 0, $limit = 10,$clasificacion,$carrera){
         if($offset == 0){
             $_SESSION["actual"] = 1;
         }else{
@@ -172,7 +172,7 @@ class Paginacion{
         try {
 
             $sql = "SELECT id_publicacion_bancos,titulo,descripcion,fecha FROM publicacion_bancos
-            WHERE estado = 1| and fk_clasificacion_publicacion = '$clasificacion' LIMIT ?,?";
+            WHERE estado = 1 and fk_clasificacion_publicacion = '$clasificacion' and fk_carrera = '$carrera' LIMIT ?,?";
             $query = $this->con->prepare($sql);
             $query->bindValue(1, (int) $offset, PDO::PARAM_INT);
             $query->bindValue(2, (int) $limit, PDO::PARAM_INT);

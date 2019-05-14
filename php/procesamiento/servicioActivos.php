@@ -14,8 +14,8 @@ $contenido = '';
           
           foreach($datos as $row):
  
-        $contenido .= "<tr class='fila' id=".$row['id_publicacion_bancos']. ">
-        <td>".$row['empresa'] ."</td>
+        $contenido .= "<tr class='fila' id=".$row['id_publicacion']. ">
+        <td>".$row['nombre'] ."</td>
             <td>".$row['titulo'] ."</td>
             <td>".substr($row['descripcion'],0,60).'...'."</td>
             <td>".$row['fecha'] ."</td>
@@ -29,9 +29,7 @@ $contenido = '';
             </tr>";
            } 
     
-      
-
-
+  
   echo $contenido;
 }
 
