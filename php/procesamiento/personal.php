@@ -1,32 +1,34 @@
 <?php
+require_once '../path.php';
+require_once DIR_CONTROLLERS . 'PersonalController.php';
 
-require_once '../model/conexion.php';
+$controller = new PersonalController();
 
-class Personal extends Conexion{
+if (isset($_GET['action']) && !empty($_GET['action'])) {
+    $action = $_GET['action'];
 
-    public function __construct(){
-        parent::__construct();
+    switch ($action) {
+        case "registrar":
+            $controller->registrar();
+            break;
+        case "actualizar":
+            $controller->actualizar();
+            break;
+        case "detalles":
+            $controller->detalles();
+            break;
+        case "deshabilitar":
+            $controller->deshabilitar();
+            break;
+        case "existe-usuario":
+            $controller->existeUsuario();
+            break;
+        case "lista":
+            $controller->getListaPersonas();
+        case "existe-correo":
+            $controller->existeCorreo();
     }
 
-    public function listarPersonas(){
-        $sql = "CALL ver_persona_administrador()";
-        $ejecuta = $this->con->query($sql);
-
-        $respuesta = $ejecuta->fetch_all(MYSQLI_ASSOC);
-
-        if($respuesta){
-            return $respuesta;
-
-            $respuesta->close();
-            $this->con->close();
-        }
-    }
-
-    public function registrarPersonas(){
-        
-    }
-
-    public function modificarPersonas(){
-        
-    }
+} else {
+    $controller->index();
 }

@@ -265,7 +265,7 @@ Tramite Servicio Social
 
 <!-- Nav Item - Tables -->
 <li class="nav-item">
-  <a class="nav-link" href="php/tablas/personal">
+  <a class="nav-link" href="php/procesamiento/personal">
     <i class="fas fa-fw fa-users"></i>
     <span>Personal</span></a>
 </li>
