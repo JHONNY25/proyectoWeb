@@ -1,7 +1,7 @@
 <?php require_once '../vistas/cabezera.php'; ?>
 <?php if($user->getTipo() == 0 || $user->getTipo() == 1){?>
 <?php require_once '../vistas/sidebar.php'; ?>
-  
+
 <?php require_once '../vistas/labelPerfil.php'; ?>
 
 <div class="container-fluid">
@@ -38,11 +38,11 @@
                 significa que no ha sido verificado y estas a espera de revisión.
                 </div>
 
-                <a href="#" class="btn azul-bajo text-white btn-icon-split mb-2 mt-3" data-toggle='modal' data-target='#modalTable'>
+                <a href="cartaLiberacion.php?al=<?php echo $user->getId(); ?>" class="btn azul-bajo text-white btn-icon-split mb-2 mt-3">
                         <span class="icon text-white-50">
                             <i class="fas fa-upload"></i>
                         </span>
-                        <span class="text">Subir documento</span>
+                        <span class="text">Administrar documentos</span>
                     </a>
 
                 <h5 class="mt-2 mb-2">Documentos entregados:</h5>
@@ -85,7 +85,7 @@
                       </td>
                       <td>No</td>
                     </tr>
-     
+
                   </tbody>
                 </table>
               </div>
@@ -116,10 +116,10 @@
                   </div>
 
                   <h5 class="mt-2 mb-2">Documnetos entregados:</h5>
-                    
-                
+
+
                 <div class="row pt-3" id="checks">
-                  
+
                 <div class="col-6">
                 <form action="">
 
@@ -144,7 +144,7 @@
                     <label class="custom-control-label" for="doc4">Constancia de tutorias (Departamento de desarrollo academico)</label>
                   </div>
 
-                  
+
                   <div class="custom-control custom-checkbox check">
                     <input type="checkbox" class="custom-control-input" autocomplete="off" id="doc5" >
                     <label class="custom-control-label" for="doc5">Constancia de actividades escolares (Se solicita en vinculación)</label>
@@ -192,7 +192,7 @@
                 <?php
                     }
                 ?>
-                
+
               </div>
             </div>
           </div>
@@ -211,7 +211,7 @@
                   <h3>Documentos para tramite de servicio social</h3>
 
                   <p class="pt-1 text-danger">!! El servicio no se podra realizar con colaboradores del Instituto Tecnologico de Los Cabos. ¡¡</p>
-                
+
                 </div>
                 <div> Para poder realizar tu tramite debes contar con el 70% de creditos o proximo a acreditarlos.
                 </div>
@@ -253,7 +253,7 @@
 <?php require_once '../vistas/footer.php'; ?>
 
 <?php
-      if($tipo == 1){ 
+      if($tipo == 1){
     ?>
       <script>
       document.getElementById('doc1').disabled = true;

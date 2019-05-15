@@ -4,10 +4,13 @@
 
 <?php require_once '../vistas/labelPerfil.php'; ?>
 <?php require_once '../procesamiento/carta.php'; ?>
+<?php require_once '../procesamiento/procesarCarta.php'; ?>
 <div class="container-fluid d-flex flex-wrap">
     <div class="col-md-6">
 
-    <?php require_once '../vistas/subirCarta.php'; ?>
+
+
+<?php require_once '../procesamiento/selectDoc.php'; ?>
 
 
 
@@ -52,6 +55,8 @@
   </div>
 
 
+
+
 <?php require_once '../vistas/footer.php'; ?>
 
 <?php require_once '../vistas/bloqueScriptView.php'; ?>
@@ -61,4 +66,152 @@
 
         header("Location: http://$host/proyectoWeb/");
         exit;
-    } ?>
+    }
+
+    ?>
+<script src="../../js/documentos.js"></script>
+<?php
+
+//==============================================================================2
+if (isset($_POST['prestaServ'])) {
+  ?>
+  <script type="text/javascript">
+  document.getElementById("slct").selectedIndex = "1";
+  $(document).ready(function(){
+      if ($("#slct option:selected").val()=="2") {
+        $("#cartaSolicitudServSoc").hide();
+        $("#cartaSolicitudPrestServ").show();
+        $("#cartaCompromiso").hide();
+        $("#cartaPresentacion").hide();
+        $("#cartaAceptacion").hide();
+        $("#tresReportes").hide();
+        $("#cartaTerminacion").hide();
+        $("#cartaLiberacion").hide();
+      }
+    });
+  </script>
+  <?php
+}
+
+//==============================================================================3
+if (isset($_POST['compromiso'])) {
+  ?>
+  <script type="text/javascript">
+  document.getElementById("slct").selectedIndex = "2";
+  $(document).ready(function(){
+      if ($("#slct option:selected").val()=="3") {
+        $("#cartaSolicitudServSoc").hide();
+        $("#cartaSolicitudPrestServ").hide();
+        $("#cartaCompromiso").show();
+        $("#cartaPresentacion").hide();
+        $("#cartaAceptacion").hide();
+        $("#cartaReportes").hide();
+        $("#cartaTerminacion").hide();
+        $("#cartaLiberacion").hide();
+      }
+    });
+  </script>
+  <?php
+}
+
+if (isset($_POST['presentacion'])) {
+  ?>
+  <script type="text/javascript">
+  document.getElementById("slct").selectedIndex = "3";
+  $(document).ready(function(){
+      if ($("#slct option:selected").val()=="7") {
+        $("#cartaSolicitudServSoc").hide();
+        $("#cartaSolicitudPrestServ").hide();
+        $("#cartaCompromiso").hide();
+        $("#cartaPresentacion").show();
+        $("#cartaAceptacion").hide();
+        $("#tresReportes").hide();
+        $("#cartaTerminacion").hide();
+        $("#cartaLiberacion").hide();
+      }
+    });
+  </script>
+  <?php
+}
+
+if (isset($_POST['aceptacion'])) {
+  ?>
+  <script type="text/javascript">
+  document.getElementById("slct").selectedIndex = "4";
+  $(document).ready(function(){
+      if ($("#slct option:selected").val()=="8") {
+        $("#cartaSolicitudServSoc").hide();
+        $("#cartaSolicitudPrestServ").hide();
+        $("#cartaCompromiso").hide();
+        $("#cartaPresentacion").hide();
+        $("#cartaAceptacion").show();
+        $("#tresReportes").hide();
+        $("#cartaTerminacion").hide();
+        $("#cartaLiberacion").hide();
+      }
+    });
+  </script>
+  <?php
+}
+
+if (isset($_POST['reportes'])) {
+  ?>
+  <script type="text/javascript">
+  document.getElementById("slct").selectedIndex = "5";
+  $(document).ready(function(){
+      if ($("#slct option:selected").val()=="9") {
+        $("#cartaSolicitudServSoc").hide();
+        $("#cartaSolicitudPrestServ").hide();
+        $("#cartaCompromiso").hide();
+        $("#cartaPresentacion").hide();
+        $("#cartaAceptacion").hide();
+        $("#cartaReportes").show();
+        $("#cartaTerminacion").hide();
+        $("#cartaLiberacion").hide();
+      }
+    });
+  </script>
+  <?php
+}
+
+if (isset($_POST['terminacion'])) {
+  ?>
+  <script type="text/javascript">
+  document.getElementById("slct").selectedIndex = "6";
+  $(document).ready(function(){
+      if ($("#slct option:selected").val()=="10") {
+        $("#cartaSolicitudServSoc").hide();
+        $("#cartaSolicitudPrestServ").hide();
+        $("#cartaCompromiso").hide();
+        $("#cartaPresentacion").hide();
+        $("#cartaAceptacion").hide();
+        $("#tresReportes").hide();
+        $("#cartaTerminacion").show();
+        $("#cartaLiberacion").hide();
+      }
+    });
+  </script>
+  <?php
+}
+
+if (isset($_POST['liberacion'])) {
+  ?>
+  <script type="text/javascript">
+  document.getElementById("slct").selectedIndex = "7";
+  $(document).ready(function(){
+      if ($("#slct option:selected").val()=="12") {
+        $("#cartaSolicitudServSoc").hide();
+        $("#cartaSolicitudPrestServ").hide();
+        $("#cartaCompromiso").hide();
+        $("#cartaPresentacion").hide();
+        $("#cartaAceptacion").hide();
+        $("#tresReportes").hide();
+        $("#cartaTerminacion").hide();
+        $("#cartaLiberacion").show();
+      }
+    });
+  </script>
+  <?php
+}
+
+?>
