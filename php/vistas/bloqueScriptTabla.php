@@ -1,4 +1,5 @@
-  <!-- Bootstrap core JavaScript-->
+
+
   <script src="../../vendor/jquery/jquery.min.js"></script>
   <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -14,8 +15,6 @@
 
   <!-- Page level custom scripts -->
   <script src="../../js/demo/datatables-demo.js"></script>
-
-
 </body>
 
 </html>

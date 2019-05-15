@@ -17,10 +17,12 @@ class Paginacion{
         return $this->con->prepare($sql);
     }
     //obtenemos el número de posts totales
-    public function get_all_posts($clasificacion){
+    public function get_all_posts($clasificacion,$carrera){
          try {
+
             $sql = "SELECT COUNT(*) from publicacion_bancos
-            WHERE estado = 1 and fk_clasificacion_publicacion = '$clasificacion'";
+            WHERE estado = 1 and fk_clasificacion_publicacion = '$clasificacion'
+            and fk_carrera = '$carrera'";
             $query = $this->con->prepare($sql);
             $query->execute();
             //si es true
@@ -48,25 +50,29 @@ class Paginacion{
        }
    }
     //creamos los enlaces de nuestra paginación
-    public function crea_links($clasificacion){
+    public function crea_links($clasificacion,$carrera){
+
         //html para retornar
         $html = "";
         //página actual
         $actual_pag = $_SESSION["actual"];
         //limite por página
         $limit = $_SESSION["limit"];
+
+        $paginasExistente = $this->get_all_posts($clasificacion,$carrera);
         //total de enlaces que existen
-        $totalPag = floor($this->get_all_posts($clasificacion)/$limit);
+        $totalPag = floor($this->get_all_posts($clasificacion,$carrera)/$limit);
+
         //links delante y detrás que queremos mostrar
         $pagVisibles = 2;
-        if($actual_pag <= $pagVisibles)
-        {
+
+        if($actual_pag <= $pagVisibles){
             $primera_pag = 1;
         }else{
             $primera_pag = $actual_pag - $pagVisibles;
         }
-        if($actual_pag + $pagVisibles <= $totalPag)
-        {
+
+        if($actual_pag + $pagVisibles <= $totalPag){
             $ultima_pag = $actual_pag + $pagVisibles;
         }else{
             $ultima_pag = $totalPag;
@@ -92,6 +98,8 @@ class Paginacion{
             </ul>
         </nav>
 */
+        if($paginasExistente > 1 || $paginasExistente == 1){
+
         $html .= '<nav>';
         $html .= '<ul class="pagination">';
         $html .= ($actual_pag > 1) ?
@@ -107,14 +115,22 @@ class Paginacion{
             '<li class="page-item active"> <a class="page-link disabled" href="#">'.$i.'</a> </li>' :
             '<li class="page-item"> <a class="page-link" href="#" onclick="paginate('.(($z-1)*$limit).','.$limit.')">'.$i.'</a> </li>';
         }
-        $html .= ($actual_pag < $totalPag) ?
+
+        $html .= ($actual_pag <= $totalPag) ?
         '<li class="page-item"> <a href="#" class="page-link" onclick="paginate('.(($actual_pag)*$limit).','.$limit.')">Siguiente</a> </li>' :
-        '<li class="page-item "> <a href="#" class="page-link disabled">Siguiente</a> </li>';
-        $html .= ($actual_pag < $totalPag) ?
+        '<li class="page-item disabled"> <a href="#" class="page-link disabled">Siguiente</a> </li>';
+
+        $html .= ($actual_pag <= $totalPag) ?
         '<li class="page-item"> <a href="#" class="page-link" onclick="paginate('.(($totalPag)*$limit).','.$limit.')">Última</a> </li>' :
-        '<li class="page-item "> <a href="#" class="page-link disabled">Última</a> </li>';
+        '<li class="page-item disabled"> <a href="#" class="page-link disabled">Última</a> </li>';
+
         $html .= '</ul>';
         $html .= '</nav>';
+
+
+    }else if($paginasExistente == 0){
+        $html .= "<div id='noData' class='alert alert-danger' role='alert'>No hay publicaciones por el momento</div>";
+    }
 
         return $html;
     }
@@ -143,7 +159,8 @@ class Paginacion{
             print "Error!: " . $e->getMessage();
         }
     }
-    public function get_postsBuscador($offset = 0, $limit = 10,$valor,$clasificacion){
+
+    public function get_postsBuscador($offset = 0, $limit = 10,$valor,$clasificacion,$carrera){
         if($offset == 0){
             $_SESSION["actual"] = 1;
         }else{
@@ -153,9 +170,10 @@ class Paginacion{
         try {
             $sql = "SELECT id_publicacion_bancos,titulo,descripcion,fecha FROM publicacion_bancos
             WHERE estado = 1 and fk_clasificacion_publicacion = '$clasificacion' and
-             titulo LIKE '%".$valor."%'  OR
-            descripcion LIKE '%".$valor."%'  OR
-            fecha LIKE '%".$valor."%'
+            fk_carrera = '$carrera' and
+             titulo LIKE '%$valor%'  OR
+            descripcion LIKE '%$valor%'  OR
+            fecha LIKE '%$valor%'
             LIMIT ?,?";
             $query = $this->con->prepare($sql);
             $query->bindValue(1, (int) $offset, PDO::PARAM_INT);

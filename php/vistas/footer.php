@@ -6,3 +6,5 @@
     <!-- End of Content Wrapper -->
   </div>
   <!-- End of Page Wrapper -->
+
+  <!-- Bootstrap core JavaScript-->

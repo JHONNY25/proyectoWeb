@@ -6,12 +6,13 @@ String.prototype.trim = function() { return this.replace(/^\s+|\s+$/g, ""); };
 
 $(document).on('keyup', '#buscador', function(){
 	var busqueda = $(this).val().trim();
-
-	if(busqueda != ''){
-		buscador(busqueda,1);
-	}else{
-		$('.alerta').hide();
-		paginate();
+	if (!$('#noData').length) {
+		if(busqueda != ''){
+			buscador(busqueda,1);
+		}else{
+			$('.alerta').hide();
+			paginate();
+		}
 	}
 });
 
