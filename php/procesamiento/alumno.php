@@ -94,4 +94,19 @@ class Alumno extends Conexion{
       mysqli_query($this->con,$sql);
 
     }
+
+
+    public function documentosAceptados($id){
+        $sql = "CALL documentos_aceptados('$id')";
+        $ejecuta = $this->con->query($sql); 
+
+        $respuesta = $ejecuta->fetch_all(MYSQLI_ASSOC);
+
+        if($respuesta){
+            return $respuesta;
+
+            $respuesta->close();
+            $this->con->close();
+        }
+    }
 }

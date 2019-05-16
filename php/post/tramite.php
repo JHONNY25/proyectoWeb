@@ -52,40 +52,31 @@
                   <thead class="azul-bajo text-white rounded">
                     <tr>
                       <th>Documento</th>
-                      <th>Notificaciones</th>
                       <th>Aceptado</th>
                     </tr>
                   </thead>
                   <tbody id="" >
+
+                  <?php  
+                    require_once '../procesamiento/alumno.php';
+                     $id_usuario =  $user->getId();
+                    $alumno = new Alumno();
+                    $datos = $alumno->documentosAceptados($id_usuario);
+
+                    if($datos){
+
+                      foreach($datos as $row):
+                    
+                  ?>
                     <tr>
-                      <td >Solicitud de servicio social</td>
-                      <td >
-                      <a href='' class='notificacion'><i class='fas fa-bell fa-fw'></i></a>
-                      </td>
-                      <td>Si</td>
-                    </tr>
-                    <tr>
-                      <td >Solicitud de prestador de servicio social</td>
-                      <td >
-                      <a href='' class='notificacion'><i class='fas fa-bell fa-fw'></i></a>
-                      </td>
-                      <td>Si</td>
-                    </tr>
-                    <tr>
-                      <td >Carta compromiso</td>
-                      <td >
-                      <a href='' class='notificacion'><i class='fas fa-bell fa-fw'></i></a>
-                      </td>
-                      <td>Si</td>
-                    </tr>
-                    <tr>
-                      <td >Constancia de tutorias (Departamento de desarrollo academico)</td>
-                      <td >
-                      <a href='' class='notificacion'><i class='fas fa-bell fa-fw'></i></a>
-                      </td>
-                      <td>No</td>
+                      <td ><?php echo $row['documento']; ?></td>
+                      <td><?php echo $row['aprobacion']; ?></td>
                     </tr>
      
+                    <?php
+                    endforeach;
+                    }
+                    ?>
                   </tbody>
                 </table>
               </div>
