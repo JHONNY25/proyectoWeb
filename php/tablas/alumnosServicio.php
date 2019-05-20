@@ -62,6 +62,7 @@
 <script src="../../js/sweetalert2.all.min.js" type="text/javascript"></script>
   <script src="../../js/solicitudServicio.js"></script>
   <script src="../../js/eliminarAlumnoServicio.js"></script>
+  <script type="text/javascript" src="../../js/listaComentarios.js"></script>
 
 
 

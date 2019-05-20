@@ -78,6 +78,7 @@
   
   <script type="text/javascript" src="ajax.js"></script>
   <script type="text/javascript" src="../../js/listaNotificacion.js"></script>
+  <script type="text/javascript" src="../../js/listaComentarios.js"></script>
  
 </body>
 

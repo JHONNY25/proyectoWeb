@@ -20,7 +20,12 @@
         protected $calle;
         protected $municipio;
         protected $id;
-        protected $idcarrera;
+        protected $idcarrera;    
+        protected $numero;
+
+        public function getNumeroDeDocumentosAceptados(){
+            return $this->numero;
+        }
 
         public function getColonia(){
             return $this->colonia;
@@ -165,6 +170,28 @@
 
             while($row = mysqli_fetch_array($user)){
                 $this->nombrePersona = $row['nombre'];
+            }
+        }
+
+
+        public function contrasena($persona){
+            $user = trim($persona);
+
+            $sql = "CALL getContrasena('$user')";
+            $user = mysqli_query($this->con,$sql);
+
+            while($row = mysqli_fetch_array($user)){
+                $this->pass = $row['contrasena'];
+            }
+        }
+
+        public function fin_servicio($id){
+            $id_alumno = trim($id);
+            $sql = "CALL fin_servicio($id_alumno)";
+            $user = mysqli_query($this->con,$sql);
+    
+            while($row = mysqli_fetch_array($user)){
+                $this->numero = $row['numero'];
             }
         }
 

@@ -237,13 +237,13 @@ Tramite Servicio Social
 </li>
 
 <li class="nav-item">
-    <a class="nav-link" href="php/post/postServicio">
+    <a class="nav-link" href="php/procesamiento/postServicio">
     <i class="fas fa-fw fa-id-card"></i>
     <span>Servicio Social</span></a>
 </li>
 
 <li class="nav-item">
-    <a class="nav-link" href="php/post/postTrabajo">
+    <a class="nav-link" href="php/procesamiento/postTrabajo">
     <i class="fas fa-fw fa-briefcase"></i>
     <span>Bolsa de trabajo</span></a>
 </li>
@@ -309,6 +309,19 @@ Tramite Servicio Social
   <li class="nav-item dropdown no-arrow mx-1" id="listaNotificaciones">
 
   </li>
+
+    <!-- Nav Item - User Information -->
+    <li class="nav-item dropdown no-arrow" id="listaComentarios">
+
+</li>
+<?php } ?>
+
+<?php if($user->getTipo() == 0){ ?>
+
+<!-- Nav Item - User Information -->
+<li class="nav-item dropdown no-arrow" id="listaComentarios2">
+
+</li>
 <?php } ?>
 
   <div class="topbar-divider d-none d-sm-block"></div>
@@ -420,6 +433,44 @@ Tramite Servicio Social
          });  
     }            
 });  
+
+$(document).on('click', '#alertsDropdown', function(){  
+     $('#conteo2').hide();
+   }); 
+
+function getComentariosAdmin(){
+    $.ajax({
+        url: 'php/procesamiento/listaComentarios.php',
+        method:'POST',
+        success:function(data){  
+            $('#listaComentarios').html(data);
+       } 
+    });
+}
+
+function getComentariosAlumno(){
+  $.ajax({
+      url: 'php/procesamiento/listaComentariosAlumno.php',
+      method:'POST',
+      success:function(data){  
+          $('#listaComentarios2').html(data);
+     } 
+  });
+}
+
+getComentariosAdmin();
+
+getComentariosAlumno();
+
+$(document).on('click', '#messagesDropdown', function(){  
+  $('#conteo').hide();
+}); 
+
+$(document).on('click', '.viewComents', function(){  
+  
+  location.href = 'php/post/cartaLiberacion.php?al=' + $(this).attr('id');
+}); 
+
   </script>
 
 </body>

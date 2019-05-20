@@ -19,10 +19,13 @@ $(document).on('click', '.view', function(){
               method:"POST",  
               data:{dato:dato},  
               success:function(data){  
-                   $('#detalles').html(data);  
-                   $('#ver-notificacion').modal('show');  
+                   $('#notificacionDetalle').html(data);  
+                   $('#modal').modal('show');  
               }  
          });  
     }            
 });  
 
+$(document).on('click', '#alertsDropdown', function(){  
+     $('#conteo2').hide();
+   }); 

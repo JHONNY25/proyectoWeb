@@ -121,6 +121,7 @@
   <script src="../../js/sweetalert2.all.min.js" type="text/javascript"></script>
   <script src="../../js/validate.js"></script>
   <script src="../../js/notificacion.js"></script>
+  <script type="text/javascript" src="../../js/listaComentarios.js"></script>
 
 </body>
 

@@ -4,12 +4,24 @@
 </div>
 <div class="modal-body" id="actualizar">
     <form action="" class="user" id="publicacion" method="POST">
+        
         <h5>Datos usuario</h5>
         <div class="d-block form-group">
             <label for="" >Usuario</label>
             <input id="usuario" name="usuario" type="text" maxlength="16" placeholder="" class="form-control" aria-describedby="emailHelp" require>
             <small id="msj-usuario" class="text-danger"></small>
         </div>
+
+        <div class="form-group" id="divcheck">
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="check">
+                <label class="form-check-label" for="invalidCheck2">
+                Cambiar contraseña
+                </label>
+            </div>
+        </div>
+
+        <div id="divcontra">
         <div class="d-block form-group">
             <label for="" >Contraseña</label>
             <input id="contra" name="contra" type="password" maxlength="16" placeholder="" class="form-control" aria-describedby="emailHelp" require>
@@ -20,6 +32,8 @@
             <input id="rep_contra" name="rep_contra" type="password" maxlength="16" placeholder="" class="form-control" aria-describedby="emailHelp" require>
             <small id="msj-rep-contrasena" class="text-danger"></small>
         </div>
+        </div>
+
         <hr>
         <h5>Datos generales</h5>
         <div class="d-block form-group">
@@ -47,6 +61,7 @@
             <input id="telefono" name="telefono" type="tel" maxlength="10" placeholder="" class="form-control" aria-describedby="emailHelp" require>
             <small id="msj-telefono" class="text-danger"></small>
         </div>
+        <input id="id" name="id" type="hidden" value="">
         <div id="grupo-botones">
             <button id="guardar" name="guardar" href="#" class="btn btn-inicio btn-user btn-block">
                 Guardar

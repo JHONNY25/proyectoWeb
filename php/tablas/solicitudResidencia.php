@@ -65,5 +65,6 @@
 <script src="../../js/sweetalert2.all.min.js" type="text/javascript"></script>
 
   <script type="text/javascript" src="../../js/alertPublicaciones.js"></script>
+  <script type="text/javascript" src="../../js/listaComentarios.js"></script>
 
   <?php require_once '../vistas/modalBancoInfo.php'; ?>

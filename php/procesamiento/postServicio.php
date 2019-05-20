@@ -73,6 +73,7 @@
   <script src="../../js/sb-admin-2.min.js"></script>
   <script type="text/javascript" src="ajax1.js"></script>
   <script type="text/javascript" src="../../js/listaNotificacion.js"></script>
+  <script type="text/javascript" src="../../js/listaComentarios.js"></script>
   </body>
 
 </html>

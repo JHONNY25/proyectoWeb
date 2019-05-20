@@ -59,6 +59,7 @@
   <!-- Page level custom scripts -->
   <script src="../../js/demo/datatables-demo.js"></script>
   <script src="../../js/empresaActiva.js"></script>
+  <script type="text/javascript" src="../../js/listaComentarios.js"></script>
 
 </body>
 

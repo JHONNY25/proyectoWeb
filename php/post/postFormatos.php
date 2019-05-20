@@ -170,7 +170,21 @@
 </div>
 <?php require_once '../vistas/footer.php'; ?>
 
-<?php require_once '../vistas/bloqueScriptView.php'; ?>
+  <!-- Bootstrap core JavaScript-->
+  <script src="../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="../../js/sb-admin-2.min.js"></script>
+  <script type="text/javascript" src="../../js/listaComentarios.js"></script>
+
+ 
+</body>
+
+</html>
 
 <?php }else{
         $host  = $_SERVER['HTTP_HOST'];

@@ -8,6 +8,7 @@ var apellidoPaternoValido = false;
 var apellidoMaternoValido = false;
 var correoValido = false;
 var telefonoValido = false;
+var contrasenaIguales = false;
 
 function getDatosInput(){
     let nombre = $('#nombre').val();
@@ -33,8 +34,21 @@ function getDatosInput(){
     return objeto;
 }
 
+$("#divcontra").hide();
+$("#usuario").hide();
+
+$("#check").on("click", function() {  
+  if ($("#check").is(':checked')) {  
+    $("#divcontra").show();
+  } else {  
+    $("#divcontra").hide();
+  } 
+
+});
+
 function setDatosInput(o){
-    $('#usuario').val(o.usuario);
+   // $('#usuario').val(o.usuario);
+
     $('#contra').val();
     $('#rep_contra').val();
     $('#nombre').val(o.nombre);
@@ -42,6 +56,7 @@ function setDatosInput(o){
     $('#apellido_m').val(o.apellidoM);
     $('#correo').val(o.correo);
     $('#telefono').val(o.telefono);
+    $('#id').val(o.id);
 }
 
 function limpiarForm(){
@@ -85,6 +100,36 @@ function camposValidos(){
     return true;
 }
 
+function camposValidos2(){
+    if (!contrasenaIguales) {
+        jQuery("#contra").focus();
+        console.log('contraseña diferente');
+        return false;
+    }else if (!nombreValido) {
+        jQuery("#nombre").focus();
+        console.log('nombre no valido');
+        return false;
+    } else if (!apellidoPaternoValido) {
+        jQuery("#apellido_p").focus();
+        console.log('ape p no valido');
+        return false;
+    } else if (!apellidoMaternoValido) {
+        jQuery("#apellido_m").focus();
+        console.log('ape m no valido');
+        return false;
+    } else if (!correoValido) {
+        jQuery("#correo").focus();
+        console.log('correo no valido');
+        return false;
+    } else if (!telefonoValido) {
+        jQuery("#telefono").focus();
+        console.log('tel no valido');
+        return false;
+    }
+
+    return true;
+}
+
 function habilitarEdicion(b){
     $('#usuario').prop('disabled', !b);
     $('#contra').prop('disabled', !b);
@@ -109,32 +154,15 @@ function habilitarEdicion(b){
 
 function getListaPersonas(){
     $.ajax({
-        url:"../procesamiento/personal.php?action=lista",  
-        type:"GET",
-        success: (data) => {
-            var lista = JSON.parse(data);
-            jQuery("#cuerpo-tabla").empty();
-            var html2 = "";
-            for (var i of lista) {
-                
-                html2 += `
-                    <tr class = "fila" data-id = "${i.id}">
-                        <td>${i.nombre}</td>
-                        <td>${i.correo}</td>
-                        <td>${i.telefono}</td>
-                        <td class="d-flex justify-content-center">
-                            <a href="" class="eliminar text-danger">
-                                    <i class="fa fa-user-times"></i>
-                            </a>
-                        </td>
-                    </tr>
-                        `;
-            }
-            
-            jQuery("#cuerpo-tabla").html(html2);
-        }
+        url: '../procesamiento/mostrarPersonal.php',
+        method:'POST',
+        success:function(data){  
+            $('#cuerpo-tabla').html(data);
+       } 
     });
 }
+
+getListaPersonas();
 
 function registrar(o){
     $.ajax({
@@ -150,13 +178,18 @@ function registrar(o){
             usuario: o.usuario,
             contrasena: o.contrasena
         },
-        success: (data) => {
-            mensajeCorrecto();
+        success: function(data){
+
         }
     });
+    mensajeCorrecto();
+    getListaPersonas();
+    $('#nuevo-modal').modal('hide');
 }
-
+/*
 function actualizar(o){
+
+    //var datos = 
     $.ajax({
         url:"../procesamiento/personal.php?action=actualizar",  
         type:"POST",
@@ -174,20 +207,99 @@ function actualizar(o){
         success: (data) => {}
         
     });
+}*/
+
+//update para empresa
+function actualizar(){
+  
+        var datos = $('#publicacion').serialize();
+  
+        $.ajax({
+          type:"POST",
+          url: "../procesamiento/updatePersonal.php",
+          data: datos,
+          success:function(r){
+            if(r == 1){
+              $('#nuevo-modal').modal('hide'); 
+              Swal.fire({
+                type: 'success',
+                title: 'Modificado!',
+                title: 'Datos modificados con éxito',
+                showConfirmButton: false,
+                timer: 1600
+              })
+  
+              setTimeout(function(){
+                $("#cuerpo-tabla").load("../procesamiento/mostrarPersonal.php");
+              },1500);
+
+            }else{
+              Swal.fire({
+                type: 'error',
+                title: 'no funciono actualizar',
+                text: '¡Error en el servidor!'
+              })
+            }
+          }
+        });
+      
+      return false;
+    }
+
+
+function confirm(dato){
+    Swal.fire({
+        title: '¿Está seguro?',
+        text: "¡No podras revertir los cambios!",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Eliminar',
+        cancelButtonText: 'Cancelar'
+      }).then((result) => {
+        if (result.value) {
+            eliminar(dato);
+        }
+      })
+
 }
 
-function eliminar(id){
-    $.ajax({
-        url:"../procesamiento/personal.php?action=deshabilitar",  
-        type:"POST",
-        dataType: "json",
-        data:{
-            id: id
-        },
-        success: (data) => {}
-        
-    });
-}
+function eliminar(dato){ 
+        var datos = {
+            "id": dato
+        };
+            
+          $.ajax({
+            type:"POST",
+            url: "../procesamiento/eliminoAdmin.php",
+            data: datos,
+            success:function(r){
+              if(r == 1){
+                  Swal.fire({ 
+                      title: '¡Eliminado!',
+                      text: 'La publicación ha sido eliminada.',
+                      type: 'success',
+                      showConfirmButton: false,
+                      timer: 2000
+                    })
+                    
+                    //obtenerDato();
+                    setTimeout(function(){
+                      $("#cuerpo-tabla").load("../procesamiento/mostrarPersonal.php");
+                    },1500);
+                    
+              }else{
+                Swal.fire({
+                  type: 'error',
+                  title: 'Lo sentimos...',
+                  text: '¡Hubo problemas al eliminar!'
+                })
+              }
+            }
+          });
+      return false;
+    }
 
 function detalles(id){
     $.ajax({  
@@ -256,32 +368,75 @@ function mensajeCorrecto(){
         showConfirmButton: false,
         timer: 1000
       });
+
+
 }
 
 /*Script para guardar un usuario usando jQuery*/
 $('#guardar').click((e) => {
     e.preventDefault();
-    
-    if (camposValidos()){
-        let o = getDatosInput();
 
-        if (modoEdicion) {
-            actualizar(o);
-        } else {
-            registrar(o);
-            limpiarForm();
-            $('#nombre').focus();
+    if (modoEdicion) {
+        if($('#nombre').val() == ''){
+            jQuery("#nombre").addClass("is-invalid");
+            jQuery('#msj-nombre').html('Campo requerido, ingresar datos.');
+          }else if(lengh($('#nombre').val()) == false){
+
+          }else if($('#apellido_p').val() == ''){
+            jQuery('#apellido_p').addClass('is-invalid');
+            jQuery('#msj-apellido-paterno').html('Campo requerido, ingresar datos.');
+          }else if(lengh24($('#apellido_p').val()) == false){
+            jQuery('#apellido_p').addClass('is-invalid');
+            jQuery('#msj-apellido-paterno').html('Apellido paterno sobrepasa el número de parametros.');
+          }else if($('#apellido_m').val() == ''){
+            jQuery('#apellido_m').addClass('is-invalid');
+            jQuery('#msj-apellido-materno').html('Campo requerido, ingresar datos.');
+          }else if(lengh24($('#apellido_m').val()) == false){
+            jQuery('#apellido_m').addClass('is-invalid');
+            jQuery('#msj-apellido-materno').html('Apellido materno sobrepasa el número de parametros.');
+          }else if($('#telefono').val() == ''){
+            jQuery('#telefono').addClass('is-invalid');
+            jQuery('#msj-telefono').html('Campo requerido, ingresar datos.');
+          }else if(validarNumero($('#telefono').val()) == false){
+            jQuery('#telefono').addClass('is-invalid');
+            jQuery('#msj-telefono').html('Debe contar con 10 digitos.');
+          }else if($('#correo').val() == ''){
+            jQuery('#telefono').addClass('is-invalid');
+            jQuery('#msj-correo').html('Campo requerido, ingresar datos.');
+          }else if(validarCorreo($('#correo').val()) == false){
+            jQuery('#telefono').addClass('is-invalid');
+            jQuery('#msj-telefono').html('Correo invalido');
+          }
+          else if(lengh($('#correo').val()) == false){
+            jQuery('#telefono').addClass('is-invalid');
+            jQuery('#msj-telefono').html('Correo sobrepasa el número de parametros.');
+          }else if($('#contra').val() != $('#rep_contra').val()){
+            jQuery('#rep_contra').addClass('is-invalid');
+            jQuery('#msj-rep-contrasena').html('Contraseña diferentes.');
+        }else{
+            actualizar();
         }
+    }else if (camposValidos()){
+        let o = getDatosInput();
+        registrar(o);
+        limpiarForm();
+        $('#nombre').focus();
     }
 });
 
-$('.eliminar').click(function (e) {
-    e.preventDefault();
-    var id2 = $(this).parent().parent().attr('data-id');
-    eliminar(id2);
+
+
+$(document).on('click', '#nuevo', function(){
+    $("#usuario").show();
+    $("#divcontra").show();
+    $('#divcheck').hide();
+    
+    $('#nuevo-modal').modal('show');  
+
+    return false;
 });
 
-$('.fila').dblclick(function() {
+$(document).on('dblclick', '.fila', function() {
     modoEdicion = true;
     id = $(this).attr('data-id');
 
@@ -304,6 +459,10 @@ $('.fila').dblclick(function() {
     */
 
     //habilitarEdicion(false);
+
+    $("#usuario").hide();
+    $("#divcontra").hide();
+    $('#divcheck').show();
     $('#nuevo-modal').modal('show');
 
     detalles(id);
@@ -360,6 +519,27 @@ function contrasena () {
 }
 
 jQuery("#contra").on('input', delay(contrasena, 500));
+
+function contrasenaIguales() {
+    var id = "#contra";
+    var id2 = "#rep_contra";
+    var msj = "#msj-contrasena";
+    var msj2 = "#msj-rep-contrasena";
+    
+    var v = jQuery(id2).val();
+    var v2 = jQuery(id).val();
+    
+    if (v !== v2) {
+        jQuery(id).addClass('is-invalid');
+        jQuery(msj2).html('Contraseña diferentes.');
+        contrasenaIguales = false;
+    } else {
+        jQuery(id).removeClass('is-invalid');
+        jQuery(msj2).empty();
+        contrasenaIguales = true;
+    }
+}
+
 
 function repContra () {
     var id = "#contra";

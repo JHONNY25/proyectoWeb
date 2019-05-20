@@ -71,7 +71,7 @@ class Personal{
 
     public function actualizar($modelo){
         $query = "
-            CALL modificar_persona_administrador(?,?,?,?,?,?,?,?);
+            CALL modificar_persona_administrador(?,?,?,?,?,?,?);
         ";
 
         $this->getDb();
@@ -83,7 +83,6 @@ class Personal{
         if (!$stmt->bind_param(
             "isssssss",
             $modelo->id,
-            $modelo->usuario,
             $modelo->contrasena,
             $modelo->nombre,
             $modelo->apellidoP,
@@ -252,4 +251,7 @@ class Personal{
         }
         return $lista;
     }
+
+
+    
 }

@@ -15,7 +15,20 @@
 <ul class="navbar-nav ml-auto">
 <?php if($user->getTipo() == 1){ ?>
   <!-- Nav Item - Alerts -->
-  <li class="nav-item dropdown no-arrow mx-1" id="listaNotificaciones">
+  <li class="nav-item dropdown no-arrow mx-1 d-flex" id="listaNotificaciones">
+
+  </li>
+
+  <!-- Nav Item - User Information -->
+  <li class="nav-item dropdown no-arrow" id="listaComentarios">
+
+  </li>
+<?php } ?>
+
+<?php if($user->getTipo() == 0){ ?>
+
+  <!-- Nav Item - User Information -->
+  <li class="nav-item dropdown no-arrow" id="listaComentarios2">
 
   </li>
 <?php } ?>

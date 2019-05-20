@@ -21,33 +21,36 @@
     <!-- Exaple 1 -->
     <div>
     <div class="card example-1 scrollbar-ripe-malinka">
-      <div class="card-body">
-        <div class="border rounded mt-3">
-            <h5 class="ml-2">Juanito perez</h5>
-            <p class="ml-2">Mi nombre esta mal</p>
-        </div>
-        <div class="border rounded mt-3">
-            <h5 class="ml-2">Francis jimenez</h5>
-            <p class="ml-2">ok, la voy a cambiar</p>
-        </div>
-        <div class="border rounded mt-3">
-            <h5 class="ml-2">Juanito perez</h5>
-            <p class="ml-2">Perfecto, ahora si</p>
-        </div>
-        <div class="border rounded mt-3">
-            <h5 class="ml-2">Francis jimenez</h5>
-            <p class="ml-2">Imprimela y me la traes</p>
-        </div>
+      <div class="card-body" id="comentarios">
+
+      <!-- AQUI SE MUESTRAN LOS COMENTARIOS-->
       </div>
     </div>
     <!-- Exaple 1 -->
-    <form class="form-inline mt-3">
+    <form class="form-inline mt-3" id="formComents">
         <div class="form-group mr-2 mb-2">
-            <input type="password" class="form-control w-100" id="inputPassword2" placeholder="Añadir comentario">
+            <input type="text" class="form-control w-100" id="mensaje" placeholder="Añadir comentario" name="coments">
+            <?php
+              if(isset($_GET['al']) && !empty($_GET['al'])){
+            ?>
+
+                <input type="hidden" id="valor" value="<?php echo $_GET['al']; ?>" name="id"> 
+            <?php
+                  }
+            ?>
         </div>
-        <button type="submit" class="btn btn-add mb-2">Comentar</button>
+        <input type="submit" class="btn btn-add mb-2" id="comentar" value="Comentar" >
         </form>
     </div>
+    
+    <?php
+      if(isset($_GET['al']) && !empty($_GET['al'])){
+    ?>
+
+        <input type="hidden" id="valor" value="<?php echo $_GET['al']; ?>"> 
+    <?php
+          }
+    ?>
 
 
   </div>
@@ -59,17 +62,19 @@
 
 <?php require_once '../vistas/footer.php'; ?>
 
-<?php require_once '../vistas/bloqueScriptView.php'; ?>
+  <!-- Bootstrap core JavaScript-->
+  <script src="../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<?php }else{
-        $host  = $_SERVER['HTTP_HOST'];
+  <!-- Core plugin JavaScript-->
+  <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
 
-        header("Location: http://$host/proyectoWeb/");
-        exit;
-    }
-
-    ?>
-<script src="../../js/documentos.js"></script>
+  <!-- Custom scripts for all pages-->
+  <script src="../../js/sb-admin-2.min.js"></script>
+  <script src="../../js/sweetalert2.all.min.js" type="text/javascript"></script>
+  <script src="../../js/documentos.js"></script>
+  <script type="text/javascript" src="../../js/listaComentarios.js"></script>
+  <script type="text/javascript" src="../../js/listaNotificacion.js"></script>
 <?php
 
 //==============================================================================2
@@ -215,3 +220,16 @@ if (isset($_POST['liberacion'])) {
 }
 
 ?>
+ 
+</body>
+
+</html>
+<?php }else{
+        $host  = $_SERVER['HTTP_HOST'];
+
+        header("Location: http://$host/proyectoWeb/");
+        exit;
+    }
+
+    ?>
+

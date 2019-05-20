@@ -164,6 +164,7 @@
   <script src="../../js/demo/datatables-demo.js"></script>
   <script src="../../js/sweetalert2.all.min.js" type="text/javascript"></script>
   <script type="text/javascript" src="../../js/servicioActivo.js"></script>
+  <script type="text/javascript" src="../../js/listaComentarios.js"></script>
 </body>
 
 </html>

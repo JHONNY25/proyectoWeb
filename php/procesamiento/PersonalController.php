@@ -19,7 +19,7 @@ class PersonalController {
         $modelo->correo = $_POST['correo'];
         $modelo->telefono = $_POST['telefono'];
         $modelo->usuario = $_POST['usuario'];
-        $modelo->contrasena = password_hash($_POST['contrasena'], PASSWORD_DEFAULT);
+        $modelo->contrasena = password_hash($_POST['contrasena'], PASSWORD_BCRYPT);
         return $modelo;
     }
 

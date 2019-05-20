@@ -3,27 +3,33 @@
 
 require_once 'notificacion.php';
 require_once 'paginacion.php';
+
+
 $notificacion = new Notificacion();
 $numeroLista = new Paginacion();
+
 
 $datos = $notificacion->getNotificacionesLimit();
 
 $count = $numeroLista->getCountNotificacion();
 
 
-
-$contenido = '<a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+$contenido = '<a class="nav-link dropdown-toggle d-flex" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-bell fa-fw"></i>
             <!-- Counter - Alerts -->'
             ;
            
             if($count > 3){
-                $contenido .= ' <span class="badge badge-danger badge-counter">3+</span></a>';
-            }else{
-                $contenido .= ' <span class="badge badge-danger badge-counter">'.$count.'</span></a>';
+                $contenido .= ' <span class="badge badge-danger badge-counter" id="conteo2">3+</span></a>';
+            }else if($count == 0){
+                $contenido .= ' <span class="badge badge-danger badge-counter d-none" id="conteo2"></span></a>';
+            }
+            else{
+                $contenido .= ' <span class="badge badge-danger badge-counter" id="conteo2">'.$count.'</span></a>';
             }
 
-              
+
+             
     if($count != 0){
         $contenido .='
         <!-- Dropdown - Alerts -->
@@ -31,7 +37,7 @@ $contenido = '<a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" r
         <h6 class="dropdown-header">
         Notificaciones
         </h6>
-        ';
+        <div class="example-1 scrollbar-ripe-malinka">';
 
 
     if($datos){
@@ -50,7 +56,7 @@ $contenido = '<a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" r
         endforeach;  
     }
 
-$contenido .= '
+$contenido .= '</div>
                 <a class="dropdown-item text-center small text-gray-500" href="../post/listaNotificaciones.php">Ver todas las alertas</a>
             </div>';
   

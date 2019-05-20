@@ -237,11 +237,11 @@ Tramite Servicio Social
 
 <!-- Nav Item - Tables -->
 <li class="nav-item">
-  <a class="nav-link" href="../tablas/personal">
+  <a class="nav-link" href="../procesamiento/personal">
     <i class="fas fa-fw fa-users"></i>
     <span>Personal</span></a>
 </li>
-
+s
 
 <!-- Divider -->
 <hr class="sidebar-divider">

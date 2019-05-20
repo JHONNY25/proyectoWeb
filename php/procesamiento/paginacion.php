@@ -34,6 +34,7 @@ class Paginacion{
             print "Error!: " . $e->getMessage();
         }
     }
+
     public function getCountNotificacion(){
         try {
            $sql = "SELECT COUNT(*) from notificacion
@@ -49,6 +50,37 @@ class Paginacion{
            print "Error!: " . $e->getMessage();
        }
    }
+
+   public function getNumeroComentarios($id){
+    try {
+       $sql = "CALL numero_comentarios($id)";
+       $query = $this->con->prepare($sql);
+       $query->execute();
+       //si es true
+       if($query->rowCount() == 1)
+       {
+            return $query->fetchColumn();
+       }
+   }catch(PDOException $e){
+       print "Error!: " . $e->getMessage();
+   }
+}
+
+public function getNumeroComentariosAlumno(){
+    try {
+       $sql = "CALL numero_comentarios_alumno()";
+       $query = $this->con->prepare($sql);
+       $query->execute();
+       //si es true
+       if($query->rowCount() == 1)
+       {
+            return $query->fetchColumn();
+       }
+   }catch(PDOException $e){
+       print "Error!: " . $e->getMessage();
+   }
+}
+
     //creamos los enlaces de nuestra paginación
     public function crea_links($clasificacion,$carrera){
 

@@ -208,6 +208,14 @@
         background: powderblue;
     }
 
+    .warning-servicio{
+        font-size: 60px;
+    }
+
+    .selects{
+        display: flex !important;
+        justify-content: space-around !important;
+    }
 
 
 @media screen and (max-width: 991px){

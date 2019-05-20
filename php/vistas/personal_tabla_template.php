@@ -10,7 +10,7 @@ require_once VIEW_PERFIL;
         <li class="breadcrumb-item active">Personal</li>
     </ol>
     <!--Link para abrir un modal nuevo registro-->
-    <a href='' data-toggle='modal' data-target='#nuevo-modal' class="mb-3 btn btn-icon-split btn-add">
+    <a id="nuevo" href='' class="mb-3 btn btn-icon-split btn-add">
         <span class="icon text-white-50">
             <i class="fas fa-plus-circle"></i>
         </span>
@@ -33,20 +33,6 @@ require_once VIEW_PERFIL;
                         </tr>
                     </thead>
                     <tbody id = "cuerpo-tabla">
-                        <?php foreach($lista as $i): ?>
-
-                        <tr class = "fila" data-id = "<?php echo $i->id; ?>">
-                            <td><?php echo $i->nombre; ?></td>
-                            <td><?php echo $i->correo; ?></td>
-                            <td><?php echo $i->telefono; ?></td>
-                            <td class="d-flex justify-content-center">
-                                <a href="" class="eliminar text-danger">
-                                    <i class="fa fa-user-times"></i>
-                                </a>
-                            </td>
-                        </tr>
-
-                        <?php endforeach; ?>
 
                     </tbody>
                 </table>
@@ -71,9 +57,30 @@ require_once VIEW_PERFIL;
 </div>
 
 <?php require_once VIEW_FOOTER; ?>
-<script src="../../js/sweetalert2.all.min.js"></script>
-<script src="../../js/Personal.js"></script>
-<?php require_once VIEW_BLOQUE_SCRIPT;
+
+<script src="../../vendor/jquery/jquery.min.js"></script>
+  <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="../../js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="../../vendor/datatables/jquery.dataTables.js"></script>
+  <script src="../../vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="../../js/demo/datatables-demo.js"></script>
+  <script src="../../js/sweetalert2.all.min.js"></script>
+  <script src="../../js/Personal.js"></script>
+  <script src="../../js/listaComentarios.js"></script>
+  <script src="../../js/validate.js"></script>
+ 
+</body>
+
+</html>
 
 
 

@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Vinculación</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -62,65 +61,40 @@
                                         <div class="form-group">
                                             <input type="password" name="pass" class="form-control form-control-user" id="exampleInputPassword" placeholder="Ingrese su contraseña">
                                         </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Recordarme</label>
-                                                <hr>
-
-                                            </div>
-
-                                        </div>
-
 
                                         <input class="btn btn-inicio btn-user btn-block" type="submit" value="Iniciar Sesión">
 
                                         <hr>
                                     </form>
-                                    <hr>
-
-
-                                    <div class="text-center">
-                                        <a class="small" href="forgot-password.html">¿Olvidaste tu contraseña?</a>
-
-                                        <hr>
-                                    </div>
+                                    
                                     <!--Modal ////////////////////////////////////
                                  /////////////////////////AQUI VA/////////////////////////////////
                                  -->
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Registrate</button>
 
+                                 <div class="form-group text-center">
+                                    <a href="" class="text-primary d-block" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Registrate</a>
+                                </div>
 
                                     <div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="false">
-
-
-
 
 
                                         <div class="modal-dialog" role="document">
 
                                             <div class="modal-content">
 
-
-
-
-
-
-
-
                                                 <div class="container" style="margin-top: 20px;">
 
 
-  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#alumno" role="tab" aria-controls="pills-home" aria-selected="true">Alumno</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#empresa" role="tab" aria-controls="pills-profile" aria-selected="false">Empresa</a>
-  </li>
+            <ul class="nav nav-pills mb-3 selects" id="pills-tab" role="tablist">
+            <li class="nav-item item1">
+                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#alumno" role="tab" aria-controls="pills-home" aria-selected="true">Alumno</a>
+            </li>
+            <li class="nav-item item1">
+                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#empresa" role="tab" aria-controls="pills-profile" aria-selected="false">Empresa</a>
+            </li>
 
-</ul>
-<div class="tab-content" id="pills-tabContent">
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
 
 
 
@@ -175,9 +149,6 @@
                                         </div>
                                     </div>
 
-
-
-                                    <hr>
                                     <!-- final Modal ////////////////////////////-->
 
                                 </div>
