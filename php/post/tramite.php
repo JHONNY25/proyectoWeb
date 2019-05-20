@@ -221,7 +221,9 @@
 
                 </div>
                 <div> Para poder realizar tu tramite debes contar con el 70% de creditos o proximo a acreditarlos.
-                </div>
+                <h5><span>Documentos descargables:</span></h5>
+                <a class="d-block" href="http://www.itesloscabos.edu.mx/index.php/ites-proceso-de-servicio-social" target="_blank">http://www.itesloscabos.edu.mx/index.php/ites-proceso-de-servicio-social</a>  
+              </div>
                 <div class="row pt-3">
                 <div class="col-6">
                 <h5>Necesitas los siguientes documentos:</h5>
