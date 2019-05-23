@@ -16,6 +16,7 @@
         <div class="modal-body"><?php require_once 'infoPublicacionBanco.php'; ?>
         </div>
         <div class="modal-footer">
+          <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
           <button href="" class="btn btn-success btn-circle mr-2" data-dismiss="modal" onclick="confirmaAceptar
           (
           '<?php echo "$id"; ?>'
@@ -30,6 +31,7 @@
           '<?php echo $row['empresa']; ?>'
           )">
           <i class="fas fa-times"></i></button>
+        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
         </div>
       </div>
     </div>

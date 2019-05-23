@@ -40,7 +40,7 @@
 
                     <?php
                     }else if($tipo == 0){
-                  
+
                       require_once '../procesamiento/alumno.php';
 
                       $alumno = new Alumno();
@@ -53,7 +53,7 @@
                       $nombre = $alumno->getNombre();
                       $apeP = $alumno->getApellidoPaterno();
                       $apeM = $alumno->getApellidoMaterno();
-                      
+
                 ?>
 
                   <h3>Tramite de servicio social</h3>
@@ -98,7 +98,7 @@
                       $termino = $user->fin_servicio($user->getId());
 
                       $numeroDocumentos = $user->getNumeroDeDocumentosAceptados();
-              
+
                       if($numeroDocumentos == 12){
 
                     ?>
@@ -124,7 +124,7 @@
                 <h5 class="mt-2 mb-2">Documentos :</h5>
 
                 <div class="table-responsive">
- 
+
               <table class=" table table-striped table-hover rounded" id="" width="100%" cellspacing="0">
                   <thead class="azul-bajo text-white rounded">
                     <tr>
@@ -134,7 +134,7 @@
                   </thead>
                   <tbody id="" >
 
-                  <?php  
+                  <?php
                     require_once '../procesamiento/alumno.php';
                      $id_usuario =  $user->getId();
                     $alumno = new Alumno();
@@ -143,13 +143,13 @@
                     if($datos){
 
                       foreach($datos as $row):
-                    
+
                   ?>
                     <tr id="">
                       <td ><?php echo $row['documento']; ?></td>
                       <td><?php echo $row['aprobacion']; ?></td>
                     </tr>
-     
+
                     <?php
                     endforeach;
                     }
@@ -167,10 +167,10 @@
                         </a>
 
                   </div>
-                  
-                  
-                  <div id='' class='alert alert-danger mt-3' role='alert'>No has iniciado tu servicio, debes acudir a vinculación 
-                    para ser asignado a un servicio, así podras iniciar tu tramite donde podras comunicarte con 
+
+
+                  <div id='' class='alert alert-danger mt-3' role='alert'>No has iniciado tu servicio, debes acudir a vinculación
+                    para ser asignado a un servicio, así podras iniciar tu tramite donde podras comunicarte con
                     un administrador de vinculación el cual te guiara en tu tramite al dar click en administrar documentos.</div>
                   <?php
                     }
@@ -222,7 +222,85 @@
                 </div>
                 <div> Para poder realizar tu tramite debes contar con el 70% de creditos o proximo a acreditarlos.
                 <h5><span>Documentos descargables:</span></h5>
-                <a class="d-block" href="http://www.itesloscabos.edu.mx/index.php/ites-proceso-de-servicio-social" target="_blank">http://www.itesloscabos.edu.mx/index.php/ites-proceso-de-servicio-social</a>  
+                <?php
+                    if (file_exists("../../upload/formatosAlumnos/formato/formato-SolicitudSS.docx")) {
+                      ?><a class="d-block" href="../../upload/formatosAlumnos/formato/formato-SolicitudSS.docx" target="_blank">➨Solicitud de servicio social</a><?php
+                    }
+                    if (file_exists("../../upload/formatosAlumnos/ejemplo/ejemplo-SolicitudSS.pdf")) {
+
+                      ?>
+                      <div style="padding-left:15px;">
+                        <a class="d-block" href="../../upload/formatosAlumnos/ejemplo/ejemplo-SolicitudSS.pdf" target="_blank">➥Ejemplo de llenado de servicio social</a><p></p>
+                      </div>
+                      <?php
+                    }
+                    //================================================================================================
+                    if (file_exists("../../upload/formatosAlumnos/formato/formato-Solicitud-prestador-servicio.docx")) {
+                      ?><a class="d-block" href="../../upload/formatosAlumnos/formato/formato-Solicitud-prestador-servicio.docx" target="_blank">➨Solicitud de prestador de servicio social</a><?php
+                    }
+                    if (file_exists("../../upload/formatosAlumnos/ejemplo/ejemplo-solicitud-prestador-servicio.pdf")) {
+
+                      ?>
+                      <div style="padding-left:15px;">
+                        <a class="d-block" href="../../upload/formatosAlumnos/ejemplo/ejemplo-solicitud-prestador-servicio.pdf" target="_blank">➥Ejemplo de solicitud de prestador de servicio social</a><p></p>
+                      </div>
+                      <?php
+                    }
+
+                    //================================================================================================
+                    if (file_exists("../../upload/formatosAlumnos/formato/formato-Carta-compromiso.docx")) {
+                      ?><a class="d-block" href="../../upload/formatosAlumnos/formato/formato-Carta-compromiso.docx" target="_blank">➨Carta compromiso</a><?php
+                    }
+                    if (file_exists("../../upload/formatosAlumnos/ejemplo/ejemplo-carta-compromiso.pdf")) {
+
+                      ?>
+                      <div style="padding-left:15px;">
+                        <a class="d-block" href="../../upload/formatosAlumnos/ejemplo/ejemplo-carta-compromiso.pdf" target="_blank">➥Ejemplo de carta compromiso</a><p></p>
+                      </div>
+                      <?php
+                    }
+
+                    //================================================================================================
+                    if (file_exists("../../upload/formatosAlumnos/formato/formato-Reportes-bimestrales.docx")) {
+                      ?><a class="d-block" href="../../upload/formatosAlumnos/formato/formato-Reportes-bimestrales.docx" target="_blank">➨Reportes bimestrales</a><?php
+                    }
+                    if (file_exists("../../upload/formatosAlumnos/ejemplo/ejemplo-Reportes-bimestrales.pdf")) {
+
+                      ?>
+                      <div style="padding-left:15px;">
+                        <a class="d-block" href="../../upload/formatosAlumnos/ejemplo/ejemplo-Reportes-bimestrales.pdf" target="_blank">➥Ejemplo de Reportes bimestrales</a><p></p>
+                      </div>
+                      <?php
+                    }
+
+                    //================================================================================================
+                    if (file_exists("../../upload/formatosAlumnos/formato/formato-Informe-final.docx")) {
+                      ?><a class="d-block" href="../../upload/formatosAlumnos/formato/formato-Informe-final.docx" target="_blank">➨Informe final</a><?php
+                    }
+                    if (file_exists("../../upload/formatosAlumnos/ejemplo/ejemplo-Informe-final.pdf")) {
+
+                      ?>
+                      <div style="padding-left:15px;">
+                        <a class="d-block" href="../../upload/formatosAlumnos/ejemplo/ejemplo-Informe-final.pdf" target="_blank">➥Ejemplo de informe final</a><p></p>
+                      </div>
+                      <?php
+                    }
+
+                    //================================================================================================
+                    if (file_exists("../../upload/formatosAlumnos/formato/formato-Carta-de-liberacion.docx")) {
+                      ?><a class="d-block" href="../../upload/formatosAlumnos/formato/formato-Carta-de-liberacion.docx" target="_blank">➨Carta de liberación</a><?php
+                    }
+                    if (file_exists("../../upload/formatosAlumnos/ejemplo/ejemplo-Carta-liberacion.pdf")) {
+
+                      ?>
+                      <div style="padding-left:15px;">
+                        <a class="d-block" href="../../upload/formatosAlumnos/ejemplo/ejemplo-Carta-liberacion.pdf" target="_blank">➥Ejemplo de carta de liberación</a><p></p>
+                      </div>
+                      <?php
+                    }
+
+                 ?>
+
               </div>
                 <div class="row pt-3">
                 <div class="col-6">

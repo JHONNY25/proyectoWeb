@@ -36,7 +36,7 @@
       if (!empty($_POST) && isset($_POST['newUser'])) {
         if ($errorNombre==1) {
           ?>
-          <p class="text-danger">X Campo requerido</p>
+          <p class="text-danger">X Campo requerido, no pude contener caracteres numéricos</p>
           <?php
         }
       }
@@ -55,7 +55,7 @@
       if (!empty($_POST) && isset($_POST['newUser'])) {
         if ($errorApPaterno==1) {
           ?>
-          <p class="text-danger">X Campo requerido</p>
+          <p class="text-danger">X Campo requerido, no pude contener caracteres numéricos</p>
           <?php
         }
       }
@@ -72,7 +72,7 @@
       if (!empty($_POST) && isset($_POST['newUser'])) {
         if ($errorApMaterno==1) {
           ?>
-          <p class="text-danger">X Campo requerido</p>
+          <p class="text-danger">X Campo requerido, no pude contener caracteres numéricos</p>
           <?php
         }
       }

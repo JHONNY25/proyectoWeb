@@ -17,10 +17,20 @@ if (!empty($_POST)) {
       $newfilenameFormato = 'formato-SolicitudSS'.'.'.end($temp);
     }
     if (isset($_POST['cartaAceptacion'])) {
-      $newfilenameFormato = 'formato-CartaAceptacion'.'.'.end($temp);
+      $newfilenameFormato = 'formato-Solicitud-prestador-servicio'.'.'.end($temp);
     }
     if (isset($_POST['reportes'])) {
-      $newfilenameFormato = 'formato-reportes'.'.'.end($temp);
+      $newfilenameFormato = 'formato-Carta-compromiso'.'.'.end($temp);
+    }
+
+    if (isset($_POST['bimestrales'])) {
+      $newfilenameFormato = 'formato-Reportes-bimestrales'.'.'.end($temp);
+    }
+    if (isset($_POST['final'])) {
+      $newfilenameFormato = 'formato-Informe-final'.'.'.end($temp);
+    }
+    if (isset($_POST['liberacion'])) {
+      $newfilenameFormato = 'formato-Carta-de-liberacion'.'.'.end($temp);
     }
 
 
@@ -56,7 +66,7 @@ if (!empty($_POST)) {
 
       if (move_uploaded_file($_FILES["formato"]["tmp_name"], $target_file)) {
         $exitoFormato=true;
-        echo "SUBIDO";
+
       } else {
       }
     }
@@ -74,10 +84,19 @@ if (!empty($_POST)) {
       $newfilenameEjemplo = 'ejemplo-SolicitudSS'.'.'.end($temp);
     }
     if (isset($_POST['cartaAceptacion'])) {
-      $newfilenameEjemplo = 'ejemplo-CartaAceptacion'.'.'.end($temp);
+      $newfilenameEjemplo = 'ejemplo-solicitud-prestador-servicio'.'.'.end($temp);
     }
     if (isset($_POST['reportes'])) {
-      $newfilenameEjemplo = 'ejemplo-reportes'.'.'.end($temp);
+      $newfilenameEjemplo = 'ejemplo-carta-compromiso'.'.'.end($temp);
+    }
+    if (isset($_POST['bimestrales'])) {
+      $newfilenameEjemplo = 'ejemplo-Reportes-bimestrales'.'.'.end($temp);
+    }
+    if (isset($_POST['final'])) {
+      $newfilenameEjemplo = 'ejemplo-Informe-final'.'.'.end($temp);
+    }
+    if (isset($_POST['liberacion'])) {
+      $newfilenameEjemplo = 'ejemplo-Carta-liberacion'.'.'.end($temp);
     }
 
 

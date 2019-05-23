@@ -8,7 +8,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Informacion de solicitud de empresa</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Informacion de la empresa</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
@@ -16,6 +16,7 @@
         <div class="modal-body"><?php require_once 'infoEmpresa.php'; ?>
         </div>
         <div class="modal-footer">
+        <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
           <button href="" class="btn btn-success btn-circle mr-2" data-dismiss="modal" onclick="confirmaAceptar
           (
           '<?php echo "$id"; ?>'
@@ -30,6 +31,7 @@
           '<?php echo $row['empresa']; ?>'
           )">
           <i class="fas fa-times"></i></button>
+        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
         </div>
       </div>
     </div>

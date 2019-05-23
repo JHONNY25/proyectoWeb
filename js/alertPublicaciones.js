@@ -71,7 +71,7 @@ function eliminar(dato,mensaje,asunto,destino,nombre){
 
     function confirmaAceptar(dato,mensaje,asunto,destino,nombre){
         Swal.fire({
-            title: 'Aceptará a esta publicación',
+            title: 'Aceptará esta publicación',
             text: "No podras revertir los cambios, se le notificará a la empresa que su publicación a sido aprovada y será visible para los alumnos",
             type: 'warning',
             showCancelButton: true,

@@ -18,7 +18,7 @@
           </div>
           <div class="modal-footer">
             <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
-            <a class="btn btn-success" href="">Aceptar</a>
+            
           </div>
         </div>
       </div>

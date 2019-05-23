@@ -30,7 +30,7 @@
                     </tr>
                   </thead>
                   <tbody id="tblEmpresaActivas">
-  
+
                   </tbody>
                 </table>
               </div>
@@ -61,6 +61,7 @@
   <script src="../../js/empresaActiva.js"></script>
   <script type="text/javascript" src="../../js/listaComentarios.js"></script>
 
+    <?php require_once '../vistas/modalEmpresaInfo.php'; ?>
 </body>
 
 </html>

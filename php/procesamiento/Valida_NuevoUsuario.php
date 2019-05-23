@@ -105,12 +105,19 @@
         return false;
       }
       else{
-        return true;
+        $permitidos = "áéíóúabcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOP QRSTUVWXYZ ";
+          for ($i=0; $i<strlen($nombre); $i++){
+          if (strpos($permitidos, substr($nombre,$i,1))===false){
+          //no es válido;
+          return false;
+          }
+          }
+          //si estoy aqui es que todos los caracteres son validos
+          return true;
+          }
       }
-    } else{
-      return false;
     }
-  }
+
 
   function paternoCorrecto($paterno){
     if(!empty($paterno)){
@@ -119,12 +126,19 @@
         return false;
       }
       else{
-        return true;
+        $permitidos = "áéíóúabcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOP QRSTUVWXYZ ";
+          for ($i=0; $i<strlen($paterno); $i++){
+          if (strpos($permitidos, substr($paterno,$i,1))===false){
+          //no es válido;
+          return false;
+          }
+          }
+          //si estoy aqui es que todos los caracteres son validos
+          return true;
+          }
       }
-    } else{
-      return false;
     }
-  }
+
   function maternoCorrecto($materno){
     if(!empty($materno)){
       $len = strlen($materno);
@@ -132,10 +146,16 @@
         return false;
       }
       else{
-        return true;
-      }
-    } else{
-      return false;
+        $permitidos = "áéíóúabcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOP QRSTUVWXYZ ";
+          for ($i=0; $i<strlen($materno); $i++){
+          if (strpos($permitidos, substr($materno,$i,1))===false){
+          //no es válido;
+          return false;
+          }
+          }
+          //si estoy aqui es que todos los caracteres son validos
+          return true;
+          }
     }
   }
 

@@ -15,7 +15,8 @@
           <div class="modal-body"><?php require_once 'infoAlumno.php'; ?>
           </div>
           <div class="modal-footer">
-            <button href="" class="btn btn-success btn-circle mr-2" data-dismiss="modal" onclick="confirmaAceptar
+            <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+             <button href="" class="btn btn-success btn-circle mr-2" data-dismiss="modal" onclick="confirmaAceptar
             (
             '<?php echo $row['numero_control']; ?>',
             '<?php echo ""; ?>',
@@ -33,6 +34,7 @@
             '<?php echo $row['nombre'] ." ". $row['apellido_paterno']. " " . $row['apellido_materno']; ?>'
             )">
             <i class="fas fa-times"></i></button>
+        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!  -->
           </div>
         </div>
       </div>
