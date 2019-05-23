@@ -33,8 +33,7 @@
                             <div class="col-lg-6 d-flex text-center align-items-center text-inicio">
                                 <div class="margen-inicio">
                                     <h1 class="h2 text-gray-900 mb-4">BIENVENIDO AL SGV</h1>
-                                    <P class=" h4 desc-inicio">Para ingresar debes iniciar sesión. Si aún no tienes una cuenta debes de acudir
-                                        con el responsable en vinculación.</P>
+                                    <P class=" h4 desc-inicio">Para ingresar debes iniciar sesión. Si aún no tienes una cuenta puedes registrarte como alumno o como empresa, posteriormente te será notificado mediante correo.</P>
                                 </div>
 
                             </div>

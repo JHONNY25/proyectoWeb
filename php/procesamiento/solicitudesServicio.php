@@ -25,7 +25,7 @@ $contenido = '';
             <td  class='d-flex justify-content-center'>
             <a href='../post/cartaLiberacion.php?al=".$row['id_usuario']."' class='text-success subir-carta'><i class='btn-circle btn-success fa fa-upload'></i></a>
             <button class='delete btn btn-danger btn-circle' onclick='confirm(
-              \"".$row['numero_control']."\",
+              \"".$row['fk_persona']."\",
               \"".$row['correo']."\",
               \"".$row['nombre']."\"
               )'>

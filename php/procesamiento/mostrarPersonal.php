@@ -12,7 +12,7 @@ $contenido = '';
           foreach($datos as $row):
 
         $contenido .= "<tr class = 'fila' data-id = ".$row['id_persona'].">
-                <td>".$row['usuario']."</td>
+                <td>".$row['nombre']."</td>
                 <td>".$row['correo']."</td>
                 <td>".$row['telefono']."</td>
                 <td class='d-flex justify-content-center'>

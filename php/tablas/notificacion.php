@@ -61,7 +61,7 @@
                 <form action="post" class="user" id="formNotificacion">
 
                 <div class="form-group">
-                   <input id="titulo" name="titulo" type="text" placeholder="Ingresé el título de la notificación" class="form-control" aria-describedby="emailHelp" require>
+                   <input id="titulo" name="titulo" type="text" placeholder="Ingrese el título de la notificación" class="form-control" aria-describedby="emailHelp" require>
                 </div>
 
                 <div class="form-group">
